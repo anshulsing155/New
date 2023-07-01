@@ -167,7 +167,7 @@
 				<span
 					class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"
 					><img
-						src="src/lib/img/real-estate.jpeg"
+						src={"src/lib/img/real-estate.jpeg"}
 						alt=""
 						class="rounded-lg mt-10"
 					/></span
