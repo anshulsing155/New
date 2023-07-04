@@ -246,6 +246,7 @@
     label{
         padding-left: 4rem;
         height:100px;
+        overflow: scroll;
     }
     label:hover {
         border-color: green;
