@@ -26,20 +26,43 @@
   {/each}
 </ul> -->
 <script>
-  import { onMount } from "svelte";
-  import "../../app.css";
-  let cookies = [];
+  // import { onMount } from "svelte";
+  // import "../../app.css";
+  // let cookies = [];
   
-  onMount(() => {
-    cookies = document.cookie.split("; ").map((cookieString) => {
-      const [name , value] = cookieString.split("=");
-      // console.log([name , value])
+  // onMount(() => {
+  //   cookies = document.cookie.split("; ").map((cookieString) => {
+  //     const [name , value] = cookieString.split("=");
+  //     // console.log([name , value])
       
-      return { name, value };
-    });
-  });
-</script>
+  //     return { name, value };
+  //   });
+  // });
 
+  // Import the required dependencies
+import { onMount } from 'svelte';
+import { getCookie, parse } from 'cookie';
+
+// Create a Svelte component
+export let cookies;
+
+// Define the function to extract cookies
+function extractCookies() {
+  // Get the raw cookie string from the browser
+  const cookieString = document.cookie;
+
+  // Parse the raw cookie string into an object
+  const parsedCookies = parse(cookieString);
+
+  // Assign the parsed cookies to the `cookies` variable
+  cookies = parsedCookies;
+}
+
+// Run the `extractCookies` function when the component is mounted
+onMount(extractCookies);
+
+</script>
+<!-- 
 <main class="text-center font-mono text-xl">
 <div class="flex flex-col">
   <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -63,7 +86,7 @@
     </div>
   </div>
 </div>
-</main>
+</main> -->
 
 
 <!-- <form action="" method="POST">
@@ -74,7 +97,7 @@
   <button type="submit">Submit</button>
 </form> -->
 
-<style>
+<!-- <style>
   input {
     display: block;
     /* visibility: hidden; */
@@ -87,4 +110,12 @@
     border-radius: 5px;
     background-color: aquamarine;
   }
-</style>
+</style> -->
+
+
+<ul>
+  {#each cookies as cookie}
+    <li>{cookie.name}: {cookie.value}</li>
+  {/each}
+</ul>
+
