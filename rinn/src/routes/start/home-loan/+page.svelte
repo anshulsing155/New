@@ -244,7 +244,7 @@
 
 <style>
     label{
-        padding-left: 4rem;
+        padding: 2rem 4rem;
         height:100px;
         overflow:auto;
     }
