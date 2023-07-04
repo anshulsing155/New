@@ -98,7 +98,7 @@
                 value="Signed the Agreement with Builder or Seller"
             />
             <label
-                class="flex flex-col p-4 border-2 border-gray-400 rounded-2xl cursor-pointer"
+                class="flex flex-col p-4 border-2 border-gray-400 rounded-lg cursor-pointer"
                 for="radio_1"
             >
                 <!-- <span class="text-xs font-semibold uppercase">Small</span> -->
@@ -122,7 +122,7 @@
                 value="Property Finalised but Agreement is not signed. Need Sanction Letter to see eligiblity ( Validity 3 months)"
             />
             <label
-                class="flex flex-col p-4 border-2 border-gray-400 rounded-2xl cursor-pointer"
+                class="flex flex-col p-4 border-2 border-gray-400 rounded-lg cursor-pointer"
                 for="radio_1"
             >
                 <!-- <span class="text-xs font-semibold uppercase">Small</span> -->
@@ -146,7 +146,7 @@
                 value="Need only Sanction letter (Validity 3 months)"
             />
             <label
-                class=" flex flex-col p-4 border-2 border-gray-400 rounded-2xl cursor-pointer"
+                class=" flex flex-col p-4 border-2 border-gray-400 rounded-lg cursor-pointer"
                 for="radio_1"
             >
                 <!-- <span class="text-xs font-semibold uppercase">Small</span> -->
