@@ -4,7 +4,7 @@
     import img from '$lib/img/progressImg.jpg';
 </script>
 <section class=" m-auto mx-14 my-5 flex font-semibold text-xl text-green-700">
-    <div class="p-2 m-2 flex-1"> RINN.in</div>
+    <div class=" flex-1"> RINN.in</div>
     <div class="hidden sm:hidden lg:block  p-2 m-2 flex-2">Need help? Call +(91) 1234565678</div>
 </section>
 <div class="progress-bar">
@@ -12,7 +12,7 @@
 </div>
 
 
-    <img class="relative rounded-full m-auto  h-[80px] w-[120px] -top-20 " src={img} alt="" />
+    <img class="relative rounded-full m-auto  h-[77px] w-[77px] -top-14 sm:-top-16 lg:-top-20 " src={img} alt="" />
   
             
 
