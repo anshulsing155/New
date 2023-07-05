@@ -19,7 +19,7 @@
         }
     }
 </script>
-
+<!-- 
 <ProgressBar {progress} />
 <main>
     <form class="form-container" action="" method="POST">
@@ -37,54 +37,99 @@
         </label>
     </form>
 </main>
+ -->
+
+<ProgressBar {progress} />
+<div class="flex items-center justify-center mb-20">
+    <form class="w-full max-w-screen-sm">
+        <div class="m-10">
+            <input
+                on:change={onChange}
+                class="hidden"
+                id="radio_1"
+                type="radio"
+                name="radio"
+                checked
+                value="Row House"
+            />
+            <label
+                class="flex flex-col p-4 border-2 border-gray-400 rounded-lg cursor-pointer"
+                for="radio_1"
+            >
+                <span class="text-lg my-auto"
+                    >Row House</span
+                >
+            </label>
+        </div>
+        <div class="m-10">
+            <input
+                on:change={onChange}
+                class="hidden"
+                id="radio_1"
+                type="radio"
+                name="radio"
+                checked
+                value="Floor"
+            />
+            <label
+                class="flex flex-col p-4 border-2 border-gray-400 rounded-lg cursor-pointer"
+                for="radio_1"
+            >
+                <span class="text-lg my-auto"
+                    >Floor</span
+                >
+            </label>
+        </div>
+        <div class="m-10">
+            <input
+                on:change={onChange}
+                class="hidden"
+                id="radio_1"
+                type="radio"
+                name="radio"
+                checked
+                value="Flat"
+            />
+            <label
+                class=" flex flex-col p-4 border-2 border-gray-400 rounded-lg cursor-pointer"
+                for="radio_1"
+            >
+                <span class="text-lg my-auto"
+                    >Flat</span
+                >
+            </label>
+        </div>
+        <div class="m-10">
+            <input
+                on:change={onChange}
+                class="hidden"
+                id="radio_1"
+                type="radio"
+                name="radio"
+                checked
+                value="Plot"
+            />
+            <label
+                class=" flex flex-col p-4 border-2 border-gray-400 rounded-lg cursor-pointer"
+                for="radio_1"
+            >
+                <span class="text-lg my-auto"
+                    >Plot</span
+                >
+            </label>
+        </div>
+    </form>
+</div>
+
 <style>
-    @import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
- 
- * {
-     box-sizing: border-box;
- }
- 
- main{
-     font-family: "Muli", sans-serif;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-    
-     overflow: hidden;
-     margin: 0;
- }.form-container {
-     background-color: #ffffff;
-     /* border-radius: 10px; */
-     /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1); */
-     padding-bottom: 100px;
-     text-align: center;
-     max-width: 100%;
-     width: 60%;
- }
- label {
-     display: block;
-     text-align: left;
-     border: 1;
-     padding: 1.5rem;
- 
-     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
-     border-radius: 10px;
-     width: 40%;
-     margin: 10px auto;
- 
- }
- label:hover {
-     display: block;
-     text-align: left;
-     border: 1;
-     padding: 1.5rem;
-     border: 2px solid rgb(15, 61, 15);
-     border-radius: 10px;
-     width: 40%;
-     margin: 10px auto;
- 
- }
- input { 
-     visibility: hidden;
- }
- </style>
+    label {
+        padding: 2rem 4rem;
+        height: 100px;
+        overflow: auto;
+    }
+    label:hover {
+        border-color: green;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+            0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+</style>
