@@ -80,7 +80,7 @@
         </label>
     </form>
 </main> -->
-<section class="w-1/3 m-auto mb-10">
+<section class="sm:w-1/3 m-auto mb-10">
     <label
     for="state"
         class=" block mb-4 text-center text-xl font-medium text-gray-900 dark:text-white"
