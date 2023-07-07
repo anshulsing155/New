@@ -12,10 +12,8 @@
 </script>
 
 <ProgressBar {progress} />
-<section class="">
-    <form class="form-container mb-20">
-        <div class=" bg-white flex flex-row flex-wrap">
-            <div class=" m-auto w-1/3">
+        <div class=" bg-white flex flex-row flex-wrap mb-10">
+            <div class=" m-auto w-1/2">
                 <!-- Profile Card -->
                 <div
                     class="rounded-lg shadow-lg bg-gray-600 w-full flex flex-row flex-wrap p-3 antialiased"
@@ -136,5 +134,5 @@
 
         <!-- <button on:change={onChange} value="next">Next</button> -->
         <!-- <button type="submit">Submit</button> -->
-    </form>
-</section>
+
+ 
