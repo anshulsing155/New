@@ -51,7 +51,7 @@
           Full Name
         </label>
       </div>
-      <div class="md:w-2/ p-2.5">
+      <div class="md:w-2/3 p-2.5">
         <input class="bg-gray-200 appearance-none border-b-2 border-green-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500" id="inline-full-name" type="text" placeholder="Referral Name">
       </div>
     </div>
