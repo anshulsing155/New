@@ -35,7 +35,7 @@
                         <div
                             class="w-full text-right text-gray-700 font-semibold relative pt-3 md:pt-0"
                         >
-                            <div class="text-2xl text-white leading-tight">
+                            <div class=" block text-2xl text-white leading-tight">
                                 Anshul Singh
                             </div>
                             <div
