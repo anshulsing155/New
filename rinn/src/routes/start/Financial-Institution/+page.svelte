@@ -1,20 +1,27 @@
 <script>
-    import { goto } from "$app/navigation";
-       
-        import ProgressBar from "../../components/ProgressBar.svelte";
-    let progress = 57.2;
-    function onChange(event) {
-        var inputElement = document.getElementById("myInput1");
-        var inputValue1 = inputElement.value;
-        document.cookie = "Current Financial Institution="+inputValue1;
-        event.currentTarget.value;
-        if (event.currentTarget.value == "next") {
-            goto("../start/ROI");
-        }
+  import { goto } from "$app/navigation";
+
+  import ProgressBar from "../../components/ProgressBar.svelte";
+  let progress = 57.2;
+  function onChange(event) {
+    var inputElement = document.getElementById("inline-full-name");
+    var inputValue1 = inputElement.value;
+    var inputElement = document.getElementById("inline-Contact");
+    var inputValue2 = inputElement.value;
+    var inputElement = document.getElementById("inline-ROI");
+    var inputValue3 = inputElement.value;
+    document.cookie = "Current Financial Name=" + inputValue1;
+    document.cookie = "Current Financial Location=" + inputValue2;
+    document.cookie = "Current Financial ROI=" + inputValue3;
+    event.currentTarget.value;
+    if (event.currentTarget.value == "next") {
+      goto("../start/Referral");
     }
+  }
 </script>
+
 <ProgressBar {progress} />
-<main>
+<!-- <main>
     <form class="form-container">
         <label for="state"
             >Your Financial Institute::
@@ -26,79 +33,97 @@
                 type="radio"
                 value="next"
             />Next
-        </label>
-        
-        <!-- <button on:change={onChange} value="next">Next</button> -->
-        <!-- <button type="submit">Submit</button> -->
-    </form>
-</main>
+        </label> -->
 
-<style>
-    @import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
- 
- * {
-     box-sizing: border-box;
- }
- 
- main{
-     font-family: "Muli", sans-serif;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-    
-     overflow: hidden;
-     margin: 0;
- }.form-container {
-     background-color: #ffffff;
-     /* border-radius: 10px; */
-     /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1); */
-     padding-bottom: 100px;
-     text-align: center;
-     max-width: 100%;
-     width: 60%;
- }
- label {
-     display: block;
-     text-align: left;
-     border: 1;
-     padding: 1.5rem;
- 
-     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
-     border-radius: 10px;
-     width: 40%;
-     margin: 10px auto;
- 
- }
- input[type="text"]:hover {
-     display: block;
-     border: 1;
-
-     border: 2px solid rgb(15, 61, 15);
-     border-radius: 10px;
- 
- }
-     input[type="text"] {
-        padding: 0.5rem 0;
-        margin-top: 0.5rem;
-        border-width: 1px;
-        margin: 1rem 0;
-        text-align: left;
-        border: 1;
-        padding: 1em;
-        border: 1px solid gray;
-        border-radius: 10px;
-    }
-    input[type="radio"] {
-        visibility: hidden;
-    }
-
-    .next {
-       margin-top: 5%;
-        text-align: center;
-        background-color: rgb(155, 155, 224);
-    }
-    /* button{
-        width: 100%;
-        padding: 10px;
-    } */
-</style>
+<!-- <button on:change={onChange} value="next">Next</button> -->
+<!-- <button type="submit">Submit</button> -->
+<!-- </form>
+</main> -->
+<section class="w-full max-w-xl m-auto md:border mb-20 p-10">
+  <label
+    for="state"
+    class="  block mb-8 text-center text-xl font-medium text-gray-900"
+    >Your Financial Institute...
+  </label>
+  <div class="md:flex md:items-center mb-6">
+    <div class="md:w-1/3">
+      <label
+        class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+        for="inline-full-name"
+      >
+        Bank Name
+      </label>
+    </div>
+    <div class="md:w-2/3">
+      <input
+        class="bg-gray-200 appearance-none border-b-2 border-green-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500"
+        id="inline-full-name"
+        type="text"
+        placeholder=""
+      />
+    </div>
+  </div>
+  <div class="md:flex md:items-center mb-6">
+    <div class="md:w-1/3">
+      <label
+        class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+        for="inline-Contact"
+      >
+        Branch Location
+      </label>
+    </div>
+    <div class="md:w-2/3">
+      <input
+        class="bg-gray-200 appearance-none border-b-2 border-green-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500"
+        id="inline-Contact"
+        type="tel"
+        placeholder=""
+      />
+    </div>
+  </div>
+  <div class="md:flex md:items-center mb-6">
+    <div class="md:w-1/3">
+      <label
+        class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+        for="inline-ROI"
+      >
+        Current ROI
+      </label>
+    </div>
+    <div class="md:w-2/3">
+      <input
+        class="bg-gray-200 appearance-none border-b-2 border-green-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500"
+        id="inline-ROI"
+        type="number"
+        placeholder=""
+      />
+    </div>
+  </div>
+  <!-- <div class="md:flex md:items-center mb-6">
+      <div class="md:w-1/3"></div>
+      <label class="md:w-2/3 block text-gray-500 font-bold">
+        <input class="mr-2 leading-tight" type="checkbox">
+        <span class="text-sm">
+          Send me your newsletter!
+        </span>
+      </label>
+    </div> -->
+  <div class="md:flex md:items-center">
+    <div class="md:w-1/3" />
+    <div class="md:w-2/3">
+      <label
+        class="shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+      >
+        <input
+          on:change={onChange}
+          type="radio"
+          class="hidden"
+          value="next"
+        />Next
+      </label>
+      <!-- <button on:change={onChange} class="shadow  bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button" value="next">
+        Next
+        </button> -->
+    </div>
+  </div>
+</section>
