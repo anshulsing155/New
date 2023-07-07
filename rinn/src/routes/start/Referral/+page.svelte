@@ -38,7 +38,7 @@
         </label>
     </form>
 </main> -->
-<form class="w-full max-w-md m-auto md:border mb-20 p-10 ">
+<section class="w-full max-w-md m-auto md:border mb-20 p-10 ">
     <label
     for="state"
         class="  block mb-8 text-center text-xl font-medium text-gray-900"
@@ -77,9 +77,17 @@
     <div class="md:flex md:items-center">
       <div class="md:w-1/3 "></div>
       <div class="md:w-2/3 ">
-        <button on:change={onChange} class="shadow  bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button" value="next">
+        <label class="shadow  bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
+            <input
+                on:change={onChange}
+                type="radio"
+                class="hidden"
+                value="next"
+            />Next
+        </label>
+        <!-- <button on:change={onChange} class="shadow  bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button" value="next">
         Next
-        </button>
+        </button> -->
       </div>
     </div>
-  </form>
+</section>
