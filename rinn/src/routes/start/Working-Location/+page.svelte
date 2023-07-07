@@ -1,20 +1,34 @@
 <script>
-    import { goto } from "$app/navigation";
+    import { goto , beforeNavigate ,afterNavigate} from "$app/navigation";    
+    import { path } from '../store.js';
     import ProgressBar from "../../components/ProgressBar.svelte";
-    let progress = 21.45;
     import data from "$lib/Indian-States-&-Cities.json";
+    let progress = 28.6;
+    let countValue;
 
+	path.subscribe(value => {
+		countValue = value;
+	});
     function onChange(event) {
         var inputElement = document.getElementById("state");
         var inputValue1 = inputElement.value;
         var inputElement = document.getElementById("city");
         var inputValue2 = inputElement.value;
-        document.cookie = "Workingcd Location (State)=" + inputValue1;
-        document.cookie = "Workingcd Location (City)=" + inputValue2;
-        if (event.currentTarget.value == "next") {
-            goto("../start/Working-Location");
+        document.cookie = "Working Location (State)="+inputValue1;
+        document.cookie = "Working Location (City)="+inputValue2;
+        if (countValue == true )
+        goto("../start/Referral")
+        if (event.currentTarget.value == "next" && countValue == false ) {
+            goto("../start/Master-plan");
         }
     }
+    // beforeNavigate((navigate) => {
+    //     console.log({route: navigate})
+    // });
+    // afterNavigate((navigate) => {
+    //     let route = navigate.from?.route.id;
+    //     console.dir(route);
+    // });
     let state = [];
     for (const key in data) {
         state.push(key);
