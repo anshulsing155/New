@@ -98,7 +98,7 @@
     <label
     for="state"
         class=" block mb-4 text-center text-xl font-medium text-gray-900"
-        >Select Your Workingcd Location</label
+        >Select Your Working Location</label
     >
     <label for="state">Select State:</label>
     <select

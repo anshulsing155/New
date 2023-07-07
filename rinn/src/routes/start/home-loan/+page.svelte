@@ -37,7 +37,7 @@
                 id="radio_1"
                 type="radio"
                 name="radio"
-                checked
+                
                 value="Signed the Agreement with Builder or Seller"
             />
             <label
@@ -53,15 +53,15 @@
             <input
                 on:change={onChange}
                 class="hidden"
-                id="radio_1"
+                id="radio_2"
                 type="radio"
                 name="radio"
-                checked
+                
                 value="Property Finalised but Agreement is not signed. Need Sanction Letter to see eligiblity ( Validity 3 months)"
             />
             <label
                 class="flex flex-col p-4 border-2 border-gray-400 rounded-lg cursor-pointer"
-                for="radio_1"
+                for="radio_2"
             >
                 <span class="text-lg my-auto"
                     >Property Finalised but Agreement is not signed. Need
@@ -73,15 +73,15 @@
             <input
                 on:change={onChange}
                 class="hidden"
-                id="radio_1"
+                id="radio_3"
                 type="radio"
                 name="radio"
-                checked
+                
                 value="Need only Sanction letter (Validity 3 months)"
             />
             <label
                 class=" flex flex-col p-4 border-2 border-gray-400 rounded-lg cursor-pointer"
-                for="radio_1"
+                for="radio_3"
             >
                 <span class="text-lg my-auto"
                     >Need only Sanction letter (Validity 3 months)</span

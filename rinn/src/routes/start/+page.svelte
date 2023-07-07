@@ -10,8 +10,8 @@
     function onChange(event) {
         let value = event.currentTarget.value;
         document.cookie = "Requirment="+value;
-        
-            home.set(value);
+        home.set(value);
+        console.log(value);
         if (event.currentTarget.value == "Home Loan") {
             goto("../start/home-loan");   
         } else if (event.currentTarget.value == "LAP") {
@@ -22,8 +22,6 @@
             
         }
     }
-    
-    
 </script>
 <ProgressBar {progress} />
 <div class="flex items-center justify-center mb-20">
@@ -35,7 +33,6 @@
                 id="radio_1"
                 type="radio"
                 name="radio"
-                checked
                 value="Home Loan"
             />
             <label
@@ -51,15 +48,14 @@
             <input
                 on:change={onChange}
                 class="hidden"
-                id="radio_1"
+                id="radio_2"
                 type="radio"
                 name="radio"
-                checked
                 value="LAP"
             />
             <label
                 class="flex flex-col p-4 border-2 border-gray-400 rounded-lg cursor-pointer"
-                for="radio_1"
+                for="radio_2"
             >
                 <span class="text-lg my-auto"
                     >LAP</span
@@ -70,15 +66,14 @@
             <input
                 on:change={onChange}
                 class="hidden"
-                id="radio_1"
+                id="radio_3"
                 type="radio"
                 name="radio"
-                checked
                 value="Balance Transfer"
             />
             <label
                 class=" flex flex-col p-4 border-2 border-gray-400 rounded-lg cursor-pointer"
-                for="radio_1"
+                for="radio_3"
             >
                 <span class="text-lg my-auto"
                     >Balance Transfer</span
@@ -87,7 +82,6 @@
         </div>
     </form>
 </div>
-
 <style>
     label {
         padding: 2rem 4rem;
