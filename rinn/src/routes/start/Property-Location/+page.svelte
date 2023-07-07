@@ -83,7 +83,7 @@
 <section class="sm:w-1/3 px-20 m-auto mb-10">
     <label
     for="state"
-        class=" block mb-4 text-center text-xl font-medium text-gray-900 dark:text-white"
+        class=" block mb-4 text-center text-xl font-medium text-gray-900"
         >Select Your Property Location</label
     >
     <label for="state">Select State:</label>
