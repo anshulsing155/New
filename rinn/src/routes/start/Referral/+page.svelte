@@ -38,30 +38,30 @@
         </label>
     </form>
 </main> -->
-<form class="w-full max-w-md m-auto md:border mb-20 p-10">
+<form class="w-full max-w-md m-auto md:border mb-20 p-10 ">
     <label
     for="state"
-        class=" p-2.5 block mb-8 text-center text-xl font-medium text-gray-900"
+        class="  block mb-8 text-center text-xl font-medium text-gray-900"
         >Person who referred you... </label
     >
     <div class="md:flex md:items-center mb-6">
         
-      <div class="md:w-1/3 p-2.5">
+      <div class="md:w-1/3 ">
         <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
           Full Name
         </label>
       </div>
-      <div class="md:w-2/3 p-2.5">
+      <div class="md:w-2/3 ">
         <input class="bg-gray-200 appearance-none border-b-2 border-green-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500" id="inline-full-name" type="text" placeholder="Referral Name">
       </div>
     </div>
-    <div class="md:flex md:items-center mb-6 p-2.5">
+    <div class="md:flex md:items-center mb-6 ">
       <div class="md:w-1/3">
         <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-password">
           Contact No.
         </label>
       </div>
-      <div class="md:w-2/3 p-2.5">
+      <div class="md:w-2/3 ">
         <input class="bg-gray-200 appearance-none border-b-2 border-green-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500" id="inline-password" type="tel"  placeholder="123-45-678">
       </div>
     </div>
