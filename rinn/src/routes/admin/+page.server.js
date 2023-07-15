@@ -1,94 +1,159 @@
-import { onMount } from 'svelte';
+// // import { onMount } from 'svelte';
 
 
-import Cookies from './+page.svelte';
+// import Cookies from './+page.svelte';
  
-// export const actions = {
+// // export const actions = {
 
-//     default: async({ request }) => {
-//         onMount(() => {
-//             cookies = document.cookie.split('; ').map(cookieString => {
+// //     default: async({ request }) => {
+// //         onMount(() => {
+// //             cookies = document.cookie.split('; ').map(cookieString => {
 
-//             const [name, value] = cookieString.split('=');
-//             connect();
+// //             const [name, value] = cookieString.split('=');
+// //             connect();
 
-//             return { name, value }; 
-//           });
-//         });
-//         const formData = await request.formData();
-//         const firstname = formData.get("")
-//         // const lastname = formData.get("lastname")
-//         // const email = formData.get("email")
-//         // const gender = formData.get("gender")
-//         // const address = formData.get("address")
-//         console.log({firstname})
+// //             return { name, value }; 
+// //           });
+// //         });
+// //         const formData = await request.formData();
+// //         const firstname = formData.get("")
+// //         // const lastname = formData.get("lastname")
+// //         // const email = formData.get("email")
+// //         // const gender = formData.get("gender")
+// //         // const address = formData.get("address")
+// //         console.log({firstname})
+// //     }
+// // }
+
+
+// import { config } from 'dotenv';
+// import { MongoClient } from 'mongodb';
+
+// async function connectToCluster(uri) {
+//     let mongoClient;
+
+//     try {
+//         mongoClient = new MongoClient(uri);
+//         console.log('Connecting to MongoDB Atlas cluster...');
+//         await mongoClient.connect();
+//         console.log('Successfully connected to MongoDB Atlas!');
+
+//         return mongoClient;
+//     } catch (error) {
+//         console.error('Connection to MongoDB Atlas failed!', error);
+//         process.exit();
 //     }
 // }
 
 
-import { config } from 'dotenv';
-import { MongoClient } from 'mongodb';
+// onMount(() => {
+//     cookies = document.cookie.split('; ').map(cookieString => {
 
-async function connectToCluster(uri) {
-    let mongoClient;
+//         const [name , value] = cookieString.split('=');
+//         console.log([name , value])
+//         return {name , value}
+//     });
+// });
 
-    try {
-        mongoClient = new MongoClient(uri);
-        console.log('Connecting to MongoDB Atlas cluster...');
-        await mongoClient.connect();
-        console.log('Successfully connected to MongoDB Atlas!');
+// export const actions = {
+//     default: async ({ request }) => {
+//         const formData = await request.getCookie();
+//         const firstname = formData.get("firstname")
+//         const lastname = formData.get("lastname")
+//         const email = formData.get("email")
+//         const gender = formData.get("gender")
+//         const address = formData.get("address")
+//         console.log({formData})
 
-        return mongoClient;
-    } catch (error) {
-        console.error('Connection to MongoDB Atlas failed!', error);
-        process.exit();
-    }
-}
+//         async function executeStudentCrudOperations() {
+//             const uri = process.env.DB_URI;
+//             let mongoClient;
 
-
-onMount(() => {
-    cookies = document.cookie.split('; ').map(cookieString => {
-
-        const [name , value] = cookieString.split('=');
-        console.log([name , value])
-        return {name , value}
-    });
-});
-export const actions = {
-    default: async ({ request }) => {
-        const formData = await request.formData();
-        const firstname = formData.get("firstname")
-        const lastname = formData.get("lastname")
-        const email = formData.get("email")
-        const gender = formData.get("gender")
-        const address = formData.get("address")
-        // console.log({firstname, lastname, email, gender, address})
-
-        async function executeStudentCrudOperations() {
-            const uri = process.env.DB_URI;
-            let mongoClient;
-
-            try {
-                mongoClient = await connectToCluster(uri);
-                const db = mongoClient.db('form');
-                const collection = db.collection('formData');
-                console.log('CREATE User');
-                await createStudentDocument(collection);
-            } finally {
-                await mongoClient.close();
-            }
-        }
-        async function createStudentDocument(collection) {
-            const studentDocument = {
+//             try {
+//                 mongoClient = await connectToCluster(uri);
+//                 const db = mongoClient.db('form');
+//                 const collection = db.collection('formData');
+//                 console.log('CREATE User');
+//                 await createStudentDocument(collection);
+//             } finally {
+//                 await mongoClient.close();
+//             }
+//         }
+//         async function createStudentDocument(collection) {
+//             const studentDocument = {
                
 
-            };
+//             };
 
-            await collection.insertOne(studentDocument);
-        }
+//             await collection.insertOne(studentDocument);
+//         }
 
 
-        config();
-        await executeStudentCrudOperations();
-    }
-}
+//         config();
+//         await executeStudentCrudOperations();
+//     }
+// }
+
+// import { config } from 'dotenv';
+// import { MongoClient } from 'mongodb';
+
+// async function connectToCluster(uri) {
+//     let mongoClient;
+ 
+//     try {
+//         mongoClient = new MongoClient(uri);
+//         console.log('Connecting to MongoDB Atlas cluster...');
+//         await mongoClient.connect();
+//         console.log('Successfully connected to MongoDB Atlas!');
+ 
+//         return mongoClient;
+//     } catch (error) {
+//         console.error('Connection to MongoDB Atlas failed!', error);
+//         process.exit();
+//     }
+//  }
+
+
+// export const actions = {
+//     default: async({ request }) => {
+//         const formData = await request.formData();
+//         const firstname = formData.get("firstname")
+//         const lastname = formData.get("lastname")
+//         const email = formData.get("email")
+//         const gender = formData.get("gender")
+//         const address = formData.get("address")
+//         console.log({firstname, lastname, email, gender, address})
+
+//         async function executeStudentCrudOperations() {
+//             const uri = process.env.DB_URI;
+//             let mongoClient;
+         
+//             try {
+//                 mongoClient = await connectToCluster(uri);
+//                 const db = mongoClient.db('Form');
+//                 const collection = db.collection('User');
+         
+//                 console.log('CREATE User');
+//                 await createStudentDocument(collection);
+//             } finally {
+//                 await mongoClient.close();
+//             }
+//          }
+//         async function createStudentDocument(collection) {
+//             const studentDocument = {
+//                 FName: firstname,
+//                 LName: lastname,
+//                 Email: email,
+//                 Gender: gender,
+//                 Address: address,
+                
+//             };
+         
+//             await collection.insertOne(studentDocument);
+//          }
+         
+        
+//         config();
+//         await executeStudentCrudOperations();
+//     }
+// }

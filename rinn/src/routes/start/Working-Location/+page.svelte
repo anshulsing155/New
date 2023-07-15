@@ -105,7 +105,7 @@
         id="state" on:change={populateCities}
         class="mb-8 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
     >
-        <option>Select Workingcd State</option>
+        <option>Select Working State</option>
         {#each newState as item}
             <option value={item}>{item}</option>
         {/each}
@@ -115,7 +115,7 @@
         id="city"
         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
     >
-        <option value="">Select Workingcd City</option>
+        <option value="">Select Working City</option>
     </select>
    <button on:click={onChange} class="my-8 px-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " value="next">Next</button>
 </section>

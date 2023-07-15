@@ -2,23 +2,13 @@
 import { goto } from "$app/navigation";
     import ProgressBar from "../../components/ProgressBar.svelte";
     let progress = 78.65;
-    function onChange(event) {
-        var inputElement = document.getElementById("inline-full-name");
-        var inputValue1 = inputElement.value;
-        var inputElement = document.getElementById("inline-Contact");
-        var inputValue2 = inputElement.value;
-        var inputElement = document.getElementById("inline-email");
-        var inputValue3 = inputElement.value;
-        document.cookie = "User (Name)=" + inputValue1;
-        document.cookie = "User (Mobile No.)=" + inputValue2;
-        document.cookie = "User (Email)=" + inputValue3;
-        if (event.currentTarget.value == "next") {
+    function onChange() {
             goto("../start/Executive");
         }
-    }
+    let files;
 </script>
 <ProgressBar {progress} />
-<form method="" action="../start/Executive">
+<form on:submit={ ()=> goto("../start/Executive")} method="post">
 <section class="w-full max-w-md m-auto mb-10 p-10 ">
     <!-- component -->
     <label
@@ -39,9 +29,15 @@ import { goto } from "$app/navigation";
           <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
       </svg>
       <span class="mt-2 text-base leading-normal">Select a file</span>
-      <input type='file' class="hidden" />
+      <input type='file' class="hidden"  />
+      
   </label>
   
+</div>
+<div class="p-2 text-center text-black">
+<!-- {#if files && files[0]}
+		{files[0].name}
+{/if} -->
 </div>
 <div class="md:flex md:items-center m-6">
   <div class="m-auto">
@@ -56,14 +52,21 @@ import { goto } from "$app/navigation";
           <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
       </svg>
       <span class="mt-2 text-base leading-normal">Select a file</span>
-      <input type='file' class="hidden" />
+      <input  type='file' class="hidden"  />
+      
+      
   </label>
   
 </div>
+<div class="p-2 text-center text-black">
+  <!-- {#if files && files[0]}
+      {files[].name}
+  {/if} -->
+  </div>
 <div class="md:flex md:items-center m-10">
   <div class="md:w-1/3 "></div>
   <div class="md:w-2/3 ">
-    <button class="shadow  bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit" value="next">
+    <button id="submit" class="shadow  bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit" value="next">
     Submit
     </button>
   </div>
