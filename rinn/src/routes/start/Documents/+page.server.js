@@ -1,6 +1,6 @@
 import { config } from 'dotenv';
 import { MongoClient } from 'mongodb';
-import 
+
 
 async function connectToCluster() {
     let mongoClient;
