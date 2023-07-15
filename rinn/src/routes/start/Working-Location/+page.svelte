@@ -78,7 +78,7 @@
             <input
                 type="Text"
                 id="myInput1"
-                placeholder="Enter Workingcd State"
+                placeholder="Enter Working State"
             />
         </label>
         <label for=""
@@ -87,7 +87,7 @@
                 id="myInput2"
                 type="text" 
                 name="2" 
-                placeholder=" Enter Workingcd City" />
+                placeholder=" Enter Working City" />
         </label>
         <label class="next">
             <input on:change={onChange} type="radio" value="next" />Next
