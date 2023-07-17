@@ -2,6 +2,10 @@
   import { goto } from "$app/navigation";
   import ProgressBar from "../../components/ProgressBar.svelte";
   let progress = 78.65;
+  let field1 = '';
+  let field2 = '';
+  let field3 = '';
+  $: isSubmitEnabled = field1 && field2 && field3;
   function onChange(event) {
     var inputElement = document.getElementById("inline-full-name");
     var inputValue1 = inputElement.value;
@@ -70,7 +74,7 @@
         bind:value={name}
         on:blur={validateName}
         placeholder="Enter Your Name"
-      />
+      required/>
     </div>
   </div>
   <div class="md:flex md:items-center mb-6">
@@ -115,15 +119,7 @@
       />
     </div>
   </div>
-  <!-- <div class="md:flex md:items-center mb-6">
-      <div class="md:w-1/3"></div>
-      <label class="md:w-2/3 block text-gray-500 font-bold">
-        <input class="mr-2 leading-tight" type="checkbox">
-        <span class="text-sm">
-          Send me your newsletter!
-        </span>
-      </label>
-    </div> -->
+
   <div class="md:flex md:items-center">
     <div class="md:w-1/3" />
     <div class="md:w-2/3">
@@ -141,10 +137,3 @@
     </div>
   </div>
 </section>
-
-<style>
-  input :disabled {
-    background-color: azure;
-    color: black;
-  }
-</style>
