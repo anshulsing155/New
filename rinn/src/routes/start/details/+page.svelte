@@ -2,10 +2,8 @@
   import { goto } from "$app/navigation";
   import ProgressBar from "../../components/ProgressBar.svelte";
   let progress = 78.65;
-  let field1 = '';
-  let field2 = '';
-  let field3 = '';
-  $: isSubmitEnabled = field1 && field2 && field3;
+
+  
   function onChange(event) {
     var inputElement = document.getElementById("inline-full-name");
     var inputValue1 = inputElement.value;
@@ -63,7 +61,7 @@
         class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
         for="inline-full-name"
       >
-        Full Name :
+        Full Name : <sup class="text-red-700 text-lg">*</sup>
       </label>
     </div>
     <div class="md:w-2/3">
@@ -80,10 +78,10 @@
   <div class="md:flex md:items-center mb-6">
     <div class="md:w-1/3">
       <label
-        class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+        class="flex text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
         for="inline-Contact"
       >
-        Contact No. :
+        Mobile No : <sup class="text-red-700 text-lg">*</sup>
       </label>
     </div>
     <div class="md:w-2/3">
@@ -94,7 +92,7 @@
         bind:value={mobileNumber}
         on:input={validateMobileNumber}
         placeholder="123-45-678"
-      />
+      required/>
     </div>
   </div>
   {#if !isMobileNumberValid}
@@ -106,7 +104,7 @@
         class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
         for="inline-email"
       >
-        Email ID :
+        Email ID : <sup class="text-red-700 text-lg">*</sup>
       </label>
     </div>
     <div class="md:w-2/3">
@@ -115,8 +113,8 @@
         id="inline-email"
         type="tel"
         placeholder="abc@gmail.com"
-        required
-      />
+        
+      required/>
     </div>
   </div>
 
@@ -128,7 +126,6 @@
       >
         <input
           on:change={onChange}
-          disabled={!isNameValid || !isMobileNumberValid || !isEmailValid}
           type="radio"
           class="hidden"
           value="next"
