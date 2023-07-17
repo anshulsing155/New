@@ -108,12 +108,13 @@
       </label>
     </div>
     <div class="md:w-2/3">
+    
       <input
         class="bg-gray-200 appearance-none border-b-2 border-green-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500"
         id="inline-email"
-        type="tel"
+        type="email"
         placeholder="abc@gmail.com"
-        
+        on:input={validateEmail}
       required/>
     </div>
   </div>
