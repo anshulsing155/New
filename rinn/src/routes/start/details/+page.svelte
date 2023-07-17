@@ -43,7 +43,7 @@
 
   function validateEmail() {
     // Validate the email field using a simple regular expression pattern
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     isEmailValid = emailPattern.test(email.trim());
   }
 </script>
