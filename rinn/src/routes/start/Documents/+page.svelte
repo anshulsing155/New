@@ -12,7 +12,7 @@ import { goto } from "$app/navigation";
 </script>
 <ProgressBar {progress} />
 
-<section class="w-full max-w-md m-auto mb-10 p-10 ">
+<section class="w-full max-w-md m-auto mb-10 p-10  ">
     <label
     for="state"
         class="  block mb-8 text-center text-xl font-medium text-gray-900"
@@ -74,12 +74,12 @@ import { goto } from "$app/navigation";
   </div>
 </div>
 </div>-->
-</section> 
+
 <form method="post" on:submit={onChange} use:enhance >
-  <div class="md:flex md:items-center m-10">
-    <div class="md:w-1/3 ">
-    <div class="md:w-2/3 ">
-      <button id="submit" class="shadow  bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit" value="next">
+  <div class="md:flex md:items-center">
+    <div class="m-auto">
+    <div class="md:w-2/3 my-4 ">
+      <button id="submit" class="shadow   bg-green-700 hover:bg-green-600 focus:shadow-outline focus:outline-none text-white font-bold m-auto py-2 px-4 rounded" type="submit" value="next">
       Submit
       </button>
     </div>
@@ -87,3 +87,4 @@ import { goto } from "$app/navigation";
   </div>
 
 </form>
+</section>
