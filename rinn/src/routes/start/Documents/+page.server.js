@@ -34,7 +34,7 @@ export function load({ cookies }) {
     usernName = cookies.get('User (Name)');
     userNo = cookies.get('User (Mobile No.)');
     userMail = cookies.get('User (Email)');
-    // console.log({ home, propertyPurchase });
+    console.log({ home, propertyPurchase });
 
 }
 

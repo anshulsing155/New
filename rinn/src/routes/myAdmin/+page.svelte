@@ -1,5 +1,26 @@
 <script>
 import "../../app.css";
+async function handleLogin(event) {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+    const email = formData.get('email');
+    const password = formData.get('password');
+
+    const response = await fetch('/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
+
+    if (response.ok) {
+      // Redirect to a protected route or display success message
+      console.log('Login successful');
+    } else {
+      const error = await response.json();
+      console.error('Login failed:', error.message);
+    }
+  }
 </script>
 <!-- component -->
 <div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">

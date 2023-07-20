@@ -1,8 +1,8 @@
 <script>
     import "../app.css";
-    
-    
+   
 </script>
+    
 
 <div class="w-full bg-gray-100">
     <div class=" flex flex-row justify-between w-11/12 p-4 m-auto">
@@ -270,6 +270,9 @@
         </div>
     </nav>
 </header>
+
+
+
 <style>
     .dropdown:hover .dropdown-menu {
   display: block;
