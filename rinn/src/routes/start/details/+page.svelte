@@ -28,6 +28,7 @@
   function validateName() {
     // Validate the name field
     isNameValid = name.trim() !== "";
+    handleNext();
   }
 
   function validateMobileNumber() {
@@ -39,13 +40,28 @@
 
     // Validate the mobile number field
     isMobileNumberValid = mobileNumber.length === 10;
+    handleNext();
   }
 
   function validateEmail() {
     // Validate the email field using a simple regular expression pattern
     const emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     isEmailValid = emailPattern.test(email.trim());
+    handleNext();
   }
+
+  function handleNext(){
+        const nameSelect = document.getElementById("inline-full-name");
+        const selectedName = nameSelect.value;
+        const contactSelect = document.getElementById("inline-Contact");
+        const selectedContact = contactSelect.value;
+        const emailSelect = document.getElementById("inline-email");
+        const selectedEmail = emailSelect.value;
+        if (selectedName && selectedContact && selectedEmail !== "") {
+            document.getElementById("next").disabled = false;
+        }
+        
+    }
 </script>
 
 <ProgressBar {progress} />
@@ -120,18 +136,27 @@
   </div>
 
   <div class="md:flex md:items-center">
-    <div class="md:w-1/3" />
-    <div class="md:w-2/3">
-      <label
-        class="shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-      >
-        <input
-          on:change={onChange}
-          type="radio"
-          class="hidden"
-          value="next"
-        />Next
-      </label>
-    </div>
+    
+      <button
+    on:click={onChange}
+    class="my-8 px-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+    id="next"
+    value="next" disabled>Next</button
+>
+   
   </div>
 </section>
+
+<style>
+  *:disabled {
+  background-color: dimgrey;
+  color: linen;
+  opacity: 1;
+}
+#next:enabled{
+background: rgb(82, 150, 82);
+color: black;
+opacity: 1;
+}
+
+</style>

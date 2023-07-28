@@ -21,23 +21,15 @@
     }
     let newState = state.sort();
 
-    
-
-
-    // let newCity = city.sort();
-
-    // City data based on selected state
-    // const cityData = {
-    //     California: ["Los Angeles", "San Francisco", "San Diego"],
-    //     "New York": ["New York City", "Buffalo", "Rochester"],
-    //     Texas: ["Houston", "Austin", "Dallas"],
-    // };
-
     // Function to populate city options based on selected state
     function populateCities() {
+
         const stateSelect = document.getElementById("state");
         const citySelect = document.getElementById("city");
-        const selectedState = stateSelect.value;
+        const selectedState = stateSelect.value; 
+         
+
+        // const button = document.getElementById('next');
 
         // Clear previous city options
         citySelect.innerHTML = "<option value=''>-- Select a City --</option>";
@@ -49,47 +41,39 @@
                 const option = document.createElement("option");
                 option.value = cities[i];
                 option.text = cities[i];
+               
                 citySelect.appendChild(option);
             }
+        
         }
+        citySelect.addEventListener( 'change',handleNext)
+        
+        
     }
+    
+    function handleNext(){
+        const citySelect = document.getElementById("city");
+        const selectedCity = citySelect.value;
+        if (selectedCity !== "") {
+            document.getElementById("next").disabled = false;
+        }
+        
+    }
+    
 </script>
-
-<!-- {data1} -->
 <ProgressBar {progress} />
-<!-- <main>
-    <form class="form-container">
-        <label for=""
-            >Property State:
-            <input
-                type="Text"
-                id="myInput1"
-                placeholder="Enter Property State"
-            />
-        </label>
-        <label for=""
-            >Property City:
-            <input 
-                id="myInput2"
-                type="text" 
-                name="2" 
-                placeholder=" Enter Property City" />
-        </label>
-        <label class="next">
-            <input on:change={onChange} type="radio" value="next" />Next
-        </label>
-    </form>
-</main> -->
+
 <section class="sm:w-1/3 px-20 m-auto mb-10">
     <label
-    for="state"
+        for="state"
         class=" block mb-4 text-center text-xl font-medium text-gray-900"
         >Select Your Property Location</label
     >
     <label for="state">Select State:</label>
-    
+
     <select
-        id="state" on:change={populateCities}
+        id="state"
+        on:change={populateCities}
         class="mb-8 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
     >
         <option>Select Property State</option>
@@ -104,5 +88,23 @@
     >
         <option value="">Select Property City</option>
     </select>
-   <button on:click={onChange} class="my-8 px-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " value="next">Next</button>
+    <button
+        on:click={onChange}
+        class="my-8 px-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+        id="next"
+        value="next" disabled>Next</button
+    >
 </section>
+<style>
+    *:disabled {
+    background-color: dimgrey;
+    color: linen;
+    opacity: 1;
+}
+#next:enabled{
+background: rgb(82, 150, 82);
+color: black;
+opacity: 1;
+}
+
+</style>

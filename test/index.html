@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- CSS here -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Form HTML here -->
+    <form action="">
+      <div class="element">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" />
+      </div>
+
+      <div class="element">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" />
+      </div>
+
+      <div class="element">
+        <label for="agree">I have read terms and conditions</label>
+        <input type="checkbox" name="agree" id="agree" clicked />
+      </div>
+
+      <button id="button">Submit</button>
+    </form>
+  </body>
+
+  <!-- JavaScript here -->
+  <script>
+    
+    // capturing the button using its id
+    const button1 = document.getElementById("button");
+    button1.disabled = true; // disabling it by default
+
+    // capturing the checkbox element
+    const checkBoxElement = document.getElementById("agree");
+
+    // function to disable the button
+    const disableButton = () => {
+      button1.disabled = false;
+    };
+
+    // calling the disableButton() function when the checkbox's state gets change
+    checkBoxElement.addEventListener("change", disableButton);
+  </script>
+</html>
+

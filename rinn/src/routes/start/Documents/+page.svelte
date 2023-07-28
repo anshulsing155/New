@@ -37,9 +37,9 @@ import { goto } from "$app/navigation";
   
 </div>
 <div class="p-2 text-center text-black">
- <!-- {#if files && files[0]}
+ {#if files && files[0]}
 		{files[0].name}
-{/if}  -->
+{/if} 
 </div>
 <div class="md:flex md:items-center m-6">
   <div class="m-auto">
@@ -61,20 +61,10 @@ import { goto } from "$app/navigation";
   
 </div>
 <div class="p-2 text-center text-black">
-  <!-- {#if files && files[0]}
-      {files[].name}
-  {/if}  -->
+  {#if files && files[0]}
+      {files[0].name}
+  {/if} 
 </div>
-<!-- <div class="md:flex md:items-center m-10">
-  <div class="md:w-1/3 ">
-  <div class="md:w-2/3 ">
-    <button id="submit" class="shadow  bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit" value="next">
-    Submit
-    </button>
-  </div>
-</div>
-</div>-->
-
 <form method="post" on:submit={onChange} use:enhance >
   <div class="md:flex md:items-center">
     <div class="m-auto">

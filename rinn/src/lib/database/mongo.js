@@ -1,5 +1,7 @@
-import { config } from 'dotenv';
 import { MongoClient } from 'mongodb';
+import { config } from 'dotenv';
+
+
 
 export async function connectToCluster() {
     let mongoClient;
@@ -16,13 +18,3 @@ export async function connectToCluster() {
         process.exit();
     }
 }
-export async function connect() {
-    let mongoClient
-    try {
-    
-      console.log('Connected to MongoDB');
-      return mongoClient.db('userLogin'); // Replace 'mydatabase' with your database name
-    } catch (error) {
-      console.error('Failed to connect to MongoDB', error);
-    }
-  }
