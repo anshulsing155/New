@@ -2,7 +2,8 @@
     import { goto } from "$app/navigation";
     import ProgressBar from "../../components/ProgressBar.svelte";
     let progress = 21.45;
-    import data from "$lib/Indian-States-&-Cities.json";
+    // import data from "$lib/Indian-States-&-Cities.json";
+    import Data1 from "$lib/pincode_IN.json";
 
     function onChange(event) {
         var inputElement = document.getElementById("state");
@@ -15,19 +16,19 @@
             goto("../start/Working-Location");
         }
     }
+    let newData = Data1;
     let state = [];
-    for (const key in data) {
+    
+    for (const key in newData) {
         state.push(key);
     }
     let newState = state.sort();
 
     // Function to populate city options based on selected state
     function populateCities() {
-
         const stateSelect = document.getElementById("state");
         const citySelect = document.getElementById("city");
-        const selectedState = stateSelect.value; 
-         
+        const selectedState = stateSelect.value;
 
         // const button = document.getElementById('next');
 
@@ -35,32 +36,47 @@
         citySelect.innerHTML = "<option value=''>-- Select a City --</option>";
 
         if (selectedState !== "") {
-            let city = data[selectedState];
-            const cities = city.sort();
-            for (let i = 0; i < cities.length; i++) {
+            // let cities = Data1[selectedState];
+            const keys = Object.keys(Data1[selectedState]);
+            console.log(keys);
+            // for (const i in cities) {
+            //     console.log(i)
+            //     const option = document.createElement("option");
+            //     option.value = cities[i];
+            //     option.text = cities[i];
+            //     citySelect.appendChild(option);
+            // }
+            for (const i of keys) {
+                console.log(i);
                 const option = document.createElement("option");
-                option.value = cities[i];
-                option.text = cities[i];
-               
+                option.value = i;
+                option.text = i;
                 citySelect.appendChild(option);
             }
-        
+
+
+
+            // for ( let i in keys[0]) {
+                
+            //     const option = document.createElement("option");
+            //     option.value = i;
+            //     option.text = i;
+
+            //     citySelect.appendChild(option);
+            // }
         }
-        citySelect.addEventListener( 'change',handleNext)
-        
-        
+        citySelect.addEventListener("change", handleNext);
     }
-    
-    function handleNext(){
+
+    function handleNext() {
         const citySelect = document.getElementById("city");
         const selectedCity = citySelect.value;
         if (selectedCity !== "") {
             document.getElementById("next").disabled = false;
         }
-        
     }
-    
 </script>
+
 <ProgressBar {progress} />
 
 <section class="sm:w-1/3 px-20 m-auto mb-10">
@@ -87,24 +103,26 @@
         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
     >
         <option value="">Select Property City</option>
+       
     </select>
     <button
         on:click={onChange}
-        class="my-8 px-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+        class="my-8 px-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
         id="next"
-        value="next" disabled>Next</button
+        value="next"
+        disabled>Next</button
     >
 </section>
+
 <style>
     *:disabled {
-    background-color: dimgrey;
-    color: linen;
-    opacity: 1;
-}
-#next:enabled{
-background: rgb(82, 150, 82);
-color: black;
-opacity: 1;
-}
-
+        background-color: dimgrey;
+        color: linen;
+        opacity: 1;
+    }
+    #next:enabled {
+        background: rgb(82, 150, 82);
+        color: black;
+        opacity: 1;
+    }
 </style>

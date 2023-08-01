@@ -16,7 +16,7 @@
     document.cookie = "User (Email)=" + inputValue3;
 
     if (event.currentTarget.value == "next") {
-      goto("../start/Documents");
+      goto("../start/employment");
     }
   }
   let name = "";
