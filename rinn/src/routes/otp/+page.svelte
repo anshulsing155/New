@@ -1,4 +1,4 @@
-<!-- src/routes/OTPVerification.svelte -->
+<!-- src/routes/OTPVerification.svelte
 <script>
     import { onMount } from 'svelte';
     import firebase from '../../firebase';
@@ -49,4 +49,4 @@
       {/if}
     </form>
   </main>
-  
+   -->
