@@ -2,7 +2,8 @@
     import { goto , beforeNavigate ,afterNavigate} from "$app/navigation";    
     import { path } from '../store.js';
     import ProgressBar from "../../components/ProgressBar.svelte";
-    import data from "$lib/Indian-States-&-Cities.json";
+    // import data from "$lib/Indian-States-&-Cities.json";
+    import Data1 from "$lib/pincode_IN.json";
     let progress = 28.6;
     let countValue;
 
@@ -22,9 +23,9 @@
             goto("../start/Master-plan");
         }
     }
-    
+    let newData = Data1;
     let state = [];
-    for (const key in data) {
+    for (const key in newData) {
         state.push(key);
     }
     let newState = state.sort();
@@ -39,19 +40,50 @@
 
         // Clear previous city options
         citySelect.innerHTML = "<option value=''>-- Select a City --</option>";
-
         if (selectedState !== "") {
-            let city = data[selectedState];
-            const cities = city.sort();
-            for (let i = 0; i < cities.length; i++) {
+            // let cities = Data1[selectedState];
+            const keys = Object.keys(Data1[selectedState]);
+            console.log(keys);
+            // for (const i in cities) {
+            //     console.log(i)
+            //     const option = document.createElement("option");
+            //     option.value = cities[i];
+            //     option.text = cities[i];
+            //     citySelect.appendChild(option);
+            // }
+            for (const i of keys) {
+                console.log(i);
                 const option = document.createElement("option");
-                option.value = cities[i];
-                option.text = cities[i];
+                option.value = i;
+                option.text = i;
                 citySelect.appendChild(option);
             }
+
+
+
+            // for ( let i in keys[0]) {
+                
+            //     const option = document.createElement("option");
+            //     option.value = i;
+            //     option.text = i;
+
+            //     citySelect.appendChild(option);
+            // }
         }
-        citySelect.addEventListener( 'change',handleNext)
+        citySelect.addEventListener("change", handleNext);
     }
+    //     if (selectedState !== "") {
+    //         let city = data[selectedState];
+    //         const cities = city.sort();
+    //         for (let i = 0; i < cities.length; i++) {
+    //             const option = document.createElement("option");
+    //             option.value = cities[i];
+    //             option.text = cities[i];
+    //             citySelect.appendChild(option);
+    //         }
+    //     }
+    //     citySelect.addEventListener( 'change',handleNext)
+    // }
     
     function handleNext(){
         const citySelect = document.getElementById("city");
