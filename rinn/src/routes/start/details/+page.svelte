@@ -49,7 +49,7 @@
     isEmailValid = emailPattern.test(email.trim());
     handleNext();
   }
-
+  
   function handleNext(){
         const nameSelect = document.getElementById("inline-full-name");
         const selectedName = nameSelect.value;
@@ -57,11 +57,12 @@
         const selectedContact = contactSelect.value;
         const emailSelect = document.getElementById("inline-email");
         const selectedEmail = emailSelect.value;
-        if (selectedName && selectedContact && selectedEmail !== "") {
+        if (isNameValid && isMobileNumberValid && isEmailValid) {
             document.getElementById("next").disabled = false;
         }
         
     }
+    
 </script>
 
 <ProgressBar {progress} />
@@ -130,11 +131,14 @@
         id="inline-email"
         type="email"
         placeholder="abc@gmail.com"
+        bind:value={email}
         on:input={validateEmail}
       required/>
     </div>
   </div>
-
+  {#if !isEmailValid}
+  <p class="text-red-300 mb-5">Please enter a valid Email Address</p>
+{/if}
   <div class="md:flex md:items-center">
     
       <button
