@@ -95,7 +95,7 @@ export const actions = {
 		}else{
 			return fail(400, {notFound:"username and password not found"})
 		}
-		config();
 
 	}
 }
+config();
