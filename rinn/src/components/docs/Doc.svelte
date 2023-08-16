@@ -5,9 +5,9 @@
 	import TsIcon from './icons/TsIcon.svelte';
 </script>
 
-<div class="max-w-full py-8 text-white">
+<div class="max-w-full py-8 text-black">
 	<h2 class="mb-10 text-3xl font-medium">Documentation</h2>
-	<section class="mb-16 px-3 py-8 md:px-8" style="background-color: rgb(146 151 179 / 13%)">
+	<section class="mb-16 px-3 py-8 md:px-8 bg-white">
 		<h2 class="text-2xl font-medium">Features</h2>
 		<ul class="mt-4 list-disc pl-6">
 			<li class="mb-4">Support of the active route (styled by default).</li>
@@ -17,7 +17,7 @@
 		</ul>
 	</section>
 
-	<section class="mb-16 px-3 py-8 md:px-8" style="background-color: rgb(146 151 179 / 13%)">
+	<section class="mb-16 px-3 py-8 md:px-8 bg-white">
 		<h2 class="mb-3 text-2xl font-medium">File Structure</h2>
 		<div class="pl-2">
 			<div class="mb-3 flex pl-5">
@@ -42,10 +42,6 @@
 			</div>
 			<div class="mb-3 flex pl-16">
 				<SvelteIcon />
-				<span class="pl-2">SidebarHeader.svelte</span>
-			</div>
-			<div class="mb-3 flex pl-16">
-				<SvelteIcon />
 				<span class="pl-2">SidebarItems.svelte</span>
 			</div>
 			<div class="mb-3 flex pl-11">
@@ -67,7 +63,7 @@
 		</div>
 	</section>
 
-	<section class="mb-16 px-3 py-8 md:px-8" style="background-color: rgb(146 151 179 / 13%)">
+	<section class="mb-16 px-3 py-8 md:px-8 bg-white">
 		<h2 class="text-2xl font-medium">File Structure explained</h2>
 
 		<div class="mb-8 mt-4">
@@ -90,12 +86,12 @@
 				</p>
 			</div>
 			<div class="mt-8 flex flex-wrap pl-8">
-				<div class="md:w-4/12">
+				<div>
 					<Snippet />
 				</div>
 				<ul class="pt-8 md:pl-4 md:pt-20">
 					<li class="mb-2">
-						<span class="px-1">section :</span> Name of the section
+						<span class="px-1">section :</span> name of the section
 					</li>
 					<li class="mb-2">
 						<span class="px-1">title :</span> Label for the route
@@ -113,11 +109,6 @@
 					compose <strong>SidebarHeader</strong> and{' '}
 					<strong>SidebarItems</strong> components.
 				</p>
-			</div>
-			<div class="mt-6 flex flex-wrap pl-6 md:flex-nowrap">
-				<SvelteIcon /> <span class="px-2 font-medium">SidebarHeader.svelte</span>{' '}
-				:
-				<p class="pl-1">contains the logo displayed on top of the sidebar</p>
 			</div>
 			<div class="mt-6 flex flex-wrap pl-6 md:flex-nowrap">
 				<SvelteIcon /> <span class="px-2 font-medium">SidebarItems.svelte</span> :
@@ -160,7 +151,7 @@
 		</div>
 	</section>
 
-	<section class="mb-16 px-3 py-8 md:px-8" style="background-color: rgb(146 151 179 / 13%)">
+	<section class="mb-16 px-3 py-8 md:px-8 bg-white">
 		<h2 class="text-2xl font-medium">Export</h2>
 		<p class="mt-4">
 			As there is no vendor lock-in, if you already have a dashboard, you can copy the
@@ -181,7 +172,7 @@
 		</div>
 	</section>
 
-	<section class="mb-16 px-3 py-8 md:px-8" style="background-color: rgb(146 151 179 / 13%)">
+	<section class="mb-16 px-3 py-8 md:px-8 bg-white">
 		<h2 class="text-2xl font-medium">Customization</h2>
 		<p class="mt-5">
 			You can customize everything according to your preferences if it doesn't suit you. What we

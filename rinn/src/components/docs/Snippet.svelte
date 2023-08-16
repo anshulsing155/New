@@ -1,20 +1,23 @@
 <script>
 	const snippets = `
 [
-    {
-      section: 'Apps',
-      content: [
+  {
+    section: 'Documents',
+    icon: DocumentsIcon,
+    content: [
       {
-        title: 'All Apps',
-        icon: AllAppsIcon,
-        link: '/'
+        title: 'Taxes',
+        link: '/new'
       },
       {
-        title: 'Updates',
-        icon: UpdatesIcon,
-        link: '/admin/updates'
+        title: 'Travel',
+        link: '/new/documents/travel'
+      },
+      {
+        title: 'Insurance',
+        link: '/new/documents/insurance'
       }
-    ]
+  ]
   }
 ]`;
 </script>

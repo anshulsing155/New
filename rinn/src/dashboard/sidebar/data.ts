@@ -1,71 +1,104 @@
-import UxIcon from './icons/UxIcon.svelte';
-import ArIcon from './icons/ArIcon.svelte';
-import VideosIcon from './icons/VideosIcon.svelte';
-import AllAppsIcon from './icons/AllAppsIcon.svelte';
-import UpdatesIcon from './icons/UpdatesIcon.svelte';
-import PhotographyIcon from './icons/PhotographyIcon.svelte';
-import IllustrationIcon from './icons/IllustrationIcon.svelte';
-import GraphicDesignIcon from './icons/GraphicDesignIcon.svelte';
-import DocumentationIcon from './icons/DocumentationIcon.svelte';
+import EventsIcon from './icons/EventsIcon.svelte';
+import GuidesIcon from './icons/GuidesIcon.svelte';
+import MessagesIcon from './icons/MessagesIcon.svelte';
+import PicturesIcon from './icons/PicturesIcon.svelte';
+import DocumentsIcon from './icons/DocumentsIcon.svelte';
+import StatisticsIcon from './icons/StatisticsIcon.svelte';
 
 export const data = [
 	{
-		section: 'Apps',
+		section: 'Documents',
+		icon: DocumentsIcon,
 		content: [
 			{
-				title: 'All Apps',
-				icon: AllAppsIcon,
-				link: '/'
+				title: 'Taxes',
+				link: '/new'
 			},
 			{
-				title: 'Updates',
-				icon: UpdatesIcon,
-				link: '/admin/updates'
+				title: 'Travel',
+				link: '/new/documents/travel'
+			},
+			{
+				title: 'Insurance',
+				link: '/new/documents/insurance'
 			}
 		]
 	},
 	{
-		section: 'Categories',
+		section: 'Messages',
+		icon: MessagesIcon,
 		content: [
 			{
-				title: 'Photography',
-				icon: PhotographyIcon,
-				link: '/admin/photography'
+				title: 'Unbox',
+				link: '/new/messages/unbox'
 			},
 			{
-				title: 'Graphic Design',
-				icon: GraphicDesignIcon,
-				link: '/admin/graphic-design'
+				title: 'Unread',
+				link: '/new/messages/unread'
 			},
 			{
-				title: 'Videos',
-				icon: VideosIcon,
-				link: '/admin/videos'
+				title: 'Archived',
+				link: '/new/messages/archived'
+			}
+		]
+	},
+	{
+		section: 'Pictures',
+		icon: PicturesIcon,
+		content: [
+			{
+				title: 'Vacations',
+				link: '/new/pictures/vacations'
 			},
 			{
-				title: 'Illustrations',
-				icon: IllustrationIcon,
-				link: '/admin/illustration'
+				title: 'Anniversary',
+				link: '/new/pictures/anniversary'
 			},
 			{
-				title: 'UI/UX',
-				icon: UxIcon,
-				link: '/admin/ux'
+				title: 'University',
+				link: '/new/pictures/university'
+			}
+		]
+	},
+	{
+		section: 'Statistics',
+		icon: StatisticsIcon,
+		content: [
+			{
+				title: 'Finances',
+				link: '/new/statistics/finances'
 			},
 			{
-				title: '3D/AR',
-				icon: ArIcon,
-				link: '/admin/ar'
+				title: 'Call Stats',
+				link: '/new/statistics/call-stats'
+			},
+			{
+				title: 'Trip Logs',
+				link: '/new/statistics/trip-logs'
+			}
+		]
+	},
+	{
+		section: 'Events',
+		icon: EventsIcon,
+		content: [
+			{
+				title: 'Weddings',
+				link: '/new/events/weddings'
+			},
+			{
+				title: 'Networking',
+				link: '/new/events/networking'
 			}
 		]
 	},
 	{
 		section: 'Guides',
+		icon: GuidesIcon,
 		content: [
 			{
 				title: 'Documentation',
-				icon: DocumentationIcon,
-				link: '/admin/documentation'
+				link: '/new/guides/documentation'
 			}
 		]
 	}

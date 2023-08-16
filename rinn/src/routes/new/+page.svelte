@@ -3,6 +3,6 @@
 </script>
 
 <svelte:head>
-  <title>Salvia-kit Dashboard v1 with Svelte-kit</title>
+  <title>Salvia-kit Dashboard v10 with Svelte-kit</title>
 </svelte:head>
-<Content title="Apps"/>
+<Content title="Taxes"/>

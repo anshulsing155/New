@@ -1,8 +1,8 @@
 <script>
-	import { closeSidebar, sidebarOpen } from './store.ts';
+	import { closeSidebar, sidebarOpen } from './store';
 </script>
 
-<!-- The overlay will only be visible on small screens to emphasize the focus on the side navigation when it is open.-->
+<!-- Overlay will only be visible on small screens to emphasize the focus on sidebar when it is open.-->
 <!--it's also used to close Sidebar on click outside-->
 <button
 	on:click={closeSidebar}

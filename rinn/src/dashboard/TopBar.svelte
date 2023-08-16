@@ -1,199 +1,70 @@
 <script>
-	import { openSidebar } from './store.ts';
+	import { toggleSidebar } from './store';
 </script>
 
-<header class="h-16 md:h-20 items-center relative w-full z-10">
-	<div
-		class="
-        flex
-        flex-col
-        flex-center
-        h-full
-        px-3
-        mx-auto
-        relative
-        justify-center
-      "
-	>
-		<div
-			class="
-          flex
-          items-center
-          pl-1
-          relative
-          w-full
-          sm:ml-0 sm:pr-2
-          lg:max-w-68
-        "
-		>
-			<div class="container flex left-0 relative w-3/4">
-				<div class="flex group h-full items-center relative w-12">
+<header class="relative z-10 h-16 w-full items-center border-b md:h-20">
+	<div class="relative mx-auto flex h-full flex-col justify-center px-3">
+		<div class="relative flex w-full items-center pl-1 sm:ml-0 sm:pr-2">
+			<div class="relative left-0 flex w-3/4">
+				<div class="group relative flex h-full w-12 items-center">
 					<button
 						type="button"
 						aria-expanded="false"
-						aria-label="Toggle sidenav"
-						class="text-4xl text-white focus:outline-none lg:hidden"
-						on:click={openSidebar}
+						aria-label="Toggle sidebar"
+						class="text-4xl text-black focus:outline-none"
+						on:click={toggleSidebar}
 					>
 						&#8801;
 					</button>
 				</div>
-				<div
-					class="
-              group
-              h-full
-              hidden
-              items-center
-              relative
-              w-full
-              md:flex
-              lg:w-64
-            "
-				>
-					<div
-						class="
-                absolute
-                block
-                cursor-pointer
-                flex
-                items-center
-                justify-center
-                p-3
-                pr-2
-                text-gray-500 text-sm
-                uppercase
-                sm:hidden
-              "
-					>
-						<svg
-							fill="none"
-							class="h-5 relative w-5"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							stroke-width="2"
-							stroke="currentColor"
-							viewBox="0 0 24 24"
-						>
-							<path d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
-						</svg>
-					</div>
-					<svg
-						class="
-                absolute
-                fill-current
-                h-4
-                hidden
-                left-0
-                ml-4
-                pointer-events-none
-                text-gray-500
-                w-4
-                group-hover:text-gray-400
-                sm:block
-              "
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 20 20"
-					>
-						<path
-							d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"
-						/>
-					</svg>
-					<input
-						type="text"
-						class="
-                bg-gray-100
-                block
-                leading-normal
-                pl-10
-                pr-4
-                py-1.5
-                ring-opacity-90
-                rounded-2xl
-                text-gray-400
-                w-full
-                focus:border-transparent
-                focus:outline-none
-                focus:ring-2
-                focus:ring-blue-500
-              "
-						placeholder="Search"
-					/>
-					<div
-						class="
-                absolute
-                border border-gray-300
-                h-auto
-                hidden
-                mr-2
-                px-2
-                py-1
-                right-0
-                text-gray-400 text-xs
-                rounded-2xl
-                md:block
-              "
-					>
-						+
-					</div>
-				</div>
 			</div>
-			<div
-				class="
-            flex
-            items-center
-            justify-end
-            ml-5
-            p-1
-            relative
-            w-9/12
-            sm:mr-0 sm:right-auto
-            md:w-1/4
-          "
-			>
-				<span class="block pr-1 text-white">
+			<div class="relative ml-5 flex w-full items-center justify-end p-1 sm:right-auto sm:mr-0">
+				<span class="block pr-5">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
-						class="h-6 w-6"
+						class="h-5 w-5 text-gray-600"
 						viewBox="0 0 20 20"
 						fill="currentColor"
 					>
-						<path d="M5.5 16a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 16h-8z" />
+						<path
+							fill-rule="evenodd"
+							d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z"
+							clip-rule="evenodd"
+						/>
 					</svg>
 				</span>
-				<span class="block inline-block px-3 py-2 relative rounded text-white">
-					<span>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							class="h-6 w-6"
-							viewBox="0 0 20 20"
-							fill="currentColor"
-						>
-							<path
-								d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"
-							/>
-						</svg>
-					</span>
-					<span
-						class="
-                absolute
-                bg-blue-700
-                font-bold
-                px-2
-                py-0.5
-                right-0
-                rounded-full
-                text-xs
-                top-0
-              "
+				<span class="block pr-5">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="h-6 w-6 text-gray-600"
+						viewBox="0 0 20 20"
+						fill="currentColor"
 					>
-						3
-					</span>
+						<path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z" />
+						<path
+							d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z"
+						/>
+					</svg>
 				</span>
-				<span class="block pl-5 relative">
+				<span class="relative block pr-5">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="h-6 w-6 text-gray-600"
+						viewBox="0 0 20 20"
+						fill="currentColor"
+					>
+						<path
+							fill-rule="evenodd"
+							d="M4.083 9h1.946c.089-1.546.383-2.97.837-4.118A6.004 6.004 0 004.083 9zM10 2a8 8 0 100 16 8 8 0 000-16zm0 2c-.076 0-.232.032-.465.262-.238.234-.497.623-.737 1.182-.389.907-.673 2.142-.766 3.556h3.936c-.093-1.414-.377-2.649-.766-3.556-.24-.56-.5-.948-.737-1.182C10.232 4.032 10.076 4 10 4zm3.971 5c-.089-1.546-.383-2.97-.837-4.118A6.004 6.004 0 0115.917 9h-1.946zm-2.003 2H8.032c.093 1.414.377 2.649.766 3.556.24.56.5.948.737 1.182.233.23.389.262.465.262.076 0 .232-.032.465-.262.238-.234.498-.623.737-1.182.389-.907.673-2.142.766-3.556zm1.166 4.118c.454-1.147.748-2.572.837-4.118h1.946a6.004 6.004 0 01-2.783 4.118zm-6.268 0C6.412 13.97 6.118 12.546 6.03 11H4.083a6.004 6.004 0 002.783 4.118z"
+							clip-rule="evenodd"
+						/>
+					</svg>
+				</span>
+				<span class="relative block">
 					<img
-						alt="Enoch Ndika"
+						alt="profile"
 						src="/images/1.jpg"
-						class="h-10 mx-auto object-cover rounded-full w-10"
+						class="mx-auto h-10 w-10 rounded-full object-cover"
 					/>
 				</span>
 			</div>
