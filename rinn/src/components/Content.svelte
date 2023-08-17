@@ -6,7 +6,7 @@
 	<div class="mb-5 text-2xl font-medium text-gray-700">{title}</div>
 	<div class="flex gap-8">
 		<div
-			class="flex items-center gap-4 rounded-md border bg-fuchsia-800 px-8 py-4 text-white shadow"
+			class="flex items-center gap-4 rounded-md border bg-green-800 px-8 py-4 text-white shadow"
 		>
 			<div>
 				<svg
@@ -30,7 +30,7 @@
 			</div>
 		</div>
 		<div
-			class="flex items-center gap-4 rounded-md border bg-fuchsia-800 px-8 py-4 text-white shadow"
+			class="flex items-center gap-4 rounded-md border bg-green-800 px-8 py-4 text-white shadow"
 		>
 			<div>
 				<svg
@@ -54,7 +54,7 @@
 			</div>
 		</div>
 		<div
-			class="flex items-center gap-4 rounded-md border bg-fuchsia-800 px-8 py-4 text-white shadow"
+			class="flex items-center gap-4 rounded-md border bg-green-800 px-8 py-4 text-white shadow"
 		>
 			<div>
 				<svg

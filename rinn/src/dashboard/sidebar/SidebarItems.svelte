@@ -27,14 +27,14 @@
 </script>
 
 <div class="flex h-full w-full">
-	<div class="h-full bg-fuchsia-950 pt-10">
+	<div class="h-full bg-green-950 pt-10">
 		{#each data as { icon, section } (section)}
 			<div class="mx-4 my-1 flex w-full items-center justify-start p-3 text-white">
 				<div on:click={() => updateCurrentSection(section)}>
 					<div>
 						<div
 							class={`flex h-8 w-8 items-center justify-center ${
-								section === currentSection && 'rounded-full bg-fuchsia-800'
+								section === currentSection && 'rounded-full bg-green-800'
 							}`}
 						>
 							<span><svelte:component this={icon} /></span>
@@ -46,7 +46,7 @@
 	</div>
 
 	{#if !$sidebarOpen || window.innerWidth < 1024}
-		<div class="h-full w-full bg-fuchsia-900 pt-5">
+		<div class="h-full w-full bg-green-900 pt-5">
 			{#each data as { section, content } (section)}
 				<div>
 					{#if section === currentSection}
@@ -60,7 +60,7 @@
 										<a
 											href={item.link}
 											class={`py-3 block pl-3 text-sm font-normal text-white  ${
-												item.link === $page.url.pathname && 'rounded-md bg-fuchsia-800'
+												item.link === $page.url.pathname && 'rounded-md bg-green-800'
 											}`}
 										>
 											{item.title}
