@@ -1,8 +1,6 @@
 <script>
 	import Content from '../../components/Content.svelte';
-    import { onMount } from "svelte";
     import "../../app.css";
-    import { json } from '@sveltejs/kit';
     export let data;
     let newData = JSON.parse(data.adminData);
     // console.log(newData);
