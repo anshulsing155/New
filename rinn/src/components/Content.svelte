@@ -108,7 +108,7 @@ function toggleCollapse() {
 									scope="col"
 									class="border-b border-gray-200 px-5 py-3 text-left text-sm font-normal uppercase"
 								>
-									Created_at
+								User Contact No.
 								</th>
 								<th
 									scope="col"
@@ -155,7 +155,7 @@ function toggleCollapse() {
 									<td
 										class="border-b border-gray-200 p-5 text-sm"
 									>
-										<p class="whitespace-nowrap">Today</p>
+										<p class="whitespace-nowrap">{item.userNo}</p>
 									</td>
 									<td
 										class="border-b border-gray-200 p-5 text-sm"
