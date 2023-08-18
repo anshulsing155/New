@@ -1,4 +1,4 @@
-<!-- <script>
+<script>
 	import Content from '../../components/Content.svelte';
     import "../../app.css";
     export let data;
@@ -36,4 +36,4 @@
 <svelte:head>
   <title>Salvia-kit Dashboard v10 with Svelte-kit</title>
 </svelte:head>
-<Content title="Taxes" data={newData}/> -->
+<Content title="Taxes" data={newData}/>
