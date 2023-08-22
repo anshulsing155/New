@@ -34,6 +34,6 @@
 </script>
 
 <svelte:head>
-  <title>Salvia-kit Dashboard v10 with Svelte-kit</title>
+  <title>Admin Dashboard | Rinn.in</title>
 </svelte:head>
 <Content title="Taxes" data={newData}/>
