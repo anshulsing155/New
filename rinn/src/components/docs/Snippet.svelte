@@ -7,15 +7,15 @@
     content: [
       {
         title: 'Taxes',
-        link: '/new'
+        link: '/'
       },
       {
         title: 'Travel',
-        link: '/new/documents/travel'
+        link: '/documents/travel'
       },
       {
         title: 'Insurance',
-        link: '/new/documents/insurance'
+        link: '/documents/insurance'
       }
   ]
   }

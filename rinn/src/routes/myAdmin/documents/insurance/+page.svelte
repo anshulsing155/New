@@ -1,5 +1,6 @@
 <script>
 	import Content from '../../../../components/Content.svelte';
+	
 </script>
 
 <svelte:head>

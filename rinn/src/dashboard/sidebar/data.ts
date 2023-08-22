@@ -12,15 +12,15 @@ export const data = [
 		content: [
 			{
 				title: 'Taxes',
-				link: '/new'
+				link: '/myAdmin'
 			},
 			{
 				title: 'Travel',
-				link: '/new/documents/travel'
+				link: '/myAdmin/documents/travel'
 			},
 			{
 				title: 'Insurance',
-				link: '/new/documents/insurance'
+				link: '/myAdmin/documents/insurance'
 			}
 		]
 	},
@@ -30,15 +30,15 @@ export const data = [
 		content: [
 			{
 				title: 'Unbox',
-				link: '/new/messages/unbox'
+				link: '/myAdmin/messages/unbox'
 			},
 			{
 				title: 'Unread',
-				link: '/new/messages/unread'
+				link: '/myAdmin/messages/unread'
 			},
 			{
 				title: 'Archived',
-				link: '/new/messages/archived'
+				link: '/myAdmin/messages/archived'
 			}
 		]
 	},
@@ -48,15 +48,15 @@ export const data = [
 		content: [
 			{
 				title: 'Vacations',
-				link: '/new/pictures/vacations'
+				link: '/myAdmin/pictures/vacations'
 			},
 			{
 				title: 'Anniversary',
-				link: '/new/pictures/anniversary'
+				link: '/myAdmin/pictures/anniversary'
 			},
 			{
 				title: 'University',
-				link: '/new/pictures/university'
+				link: '/myAdmin/pictures/university'
 			}
 		]
 	},
@@ -66,15 +66,15 @@ export const data = [
 		content: [
 			{
 				title: 'Finances',
-				link: '/new/statistics/finances'
+				link: '/myAdmin/statistics/finances'
 			},
 			{
 				title: 'Call Stats',
-				link: '/new/statistics/call-stats'
+				link: '/myAdmin/statistics/call-stats'
 			},
 			{
 				title: 'Trip Logs',
-				link: '/new/statistics/trip-logs'
+				link: '/myAdmin/statistics/trip-logs'
 			}
 		]
 	},
@@ -84,11 +84,11 @@ export const data = [
 		content: [
 			{
 				title: 'Weddings',
-				link: '/new/events/weddings'
+				link: '/myAdmin/events/weddings'
 			},
 			{
 				title: 'Networking',
-				link: '/new/events/networking'
+				link: '/myAdmin/events/networking'
 			}
 		]
 	},
@@ -98,7 +98,7 @@ export const data = [
 		content: [
 			{
 				title: 'Documentation',
-				link: '/new/guides/documentation'
+				link: '/myAdmin/guides/documentation'
 			}
 		]
 	}

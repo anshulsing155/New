@@ -1,4 +1,3 @@
-import { config } from 'dotenv';
 // import { MongoClient } from 'mongodb';
 
 
@@ -67,4 +66,3 @@ export async function load() {
 	 adminData 
 	}
 }
-config();
