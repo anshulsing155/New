@@ -31,10 +31,9 @@
                     />
                 </svg>
             </button>
-        </div>
-        {#if !isOpen}
+            {#if !isOpen}
             <div
-                class="ml-14 absolute z-10 mt-2 w-56 origin-top-center rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                class="absolute z-10 w-2/5 mt-16 origin-top-center rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
                 role="menu"
                 aria-orientation="vertical"
                 aria-labelledby="menu-button"
@@ -65,8 +64,10 @@
                 </div>
             </div>
         {/if}
+        </div>
+        
         <p
-            class="ml-14 px-3 md:mr-20 md:inline md:float-right my-4 rounded-md text-2xl text-gray-500 font-semibold"
+            class="ml-14 px-3 md:mr-20 md:inline-block md:float-right my-4 rounded-md text-2xl text-gray-500 font-semibold"
             id="menu-button"
         >
             Mortgage rates today for <span class="underline text-green-600">122017</span>
