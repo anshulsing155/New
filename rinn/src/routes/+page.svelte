@@ -81,7 +81,7 @@
 			</a> -->
 		</div>
 		<div class="w-4/5 order-1 lg:mt-0 lg:col-span-5 lg:flex m-8 lg:m-2">
-			<img src={"src/lib/img/one-day-mortgage.svg"} alt="mockup" />
+			<img src="/img/one-day-mortgage.svg" alt="mockup" />
 		</div>
 	</div>
 </section>
