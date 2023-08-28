@@ -1,7 +1,7 @@
 <script>
     export let progress = 0;
     import '../../app.css';
-    import img from '$lib/img/progressImg.jpg';
+    // import img from '$lib/img/progressImg.jpg';
 </script>
 <section class=" m-auto mx-14 my-5 flex font-semibold text-xl text-green-700">
     <div class=" flex-1"> RINN.in</div>
@@ -12,7 +12,7 @@
 </div>
 
 
-    <img class="relative rounded-full m-auto  h-[77px] w-[77px] -top-14 sm:-top-16 lg:-top-20 " src={img} alt="" />
+    <img class="relative rounded-full m-auto  h-[77px] w-[77px] -top-14 sm:-top-16 lg:-top-20 " src="/img/progressImg.jpg" alt="" />
   
             
 
