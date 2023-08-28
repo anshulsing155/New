@@ -460,8 +460,7 @@
 	</div>
 </div>
 
-<!-- Container for demo purpose -->
-<section>
+<!-- <section>
 	<div class="bg-green-200">
 		<h3 class="text-center">Ready to get started?</h3>
 		<p class="text-center">
@@ -469,7 +468,8 @@
 		</p>
 		<button type="button" class=" text-center border px-10 py-5 bg-green-800 text-white rounded-xl m-auto">Get Started</button>
 	</div>
-</section>
+</section> -->
+
 <Footer />
 <!-- <a href="/start">Get Started</a>
 <h1 class="text-3xl font-bold underline">Hello world!</h1>
