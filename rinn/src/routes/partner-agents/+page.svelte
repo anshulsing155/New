@@ -71,7 +71,7 @@
         </div>
         
         <div>
-            <img src="src/lib/img/welcome-step-hero.png" width="100%" >
+            <img src="/img/welcome-step-hero.png" width="100%" >
         </div>
         <!--@@@@@@@@@@@@-->
         
