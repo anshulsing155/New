@@ -32,7 +32,7 @@
 
     </div>
     <div class="w-auto">
-        <img src="src/lib/img/welcome-step-hero.png">
+        <img src="/img/welcome-step-hero.png">
     </div>
 
 
