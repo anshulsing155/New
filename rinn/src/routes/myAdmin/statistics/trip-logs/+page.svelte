@@ -6,4 +6,4 @@
 	<title>Trip Logs statistics</title>
 </svelte:head>
 
-<Content title="Trip Logs statistics" />
+<h1>hi</h1>
