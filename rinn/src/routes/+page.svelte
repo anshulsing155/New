@@ -167,7 +167,7 @@
 				<span
 					class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"
 					><img
-						src={"src/lib/img/real-estate.jpeg"}
+						src="/img/real-estate.jpeg"
 						alt=""
 						class="rounded-lg mt-10"
 					/></span
@@ -253,7 +253,7 @@
 				<span
 					class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"
 					><img
-						src="src/lib/img/home-loan.jpeg"
+						src="/img/home-loan.jpeg"
 						alt=""
 						class="rounded-lg mt-10"
 					/></span
@@ -340,7 +340,7 @@
 				<span
 					class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"
 					><img
-						src="src/lib/img/for-sale.jpeg"
+						src="/img/for-sale.jpeg"
 						alt=""
 						class="rounded-lg my-3"
 					/></span
@@ -397,7 +397,7 @@
 		class=" opacity-90 relative w-full overflow-hidden bg-no-repeat bg-cover"
 		style="
             background-position: 50%;
-            background-image: url('src/lib/img/customers.jpeg');
+            background-image: url('/img/customers.jpeg');
             height: 550px;
           "
 	>
@@ -451,7 +451,7 @@
 			>
 		</div>
 		<div class=" rounded-2xl">
-			<img src="src/lib/img/mortgage-calculator.jpeg" alt="" srcset="" />
+			<img src="/img/mortgage-calculator.jpeg" alt="" srcset="" />
 			<small style="font-size: 10px;color:white;"
 				>Image is for example purposes only. Your actual rates, monthly
 				payment, and loan amount will vary.</small
