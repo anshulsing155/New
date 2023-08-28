@@ -8,7 +8,7 @@
 <Menu />
 
 
-<section class="bg-green-50 dark:bg-gray-900 px-10">
+<section class=" bg-green-50 dark:bg-gray-900 px-10">
 	<div
 		class="w-11/12 grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-5 xl:gap-0 lg:py-16 lg:grid-cols-12"
 	>
@@ -42,43 +42,23 @@
 			>
 				Buy A Home
 			</a>
-			<a
-				href="#"
-				class=" mx-2 p-20 items-center justify-center py-5 mr-3 text-base font-medium text-center text-white rounded-lg bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 dark:focus:ring-green-900"
-			>
-				Refinancing
-			</a>
-			<a
-				href="#"
-				class=" mx-2 p-20 items-center justify-center py-5 mr-3 text-base font-medium text-center text-white rounded-lg bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 dark:focus:ring-green-900"
-			>
-				LAP
-			</a>
+			<!--change code############################-->
+			<div class="grid md:grid-cols-2">
+				<a
+					href="#"
+					class=" mx-2 p-20 items-center justify-center py-5 mr-3 text-base font-medium text-center text-white rounded-lg bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 dark:focus:ring-green-900"
+				>
+					Refinancing
+				</a>
+				<a
+					href="#"
+					class=" mt-5 mx-2 p-20 items-center justify-center py-5 mr-3 text-base font-medium text-center text-white rounded-lg bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 dark:focus:ring-green-900"
+				>
+					LAP
+				</a>
+			</div>
 
-			<!-- <a
-					href="#"
-					class=" bg-green-700 mt-2 inline-flex items-center justify-center px-5 py-5 text-base font-medium text-center text-white border border-gray-300 rounded-lg hover:bg-green-800 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-green-800"
-				>
-					Refinancing
-				</a>
-				<a
-					href="#"
-					class=" bg-green-700 mt-2 inline-flex items-center justify-center px-5 py-5 text-base font-medium text-center text-white border border-gray-300 rounded-lg hover:bg-green-800 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-green-800"
-				>
-				Loan Against Property
-				</a>
-				<a
-					href="#"
-					class=" bg-green-700 mt-2 inline-flex items-center justify-center px-5 py-5 text-base font-medium text-center text-white border border-gray-300 rounded-lg hover:bg-green-800 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-green-800"
-				>
-					Refinancing
-				</a>
-				<a
-					href="#"
-					class=" bg-green-700 mt-2 inline-flex items-center justify-center px-5 py-5 text-base font-medium text-center text-white border border-gray-300 rounded-lg hover:bg-green-800 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-green-800"
-				>
-				Loan Against Property
-			</a> -->
+			
 		</div>
 		<div class="w-4/5 order-1 lg:mt-0 lg:col-span-5 lg:flex m-8 lg:m-2">
 			<img src="/img/one-day-mortgage.svg" alt="mockup" />
@@ -369,7 +349,7 @@
 			>See Your Rates</button
 		>
 	</div>
-	<div class="w-2/3 bg-gray-100 rounded-2xl">
+	<div class="w-auto md:w-2/3 bg-gray-100 rounded-2xl">
 		<h3 class="m-auto p-10 text-2xl opacity-60 font-semibold">
 			Hey, we currently don’t have service in your area. We will notify
 			you when we are there.
@@ -410,15 +390,13 @@
 					class="text-justify text-white px-6 py-6 md:py-0 md:px-12 max-w-[800px] md:align-middle"
 				>
 					<h2
-						class="text-2xl md:text-4xl xl:text-6xl font-thin leading-3 md:align-middle py-20"
+						class="text-2xl md:text-4xl xl:text-6xl font-thin line-height: 2.5; md:align-middle py-20"
 					>
-						<!-- Are you ready <br /><span>for an adventure</span> -->
-						<blockquote>
-							<q
-								><br />We needed to make an offer the next day.
-								Better made it happen.&nbsp;</q
-							>
-						</blockquote>
+						
+						<p>"We needed to make an offer the next day.</p>
+						
+						<p>Better made it happen.&nbsp;"</p>
+						
 					</h2>
 					<p class="text-lg font-thin">
 						Shaina & Tessa | Better Mortgage customers
@@ -433,9 +411,9 @@
 <!-- Today’s mortgage rates section start -->
 
 <div
-	class="p-20 bg-orange-50 block justify-around gap-0 mt-0 sm:block sm:justify-center md:flex"
+	class="p-4 w-auto bg-orange-50 block justify-around gap-0 mt-0 sm:block sm:justify-center"
 >
-	<div class="bg-green-950 md:flex m-5 p-20 rounded-2xl">
+	<div class="bg-green-950 md:flex mt-5  p-10 m-0 rounded-2xl ">
 		<div class="">
 			<h3 class="w-3/5 text-4xl font-bold text-white my-8">
 				The tools you need to make that next step
@@ -460,22 +438,6 @@
 	</div>
 </div>
 
-<!-- <section>
-	<div class="bg-green-200">
-		<h3 class="text-center">Ready to get started?</h3>
-		<p class="text-center">
-			Get pre-approved with Better Mortgage in as little as 3 minutes.
-		</p>
-		<button type="button" class=" text-center border px-10 py-5 bg-green-800 text-white rounded-xl m-auto">Get Started</button>
-	</div>
-</section> -->
+<!-- Container for demo purpose -->
 
 <Footer />
-<!-- <a href="/start">Get Started</a>
-<h1 class="text-3xl font-bold underline">Hello world!</h1>
-
-<style lang="postcss">
-	:global(html) {
-		background-color: theme(colors.gray.100);
-	}
-</style> -->
