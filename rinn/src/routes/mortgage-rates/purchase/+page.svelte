@@ -78,6 +78,9 @@
             <div class="text-green-700 font-light text-4xl m-3">
                 No commissions.
             </div>
+            <div class="text-green-700 font-light text-4xl m-3">
+                No commissions.
+            </div>
             <div class="text-blue-800 font-thin text-5xl m-3 font-sans">
                 Fast pre-approval, with no hard credit pull.
             </div>
@@ -85,8 +88,9 @@
     </div>
     <!-- <div>
         <p>
-            <small>
-                The below rates are estimated rates current as of: 2:41 p.m. GMT+5:30 on Aug 24
+            <small class="ml-4">
+                The below rates are estimated rates current as of: 2:41 p.m.
+                GMT+5:30 on Aug 24
             </small>
         </p>
     </div> -->
