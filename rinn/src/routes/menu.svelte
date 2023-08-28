@@ -25,7 +25,7 @@ function toggleMenu() {
         </div>
     </div>
 </div>
-<header class="container m-auto">
+<header class="container m-auto text-lg">
     <nav class=" border-gray-200  py-2.5 dark:bg-gray-800">
         <div
             class=" w-11/12 p-3 flex flex-wrap justify-between items-center mx-auto max-w-screen-xl"
@@ -84,14 +84,14 @@ function toggleMenu() {
                 <ul
                     class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0"
                 >
-                    <li class="dropdown">
+                    <li class="dropdown flex">
                         <button 
                             class=" py-2 pr-4 pl-3 rounded bg-primary-700 lg:bg-transparent lg:text-gray-700 lg:p-0 dark:text-white">Buy or Sell</button
                         >
-                        <!-- <div class="caret m-2"></div> -->
+                        <div class="caret my-5 mx-3"></div>
                         
                         <ul
-                            class="dropdown-menu relative sm:absolute hidden bg-white z-50  w-60 text-gray-700 "
+                            class="dropdown-menu mt-14 absolute hidden bg-white z-50  w-60 text-gray-700 "
                             >
                             <br>
                                 <li class="hover:bg-gray-200 ">
@@ -138,14 +138,14 @@ function toggleMenu() {
                             </ul>
                        
                     </li>
-                    <li class="dropdown ">
+                    <li class="dropdown flex ">
                         <button
                           
                             class="block py-2 pr-4 pl-3 rounded bg-primary-700 lg:bg-transparent lg:text-gray-700 lg:p-0 dark:text-white">Refinance</button
                         >
-                       
+                        <div class="caret my-5 mx-3"></div>
                         <ul
-                        class="dropdown-menu absolute hidden bg-white z-50 py-2 w-60 text-gray-700"
+                        class="dropdown-menu mt-14 absolute hidden bg-white z-50 py-2 w-60 text-gray-700"
                         >   
                         <br>
                             <li class="hover:bg-gray-200 ">
@@ -183,14 +183,14 @@ function toggleMenu() {
                         </ul>
                        
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown flex">
                         <button
                            
                             class=" py-2 pr-4 pl-3 rounded bg-primary-700 lg:bg-transparent lg:text-gray-700 lg:p-0 dark:text-white">LAP</button
-                        > <!--<div class="caret "></div> -->
+                        > <div class="caret my-5 mx-3 "></div>
                         
                         <ul
-                        class="dropdown-menu absolute hidden bg-white z-50 py-2 w-60 text-gray-700"
+                        class="dropdown-menu mt-14 absolute hidden bg-white z-50 py-2 w-60 text-gray-700"
                         >
                         <br>
                             <li class="hover:bg-gray-200 block">
@@ -230,20 +230,7 @@ function toggleMenu() {
                             >Rates</a
                         >
                     </li>
-                    <!-- <li>
-                        <a
-                            href="#"
-                            class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
-                            >Better+</a
-                        >
-                    </li> -->
-                    <!-- <li>
-                        <a
-                            href="#"
-                            class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
-                            >Home Search
-                        </a>
-                    </li> -->
+                    
                 </ul>
             </div>
         </div>
