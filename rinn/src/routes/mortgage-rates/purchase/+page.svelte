@@ -55,7 +55,7 @@
                         id="menu-item-1">Refinance</a
                     >
                     <a
-                        href="lap"
+                        href="/lap"
                         class="text-gray-700 block px-4 py-2 text-lg"
                         role="menuitem"
                         tabindex="-1"
