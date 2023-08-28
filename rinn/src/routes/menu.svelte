@@ -5,27 +5,17 @@
 function toggleMenu() {
   isOpen = !isOpen;
 }
-
-let item1 = false;
-let item2 = false;
-let item3 = false;
-function toggleItem() {
-  item1 = !item1;
-  
-}
-
-
 </script>
     
 
-<div class="w-full bg-gray-100">
-    <div class=" flex flex-row justify-between w-11/12 p-4 m-auto">
+<div class="w-full bg-gray-100 ">
+    <div class="container flex flex-row justify-center sm:justify-between m-auto w-11/12 p-5">
         <div>
             <p>
                 <strong>$100 billion</strong> in online home loans
             </p>
         </div>
-        <div class="order-1">
+        <div class="order-1 hidden sm:block">
             
             <p>
                 <a href="tel:4155238837"> +1(415) 523 8837</a><span
@@ -35,10 +25,10 @@ function toggleItem() {
         </div>
     </div>
 </div>
-<header class="">
-    <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
+<header class="container m-auto">
+    <nav class=" border-gray-200  py-2.5 dark:bg-gray-800">
         <div
-            class=" w-11/12 p-2 flex flex-wrap justify-between items-center mx-auto max-w-screen-xl"
+            class=" w-11/12 p-3 flex flex-wrap justify-between items-center mx-auto max-w-screen-xl"
         >
             <a href="/" class="flex items-center">
                 <span
@@ -49,20 +39,18 @@ function toggleItem() {
             <div class="flex items-center lg:order-2">
                 <a
                     href="/login"
-                    class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800"
+                    class="hidden sm:block text-gray-800 dark:text-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 font-medium border rounded-lg text-md px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800"
                     >Sign In</a
                 >
                 <a
                     href="/start"
-                    class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-green-600 dark:hover:bg-green-700 focus:outline-none dark:focus:ring-green-800"
+                    class="text-black hover:text-white border hover:bg-green-600 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-lg px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-green-600 dark:hover:bg-green-700 focus:outline-none dark:focus:ring-green-800"
                     >Get Started</a
                 >
                 <button
                     on:click={toggleMenu}
                     type="button"
-                    class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                    aria-controls="mobile-menu-2"
-                    aria-expanded="false"
+                    class="inline-flex items-center p-2 ml-1 text-lg text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                 >
                     <span class="sr-only">Open main menu</span>
                     <svg
@@ -98,7 +86,7 @@ function toggleItem() {
                 >
                     <li class="dropdown">
                         <button 
-                            class="  py-2 pr-4 pl-3 rounded bg-primary-700 lg:bg-transparent lg:text-gray-700 lg:p-0 dark:text-white">Buy or Sell</button
+                            class=" py-2 pr-4 pl-3 rounded bg-primary-700 lg:bg-transparent lg:text-gray-700 lg:p-0 dark:text-white">Buy or Sell</button
                         >
                         <!-- <div class="caret m-2"></div> -->
                         
@@ -110,7 +98,7 @@ function toggleItem() {
                                     
                                     <a
                                         class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal "
-                                        href="/start/home-loan">Apply Now</a
+                                        href="/start">Apply Now</a
                                     >
                                 </li>
                                 <li class="hover:bg-gray-200">
@@ -124,7 +112,7 @@ function toggleItem() {
                                 <li class="hover:bg-gray-200">
                                     <a
                                         class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal "
-                                        href="#">
+                                        href="/find-an-agent">
                                         Find an Agent
                                         </a
                                     >
@@ -164,14 +152,14 @@ function toggleItem() {
                                 
                                 <a
                                     class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal "
-                                    href="#">Apply Now</a
+                                    href="/start">Apply Now</a
                                 >
                             </li>
                             <li class="hover:bg-gray-200">
                                 
                                 <a
                                     class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal "
-                                    href="/mortgage-rates/refinance">Purchase rates
+                                    href="/mortgage-rates/refinance">Refinance rates
                                     </a
                                 >
                             </li>
@@ -179,16 +167,7 @@ function toggleItem() {
                                 <a
                                     class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal "
                                     href="#">
-                                    Find an Agent
-                                    </a
-                                >
-                            </li>
-                            <li class="hover:bg-gray-200">
-                                <a
-                                    class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal "
-                                    href="#">
-                                    
-                                    Mortgage calculator
+                                    Cash-out refinance calculator
                                     </a
                                 >
                             </li>
@@ -218,31 +197,17 @@ function toggleItem() {
                                 
                                 <a
                                     class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal "
-                                    href="#">Apply Now</a
+                                    href="/start">Apply Now</a
                                 >
                             </li>
-                            <li class="hover:bg-gray-200">
-                                
-                                <a
-                                    class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal "
-                                    href="#">Purchase rates
-                                    </a
-                                >
-                            </li>
-                            <li class="hover:bg-gray-200">
-                                <a
-                                    class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal "
-                                    href="#">
-                                    Find an Agent
-                                    </a
-                                >
-                            </li>
+                            
+                            
                             <li class="hover:bg-gray-200">
                                 <a
                                     class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal "
                                     href="#">
                                     
-                                    Mortgage calculator
+                                    Calculate your Cash
                                     </a
                                 >
                             </li>
@@ -265,13 +230,13 @@ function toggleItem() {
                             >Rates</a
                         >
                     </li>
-                    <li>
+                    <!-- <li>
                         <a
                             href="#"
                             class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
                             >Better+</a
                         >
-                    </li>
+                    </li> -->
                     <!-- <li>
                         <a
                             href="#"
