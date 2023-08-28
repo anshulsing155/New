@@ -91,7 +91,7 @@ function toggleMenu() {
                         <div class="caret my-5 mx-3"></div>
                         
                         <ul
-                            class="dropdown-menu mt-14 absolute hidden bg-white z-50  w-60 text-gray-700 "
+                            class="dropdown-menu mt-14 sm:absolute hidden bg-white z-50  w-60 text-gray-700 "
                             >
                             <br>
                                 <li class="hover:bg-gray-200 ">
@@ -145,7 +145,7 @@ function toggleMenu() {
                         >
                         <div class="caret my-5 mx-3"></div>
                         <ul
-                        class="dropdown-menu mt-14 absolute hidden bg-white z-50 py-2 w-60 text-gray-700"
+                        class="dropdown-menu absolute hidden bg-white z-50 py-2 w-60 text-gray-700"
                         >   
                         <br>
                             <li class="hover:bg-gray-200 ">
@@ -190,7 +190,7 @@ function toggleMenu() {
                         > <div class="caret my-5 mx-3 "></div>
                         
                         <ul
-                        class="dropdown-menu mt-14 absolute hidden bg-white z-50 py-2 w-60 text-gray-700"
+                        class="dropdown-menu absolute hidden bg-white z-50 py-2 w-60 text-gray-700"
                         >
                         <br>
                             <li class="hover:bg-gray-200 block">
@@ -226,11 +226,24 @@ function toggleMenu() {
                     <li>
                         <a
                             href="/mortgage-rates/purchase"
-                            class="block m-5 py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
+                            class="block mt-2 py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
                             >Rates</a
                         >
                     </li>
-                    
+                    <!-- <li>
+                        <a
+                            href="#"
+                            class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
+                            >Better+</a
+                        >
+                    </li> -->
+                    <!-- <li>
+                        <a
+                            href="#"
+                            class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
+                            >Home Search
+                        </a>
+                    </li> -->
                 </ul>
             </div>
         </div>
