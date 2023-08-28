@@ -62,7 +62,67 @@
         }
         
     }
-    
+    export let data
+
+let loading = false
+
+const {
+  recaptchaValidStore,
+  confirmationResultStore,
+  userStore,
+  phoneSignIn,
+  verifyCode,
+  signOutAsync
+} = data.auth
+
+let countryCode = ""
+let phoneNumberBody = ""
+
+$: countryCodeValid = countryCode !== null && countryCode.length !== 0
+$: phoneNumberBodyValid =
+  phoneNumberBody !== null && phoneNumberBody.length !== 0
+
+$: phoneNumberFormValid =
+  $recaptchaValidStore && countryCodeValid && phoneNumberBodyValid && !loading
+
+async function handlePhoneSubmit() {
+  if (!phoneNumberFormValid) {
+    return
+  }
+
+  loading = true
+
+  const fullPhoneNumber = `+${countryCode + phoneNumberBody}`
+
+  await phoneSignIn(fullPhoneNumber)
+
+  loading = false
+}
+
+let OTPCode = ""
+
+$: OTPFormValid =
+  OTPCode !== null &&
+  OTPCode.length === 6 &&
+  !loading &&
+  $confirmationResultStore !== null
+
+async function handleOTPSubmit() {
+  if (!OTPFormValid) {
+    return
+  }
+
+  loading = true
+
+  try {
+    await verifyCode(OTPCode)
+  } catch (error) {
+    console.log(error)
+  }
+
+  loading = false
+}
+
 </script>
 
 <ProgressBar {progress} />
@@ -149,7 +209,44 @@
 >
    
   </div>
+  <div id="recaptcha-container" />
 </section>
+
+<main>
+  {#if $userStore}
+    <p>Your logged in!</p>
+
+    <button on:click={signOutAsync}>Log Out</button>
+  {:else if $confirmationResultStore}
+    <form on:submit|preventDefault={handleOTPSubmit}>
+      <input type="text" bind:value={OTPCode} />
+
+      <button type="submit" disabled={!OTPFormValid}>Confirm Code</button>
+    </form>
+  {:else}
+    <form on:submit|preventDefault={handlePhoneSubmit}>
+      <div class="phone-number-form">
+        <input type="text" bind:value={countryCode} placeholder="Country" />
+
+        <input
+          type="text"
+          bind:value={phoneNumberBody}
+          placeholder="111-222-3333"
+        />
+      </div>
+
+      
+
+      <button
+        id="sign-in-button"
+        type="submit"
+        disabled={!phoneNumberFormValid}
+      >
+        Sign In with Phone Number
+      </button>
+    </form>
+  {/if}
+</main>
 
 <style>
   *:disabled {

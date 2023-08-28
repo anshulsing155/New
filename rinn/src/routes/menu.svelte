@@ -5,6 +5,16 @@
 function toggleMenu() {
   isOpen = !isOpen;
 }
+
+let item1 = false;
+let item2 = false;
+let item3 = false;
+function toggleItem() {
+  item1 = !item1;
+  
+}
+
+
 </script>
     
 
@@ -18,7 +28,7 @@ function toggleMenu() {
         <div class="order-1">
             
             <p>
-                <a href="tel:4155238837"> (415) 523 8837</a><span
+                <a href="tel:4155238837"> +1(415) 523 8837</a><span
                     >Questions?</span
                 > Give us a call.
             </p>
@@ -31,11 +41,6 @@ function toggleMenu() {
             class=" w-11/12 p-2 flex flex-wrap justify-between items-center mx-auto max-w-screen-xl"
         >
             <a href="/" class="flex items-center">
-                <!-- <img
-                    src="#"
-                    class="mr-3 h-6 sm:h-9"
-                    alt=" Logo"
-                /> -->
                 <span
                     class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
                     >ऋण.In</span
@@ -91,14 +96,14 @@ function toggleMenu() {
                 <ul
                     class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0"
                 >
-                    <li class="dropdown ">
-                        <a
-                            href="#"
-                            class="  py-2 pr-4 pl-3 rounded bg-primary-700 lg:bg-transparent lg:text-gray-700 lg:p-0 dark:text-white">Buy or Sell</a
+                    <li class="dropdown">
+                        <button 
+                            class="  py-2 pr-4 pl-3 rounded bg-primary-700 lg:bg-transparent lg:text-gray-700 lg:p-0 dark:text-white">Buy or Sell</button
                         >
                         <!-- <div class="caret m-2"></div> -->
+                        
                         <ul
-                            class="dropdown-menu absolute hidden bg-white z-50  w-60 text-gray-700 "
+                            class="dropdown-menu relative sm:absolute hidden bg-white z-50  w-60 text-gray-700 "
                             >
                             <br>
                                 <li class="hover:bg-gray-200 ">
@@ -143,114 +148,119 @@ function toggleMenu() {
                                     >
                                 </li>
                             </ul>
+                       
                     </li>
                     <li class="dropdown ">
-                        <a
-                            href="#"
-                            class="block py-2 pr-4 pl-3 rounded bg-primary-700 lg:bg-transparent lg:text-gray-700 lg:p-0 dark:text-white">Refinance</a
+                        <button
+                          
+                            class="block py-2 pr-4 pl-3 rounded bg-primary-700 lg:bg-transparent lg:text-gray-700 lg:p-0 dark:text-white">Refinance</button
                         >
+                       
                         <ul
-                            class="dropdown-menu absolute hidden bg-white z-50 py-2 w-60 text-gray-700"
-                            >   
-                            <br>
-                                <li class="hover:bg-gray-200 ">
+                        class="dropdown-menu absolute hidden bg-white z-50 py-2 w-60 text-gray-700"
+                        >   
+                        <br>
+                            <li class="hover:bg-gray-200 ">
+                                
+                                <a
+                                    class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal "
+                                    href="#">Apply Now</a
+                                >
+                            </li>
+                            <li class="hover:bg-gray-200">
+                                
+                                <a
+                                    class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal "
+                                    href="/mortgage-rates/refinance">Purchase rates
+                                    </a
+                                >
+                            </li>
+                            <li class="hover:bg-gray-200">
+                                <a
+                                    class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal "
+                                    href="#">
+                                    Find an Agent
+                                    </a
+                                >
+                            </li>
+                            <li class="hover:bg-gray-200">
+                                <a
+                                    class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal "
+                                    href="#">
                                     
-                                    <a
-                                        class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal "
-                                        href="#">Apply Now</a
-                                    >
-                                </li>
-                                <li class="hover:bg-gray-200">
+                                    Mortgage calculator
+                                    </a
+                                >
+                            </li>
+                            <li class="hover:bg-gray-200">
+                                <a
+                                    class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal "
+                                    href="#">
                                     
-                                    <a
-                                        class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal "
-                                        href="/mortgage-rates/refinance">Purchase rates
-                                        </a
-                                    >
-                                </li>
-                                <li class="hover:bg-gray-200">
-                                    <a
-                                        class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal "
-                                        href="#">
-                                        Find an Agent
-                                        </a
-                                    >
-                                </li>
-                                <li class="hover:bg-gray-200">
-                                    <a
-                                        class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal "
-                                        href="#">
-                                        
-                                        Mortgage calculator
-                                        </a
-                                    >
-                                </li>
-                                <li class="hover:bg-gray-200">
-                                    <a
-                                        class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal "
-                                        href="#">
-                                        
-                                        
-                                        Learning Center</a
-                                    >
-                                </li>
-                            </ul>
+                                    
+                                    Learning Center</a
+                                >
+                            </li>
+                        </ul>
+                       
                     </li>
                     <li class="dropdown">
-                        <a
-                            href="#"
-                            class=" py-2 pr-4 pl-3 rounded bg-primary-700 lg:bg-transparent lg:text-gray-700 lg:p-0 dark:text-white">LAP</a
+                        <button
+                           
+                            class=" py-2 pr-4 pl-3 rounded bg-primary-700 lg:bg-transparent lg:text-gray-700 lg:p-0 dark:text-white">LAP</button
                         > <!--<div class="caret "></div> -->
+                        
                         <ul
-                            class="dropdown-menu absolute hidden bg-white z-50 py-2 w-60 text-gray-700"
-                            >
-                            <br>
-                                <li class="hover:bg-gray-200 block">
+                        class="dropdown-menu absolute hidden bg-white z-50 py-2 w-60 text-gray-700"
+                        >
+                        <br>
+                            <li class="hover:bg-gray-200 block">
+                                
+                                <a
+                                    class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal "
+                                    href="#">Apply Now</a
+                                >
+                            </li>
+                            <li class="hover:bg-gray-200">
+                                
+                                <a
+                                    class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal "
+                                    href="#">Purchase rates
+                                    </a
+                                >
+                            </li>
+                            <li class="hover:bg-gray-200">
+                                <a
+                                    class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal "
+                                    href="#">
+                                    Find an Agent
+                                    </a
+                                >
+                            </li>
+                            <li class="hover:bg-gray-200">
+                                <a
+                                    class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal "
+                                    href="#">
                                     
-                                    <a
-                                        class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal "
-                                        href="#">Apply Now</a
-                                    >
-                                </li>
-                                <li class="hover:bg-gray-200">
+                                    Mortgage calculator
+                                    </a
+                                >
+                            </li>
+                            <li class="hover:bg-gray-200">
+                                <a
+                                    class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal "
+                                    href="#">
                                     
-                                    <a
-                                        class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal "
-                                        href="#">Purchase rates
-                                        </a
-                                    >
-                                </li>
-                                <li class="hover:bg-gray-200">
-                                    <a
-                                        class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal "
-                                        href="#">
-                                        Find an Agent
-                                        </a
-                                    >
-                                </li>
-                                <li class="hover:bg-gray-200">
-                                    <a
-                                        class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal "
-                                        href="#">
-                                        
-                                        Mortgage calculator
-                                        </a
-                                    >
-                                </li>
-                                <li class="hover:bg-gray-200">
-                                    <a
-                                        class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal "
-                                        href="#">
-                                        
-                                        
-                                        Learning Center</a
-                                    >
-                                </li>
-                            </ul>
+                                    
+                                    Learning Center</a
+                                >
+                            </li>
+                        </ul>
+                        
                     </li>
                     <li>
                         <a
-                            href="#"
+                            href="/mortgage-rates/purchase"
                             class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
                             >Rates</a
                         >
@@ -262,13 +272,13 @@ function toggleMenu() {
                             >Better+</a
                         >
                     </li>
-                    <li>
+                    <!-- <li>
                         <a
                             href="#"
                             class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
                             >Home Search
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
