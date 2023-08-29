@@ -17,7 +17,7 @@
             </p>
         </div>
         <div>
-            <form action="" method="post">
+            <form  action="" method="post">
                 <input
                     type="email"
                     class="block border border-gray-500 m-auto w-3/5 p-4 rounded-lg my-10 "
@@ -30,7 +30,7 @@
                     name="pass"
                     placeholder="Password"
                 />
-                <button
+                <button 
                     type="submit"
                     class=" transition ease-in-out delay-150 block bg-slate-500 border text-white border-gray-400 w-1/2 m-auto p-3 rounded-lg my-5 hover:-translate-y-1 hover:scale-110 hover:bg-green-600 duration-300"
                     >Submit</button
