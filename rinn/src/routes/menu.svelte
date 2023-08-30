@@ -88,14 +88,14 @@
                 >
                     <li class="dropdown flex">
                         <button
-                            class=" py-2 pr-4 pl-3 rounded bg-primary-700 lg:bg-transparent lg:text-gray-700 lg:p-0"
+                            class=" btn py-2 pr-4 pl-3 rounded bg-primary-700 lg:bg-transparent lg:text-gray-700 lg:p-0"
                             >Buy or Sell</button
                         >
                         <div class="caret my-5 mx-3" ></div>
                         
 
                         <ul
-                            class="dropdown-menu mt-14 absolute hidden bg-white z-50 w-60 text-gray-700"
+                            class="dropdown-menu mt-10 rounded-xl absolute hidden bg-white z-50 w-60 text-gray-700"
                         >
                             <br />
                             <li class="hover:bg-gray-200">
@@ -144,7 +144,7 @@
                         >
                         <div class="caret my-5 mx-3" />
                         <ul
-                            class="dropdown-menu mt-14 absolute hidden bg-white z-50 py-2 w-60 text-gray-700"
+                            class="dropdown-menu mt-10 absolute hidden bg-white z-50 py-2 w-60 text-gray-700"
                         >
                             <br />
                             <li class="hover:bg-gray-200">
@@ -186,7 +186,7 @@
                         <div class="caret my-5 mx-3" />
 
                         <ul
-                            class="dropdown-menu mt-14 absolute hidden bg-white z-50 py-2 w-60 text-gray-700"
+                            class="dropdown-menu mt-10 absolute hidden bg-white z-50 py-2 w-60 text-gray-700"
                         >
                             <br />
                             <li class="hover:bg-gray-200 block">
