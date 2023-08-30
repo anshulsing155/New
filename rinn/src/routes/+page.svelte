@@ -8,7 +8,7 @@
 
 <section class=" bg-green-50">
 	<div
-		class="w-11/12 grid max-w-screen-xl px-4 py-8 m-auto lg:gap-5 xl:gap-0 lg:py-16 lg:grid-cols-12"
+		class=" grid max-w-screen-xl px-4 py-8  lg:gap-5 xl:gap-0 lg:py-16 lg:grid-cols-12"
 	>
 		<div
 			class="order-2 m-auto sm:order-1 mr-auto place-self-center lg:col-span-7 gap"
@@ -43,16 +43,16 @@
 				Buy A Home
 			</a>
 
-			<div class="grid grid-cols-2">
+			<div class="grid grid-cols-2 gap-2">
 				<a
 					href="/start"
-					class="  mx-2 items-center justify-center py-5 mr-3 text-base font-medium text-center text-white rounded-lg bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 "
+					class=" items-center justify-center py-5 text-base font-medium text-center text-white rounded-lg bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 "
 				>
 					Refinancing
 				</a>
 				<a
 					href="/start"
-					class="  mx-2 items-center justify-center py-5 mr-3 text-base font-medium text-center text-white rounded-lg bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 "
+					class="items-center justify-center py-5 text-base font-medium text-center text-white rounded-lg bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 "
 				>
 					LAP
 				</a>
@@ -73,7 +73,7 @@
 </section>
 <!-- Product Details section -->
 <section
-	class="bg-green-50  py-10 block justify-around gap-0 sm:block sm:justify-center md:flex"
+	class="bg-green-50 px-5 py-10 block justify-around gap-0 sm:block sm:justify-center md:flex"
 >
 	<div class="w-full max-w-sm m-auto md:m-10 ">
 		<div class="flex items-baseline text-gray-900 ">
@@ -349,8 +349,8 @@
 			><a href="/mortgage-rates/purchase">See Your Rates</a></button
 		>
 	</div>
-	<div class="w-auto m-10 p-10 md:w-2/3 bg-gray-100 rounded-2xl">
-		<h3 class="m-auto p-10 text-2xl opacity-60 font-semibold">
+	<div class="w-auto sm:m-10 p-10 md:w-2/3 bg-gray-100 rounded-2xl">
+		<h3 class="m-auto sm:p-10 text-2xl opacity-60 font-semibold">
 			Hey, we currently don’t have service in your area. We will notify
 			you when we are there.
 		</h3>
@@ -387,7 +387,7 @@
 		>
 			<div class="flex justify-left items-left h-full">
 				<div
-					class=" text-white px-6 py-6 md:py-0 md:px-12 max-w-[800px] md:align-middle"
+					class=" text-white px-6 py-6 md:py-0 md:px-12 max-w-[800px] md:align-middle leading-5"
 				>
 					<h2
 						class="text-2xl md:text-4xl xl:text-6xl font-thin leading-5 md:align-middle py-20"
@@ -405,25 +405,22 @@
 		</div>
 	</div>
 </section>
-<!-- Section: Design Block -->
-<!-- Container for demo purpose -->
-<!-- Today’s mortgage rates section start -->
 
 <div
-	class="p-4 w-auto bg-orange-50 block justify-around gap-0 mt-0 sm:block sm:justify-center"
+	class="sm:p-4 w-auto bg-orange-50 block justify-around gap-0 mt-0 sm:block sm:justify-center"
 >
-	<div class="bg-green-950 md:flex mt-5 p-10 m-0 rounded-2xl">
+	<div class="bg-green-950 md:flex mt-5 p-10 m-0 ">
 		<div class="">
-			<h3 class="w-3/5 text-4xl font-bold text-white my-8">
+			<h3 class="sm:w-3/5 text-4xl font-bold text-white my-8">
 				The tools you need to make that next step
 			</h3>
-			<p class="mb-8 text-white w-2/3 text-justify">
+			<p class="mb-8 text-white sm:w-2/3 text-justify">
 				How much home can I afford? Should I pay points to get a lower
 				rate? Should I refinance? Tap to find out.
 			</p>
 			<button
 				type="button"
-				class=" text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-200  font-medium rounded-lg text-lg px-10 py-5 inline-flex justify-center text-center"
+				class=" text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-200  font-medium rounded-lg text-lg px-10 py-5 inline-flex justify-center text-center mb-5"
 				><a href="/mortgage-rates/purchase">See Your Rates</a></button
 			>
 		</div>
@@ -439,7 +436,7 @@
 
 <!-- Container for demo purpose -->
 <section
-	class="bg-green-50  py-10 block justify-around gap-0 sm:block sm:justify-center md:flex"
+	class="bg-green-50 p-10 sm:py-10 block justify-around gap-0 sm:block sm:justify-center md:flex"
 >
 	<div class="w-full max-w-sm m-auto md:m-10 ">
 		<div class="flex items-baseline text-gray-900 ">
