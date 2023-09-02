@@ -5,12 +5,14 @@
     function toggleDropdown() {
         isOpen = !isOpen;
     }
+    const date = new Date();
 </script>
 
 <Menu />
 <section class=" bg-green-50">
-    <div class=" container m-auto">
-        <div class="inline-flex ml-14">
+    <main class="container m-auto">
+    <div class="  ">
+        <div class="inline-flex ">
             <button
                 class="inline-flex rounded-md px-3 py-2 text-5xl font-bold text-green-700"
                 id="menu-button"
@@ -65,33 +67,31 @@
             </div>
         {/if}
         <p
-            class="ml-14 px-3 md:mr-20 md:inline md:float-right my-4 rounded-md text-2xl text-gray-500 font-semibold"
+            class="ml-14 px-3 md:mr-20 md:inline md:float-right my-4 rounded-md text-2xl text-gray-700 font-semibold"
             id="menu-button"
         >
-            Mortgage rates today for <span class="underline text-green-600"
-                >122017</span
-            >
+            Mortgage rates today for your Location
+            <!-- <span class="underline text-green-600">{122017}</span> -->
         </p>
     </div>
     <div>
-        <h2 class="mx-20 px-3 mt-5">
-            <div class="text-green-700 font-light text-4xl m-3">
+        <h2 class="mx-20 px-3 mt-8">
+            <div class="text-green-700 font-normal text-5xl m-3">
                 No commissions.
             </div>
-            <div class="text-blue-800 font-thin text-5xl m-3 font-sans">
+            <div class="text-blue-800 font-normal text-5xl m-3 font-sans">
                 Fast pre-approval, with no hard credit pull.
             </div>
         </h2>
     </div>
-    <div>
-        <p>
-            <small class="ml-4">
-                The below rates are estimated rates current as of: 2:41 p.m.
-                GMT+5:30 on Aug 24
+    <div class="container">
+        <p class="m-10 px-6">
+            <small class="p-10">
+                The below rates are estimated rates current as of: <span class="font-bold"> {date}          </span>
             </small>
         </p>
     </div>
-    <div class="grid justify-items-center mt-4">
+    <div class="grid justify-items-center m4-4">
         <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -111,38 +111,77 @@
         </p>
         <p>Try making some adjustments to broaden your options.</p>
     </div>
-    <div class="inline-flex ml-24 mt-8">
+    <div class="inline-flex mx-14 my-5 px-14">
         <p class="text-2xl font-normal">Have another rate?</p>
         <a href="#" class="font-normal text-2xl text-green-600"
             >Let us match it →</a
         >
     </div>
     <br />
-    <div class="grid justify-items-center lg:grid-cols-2 mt-4">
-        <div>
-    
-           <iframe class= "lg:h-96 lg:w-96" src="https://www.youtube.com/embed/r9jwGansp1E"/>
-           <p class="font-semibold md:w-72 lg:w-96 "><a href="https://www.youtube.com/embed/r9jwGansp1E">The diffrence Between "Fixed rate" and "Adjustable"</a></p>
+    <div class="grid j mt-4">
+        <div class="bg-green-200 m-auto">
+            <iframe
+                class="lg:h-96 lg:w-1/2"
+                src="https://www.youtube.com/embed/r9jwGansp1E"
+            />
+            <p class="font-semibold md:w-72 lg:w-96">
+                <a href="https://www.youtube.com/embed/r9jwGansp1E"
+                    >The diffrence Between "Fixed rate" and "Adjustable"</a
+                >
+            </p>
         </div>
         <div>
-            
-            <iframe class= "lg:h-96 lg:w-96" src="https://www.youtube.com/embed/r9jwGansp1E"/>
-            <p class="font-semibold ml-4 md:w-72 lg:w-96"><a href="https://www.youtube.com/embed/r9jwGansp1E">What are the points and credits?</a></p>
+            <iframe
+                class="lg:h-96 lg:w-96"
+                src="https://www.youtube.com/embed/r9jwGansp1E"
+            />
+            <p class="font-semibold ml-4 md:w-72 lg:w-96">
+                <a href="https://www.youtube.com/embed/r9jwGansp1E"
+                    >What are the points and credits?</a
+                >
+            </p>
         </div>
-    </div >
+    </div>
     <div class=" mt-8">
         <ul class="list-disc text-sm ml-32 mr-16 mt-8">
-            <li>Rates can change several times a day, so we make sure you have the latest. We updated them at 3:08 a.m. PDT on Aug 25. Interest rates and APRs are for informational purposes and do not include all applicable fees. Your actual rates, payments, and costs may differ.</li>
-            <li>Rates and fees are as of time displayed above and are subject to change without notice.</li>
-            <li>The one-time costs shown include points/credits and third-party fees. An escrow deposit, pre-paid interest, and other charges may be required depending on your situation.</li>
-            <li>We don’t yet have your complete financial picture. Your actual rate, payment and costs could be higher. Get an official Loan Estimate before choosing a loan.</li>
-            <li>Loan approval is subject to underwriter review: not everyone who applies will be approved.</li>
-            <li>We also assume: closing costs are paid out of pocket; your debt-to-income ratio is below 35%; you are purchasing or refinancing a single-family home that is your primary residence; you are making a down payment of 20%; and your credit score is 760 or higher.</li>
-            <li>Refinancing may cause your finance charges to be higher over the life of the loan.</li>
+            <li>
+                Rates can change several times a day, so we make sure you have
+                the latest. We updated them at 3:08 a.m. PDT on Aug 25. Interest
+                rates and APRs are for informational purposes and do not include
+                all applicable fees. Your actual rates, payments, and costs may
+                differ.
+            </li>
+            <li>
+                Rates and fees are as of time displayed above and are subject to
+                change without notice.
+            </li>
+            <li>
+                The one-time costs shown include points/credits and third-party
+                fees. An escrow deposit, pre-paid interest, and other charges
+                may be required depending on your situation.
+            </li>
+            <li>
+                We don’t yet have your complete financial picture. Your actual
+                rate, payment and costs could be higher. Get an official Loan
+                Estimate before choosing a loan.
+            </li>
+            <li>
+                Loan approval is subject to underwriter review: not everyone who
+                applies will be approved.
+            </li>
+            <li>
+                We also assume: closing costs are paid out of pocket; your
+                debt-to-income ratio is below 35%; you are purchasing or
+                refinancing a single-family home that is your primary residence;
+                you are making a down payment of 20%; and your credit score is
+                760 or higher.
+            </li>
+            <li>
+                Refinancing may cause your finance charges to be higher over the
+                life of the loan.
+            </li>
         </ul>
-
-
     </div>
-   
+</main>
 </section>
 <Footer />

@@ -23,7 +23,7 @@
   let email = "";
   let isNameValid = false;
   let isMobileNumberValid = true;
-  let isEmailValid = false;
+  let isEmailValid = true;
   function validateName() {
     // Validate the name field
     isNameValid = name.trim() !== "";
@@ -32,13 +32,13 @@
 
   function validateMobileNumber() {
     // Remove any non-numeric characters from the input
-    mobileNumber = mobileNumber.replace(/\D/g, "");
+    mobileNumber = phoneNumberBody.replace(/\D/g, "");
 
     // Limit the input to a maximum of 10 digits
-    mobileNumber = mobileNumber.slice(0, 10);
+    mobileNumber = phoneNumberBody.slice(0, 10);
 
     // Validate the mobile number field
-    isMobileNumberValid = mobileNumber.length === 10;
+    isMobileNumberValid = phoneNumberBody.length === 10;
     handleNext();
   }
 
@@ -50,12 +50,6 @@
   }
 
   function handleNext() {
-    const nameSelect = document.getElementById("inline-full-name");
-    const selectedName = nameSelect.value;
-    const contactSelect = document.getElementById("inline-Contact");
-    const selectedContact = contactSelect.value;
-    const emailSelect = document.getElementById("inline-email");
-    const selectedEmail = emailSelect.value;
     if (isNameValid && isMobileNumberValid && isEmailValid) {
       document.getElementById("next").disabled = false;
     }
@@ -73,7 +67,6 @@
     signOutAsync,
   } = data.auth;
 
-  let countryCode = "";
   let phoneNumberBody = "";
 
   // $: countryCodeValid = countryCode !== null && countryCode.length !== 0
@@ -120,17 +113,18 @@
 
     loading = false;
   }
+  let value;
 </script>
 
 <ProgressBar {progress} />
-<section class="w-full max-w-md m-auto md:border mb-20 p-10">
+<section class=" max-w-md m-auto md:border mb-20 p-8">
   <label
     for="state"
     class="  block mb-8 text-center text-xl font-medium text-gray-900"
     >Your Details...!</label
   >
-  <div class="md:flex md:items-center mb-6">
-    <div class="md:w-1/3">
+  <div class="md:flex md:justify-between mb-6">
+    <div class="">
       <label
         class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
         for="inline-full-name"
@@ -138,7 +132,7 @@
         Full Name : <sup class="text-red-700 text-lg">*</sup>
       </label>
     </div>
-    <div class="md:w-2/3">
+    <div class="">
       <input
         class="bg-gray-200 appearance-none border-b-2 border-green-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500"
         id="inline-full-name"
@@ -150,85 +144,77 @@
       />
     </div>
   </div>
-  <div class="md:flex md:items-center mb-6">
-    <div class="md:w-1/3">
-      <label
-        class="flex text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-        for="inline-Contact"
+  <div class="md:flex md:justify-between mb-6">
+    <div class="">
+      
+      {#if $userStore}
+        <p class="bg-green-600 p-2 text-white">verified</p>
+        <button on:click={signOutAsync}>Edit Mobile No.</button>
+      {:else if $confirmationResultStore}
+        <form on:submit|preventDefault={handleOTPSubmit}>
+          <div class="md:flex md:justify-between mb-6">
+            <div class="">
+              <label
+                class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                for="inline-full-name"
+              >
+                Enter OTP : <sup class="text-red-700 text-lg">*</sup>
+              </label>
+            </div>
+            <div class="">
+              <input
+                class="bg-gray-200 appearance-none border-b-2 border-green-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500"
+                id="inline-Contact"
+                type="text"
+                bind:value={OTPCode}
+                placeholder="Enter your OTP pin"
+                required
+              />
+              <button
+                class=" bg-gray-200 appearance-none border-b-2 border-green-200 w-full rounded py-2 my-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500"
+                id="sign-in-button"
+                type="submit"
+                disabled={!OTPFormValid}
+              >
+                Confirm OTP
+              </button>
+            </div>
+          </div>
+        </form>
+      {:else}
+        <form on:submit|preventDefault={handlePhoneSubmit}>
+          <label
+        class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+        for="inline-full-name"
       >
         Mobile No : <sup class="text-red-700 text-lg">*</sup>
       </label>
-    </div>
-    <div class="md:w-2/3">
+    <div class="">
       <input
         class="bg-gray-200 appearance-none border-b-2 border-green-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500"
         id="inline-Contact"
         type="text"
-        bind:value={mobileNumber}
+        bind:value={phoneNumberBody}
         on:input={validateMobileNumber}
-        placeholder="123-45-678"
+        placeholder="123-456-7890"
         required
       />
+          <button
+            class=" bg-gray-200 appearance-none border-b-2 border-green-200 w-full rounded py-2 my-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500"
+            id="sign-in-button"
+            type="submit"
+            disabled={!phoneNumberFormValid}
+          >
+            Get OTP
+          </button>
+        </form>
+      {/if}
     </div>
   </div>
+
   {#if !isMobileNumberValid}
     <p class="text-red-300 mb-5">Please enter a valid 10-digit mobile number</p>
   {/if}
-
-  <main>
-    {#if $userStore}
-      <p>Your logged in!</p>
-
-      <button on:click={signOutAsync}>Log Out</button>
-    {:else if $confirmationResultStore}
-      <form on:submit|preventDefault={handleOTPSubmit}>
-        <input type="text" class="bg-gray-200 appearance-none border-b-2 border-green-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500"
-        bind:value={OTPCode} />
-
-        <button type="submit"  class="" disabled={!OTPFormValid}>Confirm Code</button>
-      </form>
-    {:else}
-      <form on:submit|preventDefault={handlePhoneSubmit}>
-        
-          <!-- <input type="text" bind:value={countryCode} placeholder="Country" /> -->
-          <div class="md:w-1/3">
-            <label
-              class="flex text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-              for="inline-Contact"
-            >
-              Mobile No : <sup class="text-red-700 text-lg">*</sup>
-            </label>
-          </div>
-          <div class="md:w-2/3">
-            <input
-              class="bg-gray-200 appearance-none border-b-2 border-green-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500"
-              id="inline-Contact"
-              type="text"
-              bind:value={mobileNumber}
-
-              on:input={validateMobileNumber}
-              placeholder="123-45-678"
-              required
-            />
-          </div>
-          <!-- <input
-            type="text"
-            bind:value={phoneNumberBody}
-            placeholder="111-222-3333"
-          /> -->
-        
-
-        <button
-          class=" bg-gray-200 appearance-none border-b-2 border-green-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500"
-          id="sign-in-button"
-          type="submit"
-          disabled={!phoneNumberFormValid}
-        >
-          Varify
-        </button>
-      </form>
-    {/if}
-  </main>
 
   <div class="md:flex md:items-center mb-6">
     <div class="md:w-1/3">
@@ -262,6 +248,26 @@
       value="next"
       disabled>Next</button
     >
+  </div>
+  <div class="flex flex-col space-y-2">
+    <label for="success" class="text-gray-700 select-none font-medium">Success</label>
+    <input
+      id="success"
+      type="text"
+      name="success"
+      placeholder="Placeholder"
+      class="px-4 py-2 rounded-lg border border-green-500 text-green-600 placeholder-green-600 focus:outline-none focus:ring-2 focus:ring-green-200"
+    />
+  </div>
+  <div class="flex flex-col space-y-2">
+    <label for="error" class="text-gray-700 select-none font-medium">Error</label>
+    <input
+      id="error"
+      type="text"
+      name="error"
+      placeholder="Placeholder"
+      class="px-4 py-2 rounded-lg border border-red-500 text-red-600 placeholder-red-600 focus:outline-none focus:ring-2 focus:ring-red-200"
+    />
   </div>
   <div id="recaptcha-container" />
 </section>

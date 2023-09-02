@@ -7,9 +7,9 @@
     }
 </script>
 
-<div class="w-full bg-gray-100">
+<div class="w-full shadow-sm ">
     <div
-        class="container flex flex-row justify-center sm:justify-between m-auto w-11/12 p-5"
+        class="container flex flex-row justify-center sm:justify-between m-auto w-11/12 p-3"
     >
         <div>
             <p>
@@ -26,7 +26,7 @@
     </div>
 </div>
 <header class="container m-auto text-lg">
-    <nav class=" border-gray-200 py-2.5">
+    <nav class=" border-gray-200 py-1.5">
         <div
             class=" w-11/12 p-3 flex flex-wrap justify-between items-center mx-auto max-w-screen-xl"
         >
@@ -88,7 +88,7 @@
                 >
                     <li class="dropdown flex">
                         <button
-                            class=" btn py-2 pr-4 pl-3 rounded bg-primary-700 lg:bg-transparent lg:text-gray-700 lg:p-0"
+                            class=" py-2 pr-4 pl-3 rounded bg-primary-700 lg:bg-transparent lg:text-gray-700 lg:p-0"
                             >Buy or Sell</button
                         >
                         <div class="caret my-5 mx-3" ></div>

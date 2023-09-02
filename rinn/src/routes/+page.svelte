@@ -2,6 +2,21 @@
 	import "../app.css";
 	import Menu from "./menu.svelte";
 	import Footer from "./footer.svelte";
+	import { home, balance } from "./start/store";
+	import { goto } from "$app/navigation";
+	function startButton(values){
+		document.cookie = "Requirment=" + values;
+        home.set(values);
+		if (values == "Buy A Home") {
+            goto("../start/home-loan");
+           
+        } else if (values == "Refinance") {
+            goto("../start/Property-Location");
+        } else if (values == "LAP") {
+            balance.set(true);
+            goto("../start/Property-Location");
+        }
+	}
 </script>
 
 <Menu />
@@ -36,26 +51,27 @@
 			<sup class="text-xsm antialiased text-black-100 opacity-50 mb-8"
 				>Customers must qualify. Terms apply.</sup
 			>
-			<a
-				href="/start/home-loan"
+			<button
+				on:click={()=>startButton("Buy A Home")}
+				
 				class=" mb-4 block w-full items-center justify-center py-5 mr-3 text-base font-medium text-center text-white rounded-lg bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 "
 			>
 				Buy A Home
-			</a>
+			</button>
 
 			<div class="grid grid-cols-2 gap-2">
-				<a
-					href="/start"
+				<button
+				on:click={()=>startButton("Refinance")}
 					class=" items-center justify-center py-5 text-base font-medium text-center text-white rounded-lg bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 "
 				>
-					Refinancing
-				</a>
-				<a
-					href="/start"
+					Refinance
+			</button>
+				<button
+					on:click={()=>startButton("LAP")}
 					class="items-center justify-center py-5 text-base font-medium text-center text-white rounded-lg bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 "
 				>
 					LAP
-				</a>
+		</button>
 			</div>
 		</div>
 		<div

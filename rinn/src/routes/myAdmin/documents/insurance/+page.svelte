@@ -7,4 +7,17 @@
 	<title>Insurance Documents</title>
 </svelte:head>
 
-<Content title="Insurance Documents" />
+
+	<summary class="">open or close</summary>
+	<ul class="   ">
+	  <li><a>Item 1</a></li>
+	  <li><a>Item 2</a></li>
+	</ul>
+
+  <details class="dropdown ">
+	<summary class="">open or close</summary>
+	<ul class=" dropdown-content ">
+	  <li><a>Item 1</a></li>
+	  <li><a>Item 2</a></li>
+	</ul>
+  </details>
