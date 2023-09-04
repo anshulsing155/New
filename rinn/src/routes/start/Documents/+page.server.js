@@ -1,6 +1,7 @@
 import { config } from 'dotenv';
 import { MongoClient } from 'mongodb';
-
+import { fail } from '@sveltejs/kit';
+import { writeFileSync } from 'fs';
 
 async function connectToCluster() {
     let mongoClient;
@@ -19,27 +20,40 @@ async function connectToCluster() {
 }
 
 let home, propertyPurchase, propertyLocationState, propertyLocationCity, workingLocationState, workingLocationCity, masterPlan, propertyType, propertiesOwned, referralName, referralNo, usernName, userNo, userMail, currentFinancialName, roi, currentFinanciallocation;
-export function load({ cookies }) {
-    home = cookies.get('Requirment');
-    propertyPurchase = cookies.get('Stage of Property purchase');
-    propertyLocationState = cookies.get('Property Location (State)');
-    propertyLocationCity = cookies.get('Property Location (City)');
-    workingLocationState = cookies.get('Working Location (State)');
-    workingLocationCity = cookies.get('Working Location (City)');
-    currentFinancialName = cookies.get('Current Financial Name');
-    currentFinanciallocation = cookies.get('Current Financial Location');
-    roi = cookies.get('Current Financial ROI');
-    referralName = cookies.get('Referral Code (Name)');
-    referralNo = cookies.get('Referral Code(Mobile No.)');
-    usernName = cookies.get('User (Name)');
-    userNo = cookies.get('User (Mobile No.)');
-    userMail = cookies.get('User (Email)');
-    console.log({ home, propertyPurchase });
+// export function load({ cookies }) {
+//     home = cookies.get('Requirment');
+//     propertyPurchase = cookies.get('Stage of Property purchase');
+//     propertyLocationState = cookies.get('Property Location (State)');
+//     propertyLocationCity = cookies.get('Property Location (City)');
+//     workingLocationState = cookies.get('Working Location (State)');
+//     workingLocationCity = cookies.get('Working Location (City)');
+//     currentFinancialName = cookies.get('Current Financial Name');
+//     currentFinanciallocation = cookies.get('Current Financial Location');
+//     roi = cookies.get('Current Financial ROI');
+//     referralName = cookies.get('Referral Code (Name)');
+//     referralNo = cookies.get('Referral Code(Mobile No.)');
+//     usernName = cookies.get('User (Name)');
+//     userNo = cookies.get('User (Mobile No.)');
+//     userMail = cookies.get('User (Email)');
 
-}
+// }
 
 export const actions = {
-    default: async function load({ cookies }) {
+    default: async ({request,cookies }) => {
+    //   const formData = Object.fromEntries(await request.formData());
+    //   if (
+    //     !(formData.fileToUpload as File).name ||
+    //     (formData.fileToUpload as File).name === 'undefined'
+    //   ) {
+    //     return fail(400, {
+    //       error: true,
+    //       message: 'You must provide a file to upload'
+    //     });
+    //   }
+    //   const { fileToUpload } = formData as { fileToUpload: File };
+    // writeFileSync(`static/userfiles/${fileToUpload.name}`, Buffer.from(await fileToUpload.arrayBuffer()));
+    
+    
         home = cookies.get('Requirment');
         propertyPurchase = cookies.get('Stage of Property purchase');
         propertyLocationState = cookies.get('Property Location (State)');
@@ -55,11 +69,11 @@ export const actions = {
         userNo = cookies.get('User (Mobile No.)');
         userMail = cookies.get('User (Email)');
         async function executeStudentCrudOperations() {
-            const uri = process.env.DB_URI;
+            // const uri = process.env.DB_URI;
             let mongoClient;
 
             try {
-                mongoClient = await connectToCluster(uri);
+                mongoClient = await connectToCluster();
                 const db = mongoClient.db('form');
                 const collection = db.collection('formData');
                 console.log('CREATE User');
@@ -98,7 +112,11 @@ export const actions = {
 
         config();
         await executeStudentCrudOperations();
+        return {
+          success: true
+        };
     }
+    
 }
 
 // export const actions = {
@@ -150,3 +168,26 @@ export const actions = {
 //         await executeStudentCrudOperations();
 //     }
 // }
+
+// export const actions = {
+//   default: async ({ request }) => {
+//     const formData = Object.fromEntries(await request.formData());
+ 
+    // if (
+    //   !(formData.fileToUpload as File).name ||
+    //   (formData.fileToUpload as File).name === 'undefined'
+    // ) {
+    //   return fail(400, {
+    //     error: true,
+    //     message: 'You must provide a file to upload'
+    //   });
+    // }
+ 
+    // const { fileToUpload } = formData as { fileToUpload: File };
+    // writeFileSync(`static/userfiles/${fileToUpload.name}`, Buffer.from(await fileToUpload.arrayBuffer()));
+    
+    // return {
+    //   success: true
+    // };
+//   }
+// };
