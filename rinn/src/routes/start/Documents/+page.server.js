@@ -1,7 +1,7 @@
 import { config } from 'dotenv';
 import { MongoClient } from 'mongodb';
 import { fail } from '@sveltejs/kit';
-import { writeFileSync } from 'fs';
+// import { writeFileSync } from 'fs';
 
 async function connectToCluster() {
     let mongoClient;
