@@ -1,7 +1,7 @@
 import { config } from 'dotenv';
 import { MongoClient } from 'mongodb';
 import { fail } from '@sveltejs/kit';
-// import { writeFileSync } from 'fs';
+import { writeFileSync } from 'fs';
 
 async function connectToCluster() {
     let mongoClient;
@@ -40,20 +40,41 @@ let home, propertyPurchase, propertyLocationState, propertyLocationCity, working
 
 export const actions = {
     default: async ({request,cookies }) => {
-    //   const formData = Object.fromEntries(await request.formData());
-    //   if (
-    //     !(formData.fileToUpload as File).name ||
-    //     (formData.fileToUpload as File).name === 'undefined'
-    //   ) {
-    //     return fail(400, {
-    //       error: true,
-    //       message: 'You must provide a file to upload'
-    //     });
-    //   }
-    //   const { fileToUpload } = formData as { fileToUpload: File };
-    // writeFileSync(`static/userfiles/${fileToUpload.name}`, Buffer.from(await fileToUpload.arrayBuffer()));
+    const formData = Object.fromEntries(await request.formData());
+    // if (
+    //   !(formData.fileToUpload as File).name ||
+    //   (formData.fileToUpload as File).name === 'undefined'
+    // ) {
+    //   return fail(400, {
+    //     error: true,
+    //     message: 'You must provide a file to upload'
+    //   });
+    // }
+    let selectedFile = formData.file ;
     
     
+    if (selectedFile) {
+        // Create a new Date object to get the current date and time
+        const currentDate = new Date();
+  
+        // Get the current day, month, year, hour, minute, and second
+        const currentDay = currentDate.getDate(); // Day (1-31)
+        const currentMonth = currentDate.getMonth() + 1; // Month (0-11, so add 1 for human-readable month)
+        const currentYear = currentDate.getFullYear(); // Year (4 digits)
+        const currentHour = currentDate.getHours(); // Hour (0-23)
+        const currentMinute = currentDate.getMinutes(); // Minute (0-59)
+        const currentSecond = currentDate.getSeconds(); // Second (0-59)
+        const fileDate = ''+ currentDay+currentMonth+currentYear+currentHour+currentMinute+currentSecond;
+        
+        
+  
+        const newName = fileDate + '_' + selectedFile.name;
+        selectedFile = new File([selectedFile], newName);
+        
+      }
+    
+    let fileUrl = "static/userfiles/"+selectedFile.name;
+    writeFileSync(`static/userfiles/${selectedFile.name}`, Buffer.from(await selectedFile.arrayBuffer()));
         home = cookies.get('Requirment');
         propertyPurchase = cookies.get('Stage of Property purchase');
         propertyLocationState = cookies.get('Property Location (State)');
@@ -100,8 +121,8 @@ export const actions = {
                 userMail,
                 currentFinancialName,
                 roi,
-                currentFinanciallocation
-
+                currentFinanciallocation,
+                fileUrl,
 
 
             };

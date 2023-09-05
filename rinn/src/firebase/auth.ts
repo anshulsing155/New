@@ -13,7 +13,7 @@ import {
 } from "firebase/auth";
 import { browser } from "$app/environment";
 import { setWindowProp } from "../services/window";
-
+ 
 export const auth = getAuth(firebaseApp);
 
 export async function phoneSignIn(phoneNumber: string) {
@@ -75,7 +75,7 @@ export const recaptchaValidStore = writable(false, (set) => {
   useDeviceLanguage(auth);
 
   const recaptchaVerifier = new RecaptchaVerifier(auth, "recaptcha-container", {
-    size: "normal",
+    size: "invisible",
     callback: () => {
       set(true);
     },

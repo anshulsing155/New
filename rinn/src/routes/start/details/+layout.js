@@ -1,7 +1,6 @@
 
-
 // export const ssr = false;
-
+export const prerender = true;
 export const load = (async () => {
   const auth = await import("../../../firebase/auth");
 
@@ -9,4 +8,3 @@ export const load = (async () => {
     auth,
   };
 });
-

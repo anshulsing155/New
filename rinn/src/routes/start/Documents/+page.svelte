@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+  import type { ActionData } from "./$types";
   import { enhance } from "$app/forms";
   import { goto } from "$app/navigation";
   import ProgressBar from "../../components/ProgressBar.svelte";
@@ -7,17 +8,29 @@
     event.preventDefault();
     await goto("../start/Executive");
   }
-  export let data;
-  console.log(data);
+
+  export let form: ActionData;
+  // $: console.log($page.form, $page.status);
   let files;
   $: if (files) {
-    // Note that `files` is of type `FileList`, not an Array:
-    // https://developer.mozilla.org/en-US/docs/Web/API/FileList
-    console.log(files);
+    
+    // console.log(files);
 
     for (const file of files) {
-      console.log(`${file.name}: ${file.size} bytes`);
+      // console.log(`${file.name}: ${file.size} bytes`);
     }
+    
+  }
+  $: if (form?.success) {
+    alert("File Uplaoded Successfully");
+    goto("../start/Executive");
+  }
+  let selectedFile = null;
+
+  function handleFileSelect(event) {
+    const fileInput = event.target;
+    selectedFile = fileInput.files[0]; // Get the selected file
+    // console.log(selectedFile);
   }
 </script>
 
@@ -38,12 +51,7 @@
     </div>
   </div>
 
-  <form
-    method="post"
-    on:submit={onChange}
-    use:enhance
-    enctype="multipart/form-data"
-  >
+  <form method="post" use:enhance enctype="multipart/form-data">
     <div class="flex w-full items-center justify-center bg-grey-lighter mt-20">
       <label
         class="w-64 flex flex-col items-center px-2 py-4 bg-white text-green-700 rounded-lg shadow-lg tracking-wide uppercase border border-green-700 cursor-pointer hover:bg-green-700 hover:text-white"
@@ -54,7 +62,14 @@
           />
         </svg>
         <span class="mt-2 text-base leading-normal">Select a file</span>
-        <input bind:files type="file" name="file" class="hidden" />
+        <input
+          bind:files
+          type="file"
+          id="fileupload"
+          on:change={handleFileSelect}
+          name="file"
+          class="hidden"
+        />
       </label>
     </div>
     <div class="p-2 text-center text-black">
@@ -66,6 +81,7 @@
       <div class="m-auto">
         <div class="md:w-2/3 my-4">
           <button
+            on:change={onChange}
             id="submit"
             class="shadow bg-green-700 hover:bg-green-600 focus:shadow-outline focus:outline-none text-white font-bold m-auto py-2 px-4 rounded"
             type="submit"
@@ -78,11 +94,17 @@
     </div>
   </form>
 </section>
-<form method="post" use:enhance enctype="multipart/form-data">
-  <div class="group">
-    <label for="file">Upload your file</label>
-    <input type="file" id="file" name="fileToUpload" required />
+<!-- {#if form?.success}
+  <div class="text-white w-1/2 px-6 py-4 border-0 rounded relative mb-4 bg-green-300">
+    <span class="text-xl inline-block mr-5 align-middle">
+      <i class="fas fa-bell" />
+    </span>
+    <span class="inline-block align-middle mr-8">
+      <b class="capitalize">File uploaded Successfully... </b></span
+    >
+    <button
+      class="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none"
+    >
+    </button>
   </div>
-
-  <button type="submit">Submit</button>
-</form>
+{/if} -->
