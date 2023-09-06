@@ -2,7 +2,6 @@
     import { goto , beforeNavigate ,afterNavigate} from "$app/navigation";    
     import { path } from '../store.js';
     import ProgressBar from "../../components/ProgressBar.svelte";
-    // import data from "$lib/Indian-States-&-Cities.json";
     import Data1 from "$lib/pincode_IN.json";
     let progress = 28.6;
     let countValue;
@@ -18,7 +17,7 @@
         document.cookie = "Working Location (State)="+inputValue1;
         document.cookie = "Working Location (City)="+inputValue2;
         if (countValue == true )
-        goto("../start/Referral")
+        goto("../start/Referral");
         if (event.currentTarget.value == "next" && countValue == false ) {
             goto("../start/Master-plan");
         }
@@ -97,47 +96,61 @@
 
 <ProgressBar {progress} />
 
-<section class="sm:w-1/3 px-20 m-auto mb-10">
-    <label
-    for="state"
-        class=" block mb-4 text-center text-xl font-medium text-gray-900"
-        >Select Your Working Location</label
-    >
-    <label for="state">Select State:</label>
-    <select
-        id="state" on:change={populateCities}
-        class="mb-8 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-    >
-        <option>Select Working State</option>
-        {#each newState as item}
-            <option value={item}>{item}</option>
-        {/each}
-    </select>
-    <label for="city">Select City:</label>
-    <select
-        id="city"
-        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-    >
-        <option value="">Select Working City</option>
-    </select>
-    <button
-    on:click={onChange}
-    class="my-8 px-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-    id="next"
-    value="next" disabled>Next</button
->
-</section>
+<div class="flex container m-auto items-center justify-center mb-20">
+    <form class="w-full font-medium p-10 max-w-screen-sm" id="form" >
+            <label
+                for="state"
+                class=" block mb-4 text-center text-xl text-gray-900"
+                >Select Your Working Location</label
+            >
+        <div class="m-3 text-md">
+            <label for="state">
+                Select State:</label>
+        </div>
+        <select
+            id="state"
+            on:change={populateCities}
+            class="p-5 mb-8 bg-gray-50 border-4 border-gray-300 hover:border-green-700 text-green-800 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full"
+        ><option class="">Select Working State</option>
+        
+            {#each newState as item}
+                <option value={item}>{item}</option>
+            {/each}
+        </select>
+        <div class="m-3 text-md">
+            <label for="state">
+                Select City:</label>
+        </div>
+        
+        <select
+            id="city"
+            class="p-5 mb-8 bg-gray-50 border-4 border-gray-300 hover:border-green-700 text-green-800 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full"
+        >
+            <option value="">Select Working City</option>
+        </select>
+        <button
+            on:click|preventDefault={onChange}
+            class="w-full m-auto p-5 mb-8 bg-gray-50 rounded-full  text-green-800 text-lg  focus:ring-blue-500 focus:border-blue-500 block "
+            id="next"
+            value="next"
+            disabled>Next</button
+        >
+    </form>
+</div>
 
+            
 <style>
     *:disabled {
-    background-color: dimgrey;
-    color: linen;
-    opacity: 1;
+        background-color: dimgrey;
+        color: linen;
+        opacity: 1;
+    }
+    #next:enabled {
+        background: rgb(22, 175, 22);
+        color: white;
+        opacity: 1;
+    }
+    select {
+	appearance: none;
 }
-#next:enabled{
-background: rgb(82, 150, 82);
-color: black;
-opacity: 1;
-}
-
 </style>

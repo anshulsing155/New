@@ -1,6 +1,6 @@
 <!-- ProgressBar.svelte -->
 <script>
-    let price = 0;
+    let price = 124;
     const maxPrice = 1000;
   
     function updateProgressBar() {
@@ -31,11 +31,11 @@
       margin-top: 10px;
     }
   
-    input[type="number"] {
+    /* input[type="number"] {
       width: 100px;
       font-size: 16px;
       padding: 5px;
-    }
+    } */
   </style>
   
   <div class="progress-bar">
@@ -44,6 +44,7 @@
   
   <div class="input-container">
     <label for="price">Enter Price:</label>
-    <input type="number" id="price" bind:value={price} min="0" max={maxPrice} step="1">
+    <input type="range" id="price" bind:value={price} min="0" on:change={updateProgressBar} max={maxPrice} step="1">
+    {price}
   </div>
   

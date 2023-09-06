@@ -43,6 +43,7 @@
 		"nodemailer": "^6.9.3",
 		"session": "^0.1.0",
 		"svelte-email": "^0.0.4",
+		"svelte-hmr": "^0.15.3",
 		"svelte-multistep-form": "^0.0.6",
 		"svelte-navigator": "^3.2.2"
 	}
