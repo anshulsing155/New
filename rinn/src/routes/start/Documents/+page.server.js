@@ -1,7 +1,7 @@
 import { config } from 'dotenv';
 import { MongoClient } from 'mongodb';
 import { fail } from '@sveltejs/kit';
-import { writeFileSync } from 'fs';
+// import { writeFileSync } from 'fs';
 
 async function connectToCluster() {
     let mongoClient;
@@ -74,7 +74,7 @@ export const actions = {
       }
     
     let fileUrl = "static/userfiles/"+selectedFile.name;
-    writeFileSync(`static/userfiles/${selectedFile.name}`, Buffer.from(await selectedFile.arrayBuffer()));
+    // writeFileSync(`static/userfiles/${selectedFile.name}`, Buffer.from(await selectedFile.arrayBuffer()));
         home = cookies.get('Requirment');
         propertyPurchase = cookies.get('Stage of Property purchase');
         propertyLocationState = cookies.get('Property Location (State)');
