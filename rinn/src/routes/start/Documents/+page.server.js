@@ -1,7 +1,6 @@
 import { config } from 'dotenv';
 import { MongoClient } from 'mongodb';
-import { fail } from '@sveltejs/kit';
-// import { writeFileSync } from 'fs';
+import { writeFileSync } from 'fs';
 
 async function connectToCluster() {
     let mongoClient;
@@ -20,36 +19,12 @@ async function connectToCluster() {
 }
 
 let home, propertyPurchase, propertyLocationState, propertyLocationCity, workingLocationState, workingLocationCity, masterPlan, propertyType, propertiesOwned, referralName, referralNo, usernName, userNo, userMail, currentFinancialName, roi, currentFinanciallocation;
-// export function load({ cookies }) {
-//     home = cookies.get('Requirment');
-//     propertyPurchase = cookies.get('Stage of Property purchase');
-//     propertyLocationState = cookies.get('Property Location (State)');
-//     propertyLocationCity = cookies.get('Property Location (City)');
-//     workingLocationState = cookies.get('Working Location (State)');
-//     workingLocationCity = cookies.get('Working Location (City)');
-//     currentFinancialName = cookies.get('Current Financial Name');
-//     currentFinanciallocation = cookies.get('Current Financial Location');
-//     roi = cookies.get('Current Financial ROI');
-//     referralName = cookies.get('Referral Code (Name)');
-//     referralNo = cookies.get('Referral Code(Mobile No.)');
-//     usernName = cookies.get('User (Name)');
-//     userNo = cookies.get('User (Mobile No.)');
-//     userMail = cookies.get('User (Email)');
 
-// }
 
 export const actions = {
     default: async ({request,cookies }) => {
     const formData = Object.fromEntries(await request.formData());
-    // if (
-    //   !(formData.fileToUpload as File).name ||
-    //   (formData.fileToUpload as File).name === 'undefined'
-    // ) {
-    //   return fail(400, {
-    //     error: true,
-    //     message: 'You must provide a file to upload'
-    //   });
-    // }
+    
     let selectedFile = formData.file ;
     
     
@@ -74,7 +49,7 @@ export const actions = {
       }
     
     let fileUrl = "static/userfiles/"+selectedFile.name;
-    // writeFileSync(`static/userfiles/${selectedFile.name}`, Buffer.from(await selectedFile.arrayBuffer()));
+    writeFileSync(`static/userfiles/${selectedFile.name}`, Buffer.from(await selectedFile.arrayBuffer()));
         home = cookies.get('Requirment');
         propertyPurchase = cookies.get('Stage of Property purchase');
         propertyLocationState = cookies.get('Property Location (State)');

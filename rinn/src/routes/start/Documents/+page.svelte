@@ -13,13 +13,11 @@
   // $: console.log($page.form, $page.status);
   let files;
   $: if (files) {
-    
     // console.log(files);
 
     for (const file of files) {
       // console.log(`${file.name}: ${file.size} bytes`);
     }
-    
   }
   $: if (form?.success) {
     alert("File Uplaoded Successfully");
@@ -36,25 +34,33 @@
 
 <ProgressBar {progress} />
 
-<section class="w-full max-w-md m-auto mb-10 p-10">
-  <label
-    for="state"
-    class="  block mb-8 text-center text-xl font-medium text-gray-900"
-    >Document to upload for loan eligibility...
-  </label>
-  <div class="md:flex md:items-center m-6">
-    <div class="m-auto">
-      <p class="text-center text-gray-500 font-bold text-xl mb-1 md:mb-0 pr-4">
-        3 Months Payslips <br /> <span class="text-2xl text-red-500">OR</span>
-        <br /> 3 years ITR with computation
-      </p>
-    </div>
-  </div>
-
-  <form method="post" use:enhance enctype="multipart/form-data">
-    <div class="flex w-full items-center justify-center bg-grey-lighter mt-20">
+<section class="flex items-center justify-center mb-20">
+  <form
+    class="w-full max-w-screen-sm"
+    id="form"
+    method="Post"
+    use:enhance
+    enctype="multipart/form-data"
+  >
       <label
-        class="w-64 flex flex-col items-center px-2 py-4 bg-white text-green-700 rounded-lg shadow-lg tracking-wide uppercase border border-green-700 cursor-pointer hover:bg-green-700 hover:text-white"
+        for="state"
+        class="  block mb-3 text-center text-xl font-medium text-gray-900"
+        >Document to upload for loan eligibility...
+      </label>
+      <div class="md:flex md:items-center ">
+        <div class="m-auto">
+          <p
+            class="text-center text-gray-500 font-bold text-md mb-1 md:mb-0 pr-4"
+          >
+            3 Months Payslips <br>
+            <span class="text-lg text-red-500">OR</span>
+            <br /> 3 years ITR with computation
+          </p>
+        </div>
+      </div>
+    <div class="flex w-full items-center justify-center bg-grey-lighter mt-5">
+      <label
+        class=" flex   border-4 border-gray-400 rounded-lg cursor-pointer w-64  flex-col items-center px-2 py-4 bg-white text-green-700 shadow-lg tracking-wide uppercase   hover:bg-green-700 hover:text-white"
       >
         <svg class="w-6 h-8" fill="currentColor" viewBox="0 0 20 20">
           <path
@@ -77,13 +83,13 @@
         {files[0].name}
       {/if}
     </div>
-    <div class="md:flex md:items-center">
+    <div class="mx-4 md:flex md:items-center">
       <div class="m-auto">
         <div class="md:w-2/3 my-4">
           <button
             on:change={onChange}
             id="submit"
-            class="shadow bg-green-700 hover:bg-green-600 focus:shadow-outline focus:outline-none text-white font-bold m-auto py-2 px-4 rounded"
+            class="text-[13px] rounded-lg md:text-sm leading-4 inline-flex items-center cursor-pointer transition ease-in-out duration-300 font-semibold font-body text-center justify-center border-0 border-transparent placeholder-white focus-visible:outline-none focus:outline-none bg-gray-600 text-white px-5 md:px-6 lg:px-8 py-4 md:py-3.5 lg:py-4 hover:text-white hover:bg-green-600 hover:shadow-cart h-12 lg:h-14 mt-1 text-sm lg:text-base w-full sm:w-auto"
             type="submit"
             value="next"
           >
