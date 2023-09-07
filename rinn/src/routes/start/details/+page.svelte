@@ -1,88 +1,25 @@
-<script >
-
-// export let data
-// console.log(data)
-// let loading = false
-
-// const {
-//   recaptchaValidStore,
-//   confirmationResultStore,
-//   userStore,
-//   phoneSignIn,
-//   verifyCode,
-//   signOutAsync
-// } = data.auth
-
-// let countryCode = ""
-// let phoneNumberBody = ""
-
-// $: countryCodeValid = countryCode !== null && countryCode.length !== 0
-// $: phoneNumberBodyValid =
-//   phoneNumberBody !== null && phoneNumberBody.length !== 0
-
-// $: phoneNumberFormValid =
-//   $recaptchaValidStore && countryCodeValid && phoneNumberBodyValid && !loading
-
-// async function handlePhoneSubmit() {
-//   if (!phoneNumberFormValid) {
-//     return
-//   }
-
-//   loading = true
-
-//   const fullPhoneNumber = `+${countryCode + phoneNumberBody}`
-
-//   await phoneSignIn(fullPhoneNumber)
-
-//   loading = false
-// }
-
-// let OTPCode = ""
-
-// $: OTPFormValid =
-//   OTPCode !== null &&
-//   OTPCode.length === 6 &&
-//   !loading &&
-//   $confirmationResultStore !== null
-
-// async function handleOTPSubmit() {
-//   if (!OTPFormValid) {
-//     return
-//   }
-
-//   loading = true
-
-//   try {
-//     await verifyCode(OTPCode)
-//   } catch (error) {
-//     console.log(error)
-//   }
-
-//   loading = false
-// }
-
-//  import OtpFirebase from "../../components/otpFirebase.svelte";
-
+<script>
   import { goto } from "$app/navigation";
   import ProgressBar from "../../components/ProgressBar.svelte";
   let progress = 78.65;
-
   function onChange(event) {
-    
-    var inputElement = document.getElementById("inline-full-name");
-    var inputValue1 = inputElement.value;
-    // var inputElement = document.getElementById("inline-Contact");
-    // var inputValue2 = inputElement.value;
-    var inputElement = document.getElementById("inline-email");
-    var inputValue3 = inputElement.value;
+    var inputElement1 = document.getElementById("inline-full-name");
+    var inputValue1 = inputElement1.value;
+    var inputElement2 = document.getElementById("inline-contact");
+    var inputValue2 = inputElement2.value;
+    var inputElement3 = document.getElementById("inline-email");
+    var inputValue3 = inputElement3.value;
     document.cookie = "User (Name)=" + inputValue1;
-    // document.cookie = "User (Mobile No.)=" + inputValue2;
+    document.cookie = "User (Mobile)=" + inputValue2;
     document.cookie = "User (Email)=" + inputValue3;
-
+    console.log(event.currentTarget.value == "next")
     if (event.currentTarget.value == "next") {
+    console.log(inputValue1,inputValue3);
+      
       goto("../start/employment");
     }
   }
+
   let name = "";
   let mobileNumber = "";
   let email = "";
@@ -90,186 +27,125 @@
   let isMobileNumberValid = true;
   let isEmailValid = true;
   function validateName() {
-    // Validate the name field
     isNameValid = name.trim() !== "";
-    handleNext();
   }
 
   function validateMobileNumber() {
     // Remove any non-numeric characters from the input
-    mobileNumber = phoneNumberBody.replace(/\D/g, "");
+    mobileNumber = mobileNumber.replace(/\D/g, "");
 
     // Limit the input to a maximum of 10 digits
-    mobileNumber = phoneNumberBody.slice(0, 10);
+    mobileNumber = mobileNumber.slice(0, 10);
 
     // Validate the mobile number field
-    isMobileNumberValid = phoneNumberBody.length === 10;
-    handleNext();
+    isMobileNumberValid = mobileNumber.length === 10;
   }
 
   function validateEmail() {
-    // Validate the email field using a simple regular expression pattern
     const emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     isEmailValid = emailPattern.test(email.trim());
-    handleNext();
-  }
-
-  function handleNext() {
-    if (isNameValid && isMobileNumberValid && isEmailValid) {
-      document.getElementById("next").disabled = false;
+    if (isEmailValid) {
+      handleButton();
     }
   }
+  let nextButton = true;
+  let handleButton = function handleNext() {
+    if (isNameValid && isMobileNumberValid && isEmailValid) {
+      nextButton = false;
+    }
+  };
 </script>
 
 <ProgressBar {progress} />
-<section class=" max-w-md m-auto md:border mb-20 p-8">
-  <!-- <label
-    for="state"
-    class="  block mb-8 text-center text-xl font-medium text-gray-900"
-    >Your Details...!</label
-  > -->
-  <div class="md:flex md:justify-between mb-6">
-    <div class="">
-      <label
-        class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-        for="inline-full-name"
-      >
-        Full Name : <sup class="text-red-700 text-lg">*</sup>
-      </label>
+<div class="container mb-10 m-auto">
+  <div
+    class="mx-auto sm:w-full md:w-3/5 lg:w-1/2 2xl:w-4/6 flex h-full ltr:md:ml-7 rtl:md:mr-7 flex-col ltr:lg:pl-7 rtl:lg:pr-7"
+  >
+    <div class="md:flex justify-between pb-7 md:pb-9 mt-7 md:-mt-1.5">
+      <h4 class="text-2xl mx-10 2xl:text-3xl font-bold text-heading">
+        Enter Your Details...
+      </h4>
     </div>
-    <div class="">
-      <input
-        class="bg-gray-200 appearance-none border-b-2 border-green-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500"
-        id="inline-full-name"
-        type="text"
-        bind:value={name}
-        on:blur={validateName}
-        placeholder="Enter Your Name"
-        required
-      />
-    </div>
-  </div>
-
-  <!-- <div class="md:flex md:justify-between mb-6">
-    <div class="">
-      <label
-        class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-        for="inline-full-name"
-      >
-        Full Name : <sup class="text-red-700 text-lg">*</sup>
-      </label>
-    </div>
-    <div class="">
-      <input
-        class="bg-gray-200 appearance-none border-b-2 border-green-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500"
-        id="inline-full-name"
-        type="text"
-        bind:value={name}
-        on:blur={validateName}
-        placeholder="Enter Your Name"
-        required
-      />
-    </div>
-  </div> -->
-
-  <div class="md:flex md:justify-between mb-6">
-    <div class="">
-      <label
-        class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-        for="inline-email"
-      >
-        Email ID : <sup class="text-red-700 text-lg">*</sup>
-      </label>
-    </div>
-    <div class="">
-      <input
-        class="bg-gray-200 appearance-none border-b-2 border-green-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500"
-        id="inline-email"
-        type="email"
-        placeholder="abc@gmail.com"
-        bind:value={email}
-        on:input={validateEmail}
-        required
-      />
-    </div>
-  </div>
-  {#if !isEmailValid}
-    <p class="text-red-300 mb-5">Please enter a valid Email Address</p>
-  {/if}
-  <div class="md:flex md:items-center">
-    <button
-      on:click={onChange}
-      class="my-8 px-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-      id="next"
-      value="next"
-      disabled>Next</button
+    <div />
+    <form
+      class="w-11/12 mx-auto flex flex-col justify-center"
+      noValidate
+      id="form"
     >
-  </div>
-  <!-- <div class="flex flex-col space-y-2">
-    <label for="success" class="text-gray-700 select-none font-medium"
-      >Success</label
-    >
-    <input
-      id="success"
-      type="text"
-      name="success"
-      placeholder="Placeholder"
-      class="px-4 py-2 rounded-lg border border-green-500 text-green-600 placeholder-green-600 focus:outline-none focus:ring-2 focus:ring-green-200"
-    />
-  </div>
-  <div class="flex flex-col space-y-2">
-    <label for="error" class="text-gray-700 select-none font-medium"
-      >Error</label
-    >
-    <input
-      id="error"
-      type="text"
-      name="error"
-      placeholder="Placeholder"
-      class="px-4 py-2 rounded-lg border border-red-500 text-red-600 placeholder-red-600 focus:outline-none focus:ring-2 focus:ring-red-200"
-    />
-  </div> -->
-</section>
-<!-- <OtpFirebase data /> -->
+      <div class="flex flex-col px-5 space-y-5">
+        <div class="relative">
+          <label
+            for="inline-full-name"
+            class="block text-gray-600 font-semibold text-sm leading-none mb-3 cursor-pointer"
+          >
+            Your Name (required)
+          </label>
+          <input
+            bind:value={name}
+            on:blur={validateName}
+            id="inline-full-name"
+            type="text"
+            placeholder="Enter Your Name"
+            class="py-2 px-4 md:px-5 w-full appearance-none text-input text-xs lg:text-sm font-body placeholder-body min-h-12 transition duration-200 ease-in-out bg-white focus:outline-none focus:border-heading h-11 md:h-12 flex border-4 border-gray-400 rounded-lg cursor-pointer"
+          />
+        </div>
+        <div class="relative">
+          <label
+            for="inline-contact"
+            class="block text-gray-600 font-semibold text-sm leading-none mb-3 cursor-pointer"
+          >
+            Your Contact No. (required)
+          </label>
+          <input
+            bind:value={mobileNumber}
+            on:input={validateMobileNumber}
+            id="inline-contact"
+            type="tel"
+            placeholder="123-45-678"
+            class="py-2 px-4 md:px-5 w-full appearance-none text-input text-xs lg:text-sm font-body placeholder-body min-h-12 transition duration-200 ease-in-out bg-white focus:outline-none focus:border-heading h-11 md:h-12 flex border-4 border-gray-400 rounded-lg cursor-pointer"
+          />
+          {#if !isMobileNumberValid}
+            <p class="text-red-300 mb-5">
+              Please enter a valid 10-digit mobile number
+            </p>
+          {/if}
+        </div>
+        <div class="relative">
+          <label
+            for="inline-email"
+            class="block text-gray-600 font-semibold text-sm leading-none mb-3 cursor-pointer"
+          >
+            Your Email. (required)
+          </label>
+          <input
+            bind:value={email}
+            on:input={validateEmail}
+            id="inline-email"
+            type="email"
+            placeholder="abc@domain.com"
+            class="py-2 px-4 md:px-5 w-full appearance-none text-input text-xs lg:text-sm font-body placeholder-body min-h-12 transition duration-200 ease-in-out bg-white focus:outline-none focus:border-heading h-11 md:h-12 flex border-4 border-gray-400 rounded-lg cursor-pointer"
+          />
+          {#if !isEmailValid}
+            <p class="text-red-300 mb-5">Please enter a valid Email Address.</p>
+          {/if}
+        </div>
 
-
-<!-- 
-<main>
-  {#if $userStore}
-    <p>Your logged in!</p>
-
-    <button on:click={signOutAsync}>Log Out</button>
-  {:else if $confirmationResultStore}
-    <form on:submit|preventDefault={handleOTPSubmit}>
-      <input type="text" bind:value={OTPCode} />
-
-      <button type="submit" disabled={!OTPFormValid}>Confirm Code</button>
-    </form>
-  {:else}
-    <form on:submit|preventDefault={handlePhoneSubmit}>
-      <div class="phone-number-form">
-        <input type="text" bind:value={countryCode} placeholder="Country" />
-
-        <input
-          type="text"
-          bind:value={phoneNumberBody}
-          placeholder="111-222-3333"
-        />
+        <div class="relative md:m-auto justify-center gap-5">
+          <button
+            on:click|preventDefault={onChange}
+            id="next"
+            value="next"
+            class="text-[13px] rounded-lg md:text-sm leading-4 inline-flex items-center cursor-pointer transition ease-in-out duration-300 font-semibold font-body text-center justify-center border-0 border-transparent placeholder-white focus-visible:outline-none focus:outline-none b text-white px-5 md:px-6 lg:px-8 py-4 md:py-3.5 lg:py-4 hover:text-white hover:bg-gray-600 hover:shadow-cart h-12 lg:h-14 mt-1 text-sm lg:text-base w-full sm:w-auto"
+            disabled={nextButton}
+          >
+            Next
+          </button>
+        </div>
       </div>
-
-      <div id="recaptcha-container" />
-
-      <button
-        id="sign-in-button"
-        type="submit"
-        disabled={!phoneNumberFormValid}
-      >
-        Sign In with Phone Number
-      </button>
     </form>
-  {/if}
-</main>
- -->
+  </div>
+</div>
+
 <style>
   *:disabled {
     background-color: dimgrey;
@@ -280,5 +156,16 @@
     background: rgb(82, 150, 82);
     color: black;
     opacity: 1;
+  }
+  input {
+    padding: 2rem 2rem;
+    text-wrap: pretty;
+    /* height: 100px; */
+    overflow: auto;
+  }
+  input:hover {
+    border-color: green;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
 </style>

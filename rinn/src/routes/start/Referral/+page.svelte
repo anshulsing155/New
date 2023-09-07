@@ -32,7 +32,9 @@
 
     // Validate the mobile number field
     isMobileNumberValid = mobileNumber.length === 10;
-    handleNext();
+    if (isMobileNumberValid){
+      handleNext();
+    }
   }
   function handleNext() {
     const nameSelect = document.getElementById("inline-full-name");
@@ -46,113 +48,103 @@
 </script>
 
 <ProgressBar {progress} />
-<!-- <div class="flex w-72 flex-col gap-6 m-auto">
-  <div class="relative h-11 w-full min-w-[200px]">
-    <input
-      placeholder="Static"
-      class="peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-lg font-semibold text-blue-gray-700  outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-green-500 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
-    />
-    <label for=""
-      class="after:content[' '] pointer-events-none absolute left-0 -top-2.5 flex h-full w-full select-none text-lg font-normal leading-tight text-blue-gray-500 transition-all after:absolute after:-bottom-2.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-green-500 after:transition-transform after:duration-300 peer-placeholder-shown:leading-tight peer-placeholder-shown:text-blue-gray-500 peer-focus:text-lg peer-focus:leading-tight peer-focus:text-green-500 peer-focus:after:scale-x-100 peer-focus:after:border-green-500 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500"
-    >
-      Static
-    </label>
-  </div>
-  <div class="relative h-11 w-full min-w-[200px]">
-    <input
-      class="peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-green-500 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
-      placeholder=" "
-    />
-    <label for=""
-      class="after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-500 transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-green-500 after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-blue-gray-500 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-green-500 peer-focus:after:scale-x-100 peer-focus:after:border-green-500 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500"
-    >
-      Standard
-    </label>
-  </div>
-  <div class="relative h-10 w-full min-w-[200px]">
-    <input
-      class="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-green-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
-      placeholder=" "
-    />
-    <label for=""
-      class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-green-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-green-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-green-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500"
-    >
-      Outlined
-    </label>
-  </div>
-</div> -->
-<section class="flex items-center justify-center mb-20">
-  <form class="w-full max-w-screen-sm" id="form" method="Post">
-    <label class="text-blue-400 float-right">
-      <input
-        on:change={onChange}
-        type="radio"
-        class="hidden"
-        value="next"
-      />Skip Now...
-    </label>
-    <label
-      for="state"
-      class="  block mb-8 text-center text-xl font-medium text-gray-900"
-      >Person who referred you...
-    </label>
-    <div class="md:flex md:items-center mb-6">
-      <div>
-        <label
-          class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-          for="inline-full-name"
-        >
-          Full Name
-        </label>
-      </div>
-      <div>
-        <input
-          bind:value={name}
-          on:blur={validateName}
-          class="flex border-4 border-gray-400 rounded-lg cursor-pointer"
-          id="inline-full-name"
-          type="text"
-          placeholder="Referral Name"
-        />
-      </div>
-    </div>
-    <div class="md:flex md:items-center mb-6">
-      <div>
-        <label
-          class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-          for="inline-Contact"
-        >
-          Contact No.
-        </label>
-      </div>
-      <div>
-        <input
-          bind:value={mobileNumber}
-          on:input={validateMobileNumber}
-          class="flex border-4 border-gray-400 rounded-lg cursor-pointer"
-          id="inline-Contact"
-          type="tel"
-          placeholder="123-45-678"
-        />
-        {#if !isMobileNumberValid}
-          <p class="text-red-300 mb-5">
-            Please enter a valid 10-digit mobile number
-          </p>
-        {/if}
-      </div>
-    </div>
-
-    <div class="md:flex md:items-center">
-      <button
-        on:click={onChange}
-        class="my-5 mx-20 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-        id="next"
-        value="next"
-        disabled>Next</button
+<div class="container mb-10 m-auto">
+  <div
+    class="mx-auto sm:w-full md:w-3/5 lg:w-1/2 2xl:w-4/6 flex h-full ltr:md:ml-7 rtl:md:mr-7 flex-col ltr:lg:pl-7 rtl:lg:pr-7"
+  >
+    <div class="md:flex justify-between pb-7 md:pb-9 mt-7 md:-mt-1.5">
+      <h4 class="text-2xl mx-10 2xl:text-3xl font-bold text-heading">
+        Person who referred you...
+      </h4>
+      <label
+        class="hidden md:flex text-blue-400 font-semibold border-2 py-2 px-4 hover:bg-green-600 hover:text-white rounded-md shadow-lg hover:shadow-green-200 mx-10"
       >
+        <input
+          on:change={onChange}
+          type="radio"
+          class="hidden"
+          value="next"
+        />Skip Now...
+      </label>
     </div>
-  </form>
-</section>
+    <div />
+    <form
+      class="w-11/12 mx-auto flex flex-col justify-center"
+      noValidate
+      id="form"
+      
+    >
+      <div class="flex flex-col px-5 space-y-5">
+        <div class="relative">
+          <label
+            for="inline-full-name"
+            class="block text-gray-600 font-semibold text-sm leading-none mb-3 cursor-pointer"
+          >
+            Your Name (required)
+          </label>
+          <input
+            bind:value={name}
+            on:blur={validateName}
+            id="inline-full-name"
+            type="text"
+            placeholder="Enter Referral Name"
+            class="py-2 px-4 md:px-5 w-full appearance-none text-input text-xs lg:text-sm font-body placeholder-body min-h-12 transition duration-200 ease-in-out bg-white focus:outline-none focus:border-heading h-11 md:h-12 flex border-4 border-gray-400 rounded-lg cursor-pointer"
+            autoComplete="off"
+            spellCheck="false"
+            aria-invalid="false"
+          />
+        </div>
+        <div class="relative">
+          <label
+            for="inline-Contact"
+            class="block text-gray-600 font-semibold text-sm leading-none mb-3 cursor-pointer"
+          >
+            Contact No. (required)
+          </label>
+          <input
+            bind:value={mobileNumber}
+            on:input={validateMobileNumber}
+            id="inline-Contact"
+            type="tel"
+            placeholder="123-45-678"
+            class="py-2 px-4 md:px-5 w-full appearance-none text-input text-xs lg:text-sm font-body placeholder-body min-h-12 transition duration-200 ease-in-out bg-white focus:outline-none focus:border-heading h-11 md:h-12 flex border-4 border-gray-400 rounded-lg cursor-pointer"
+            autoComplete="off"
+            spellCheck="false"
+            aria-invalid="false"
+          />
+          {#if !isMobileNumberValid}
+            <p class="text-red-300 mb-5">
+              Please enter a valid 10-digit mobile number
+            </p>
+          {/if}
+        </div>
+
+        <div class="relative md:m-auto justify-center gap-5">
+          <button
+            on:click|preventDefault={onChange}
+            id="next"
+            value="next"
+            data-variant="flat"
+            class="text-[13px] rounded-lg md:text-sm leading-4 inline-flex items-center cursor-pointer transition ease-in-out duration-300 font-semibold font-body text-center justify-center border-0 border-transparent placeholder-white focus-visible:outline-none focus:outline-none b text-white px-5 md:px-6 lg:px-8 py-4 md:py-3.5 lg:py-4 hover:text-white hover:bg-gray-600 hover:shadow-cart h-12 lg:h-14 mt-1 text-sm lg:text-base w-full sm:w-auto"
+            disabled
+          >
+            Next
+          </button>
+          <label
+            class=" md:hidden text-[13px] rounded-lg md:text-sm leading-4 inline-flex items-center cursor-pointer transition ease-in-out duration-300 font-semibold font-body text-center justify-center border-0 border-transparent placeholder-white focus-visible:outline-none focus:outline-none bg-black text-white px-5 md:px-6 lg:px-8 py-4 md:py-3.5 lg:py-4 hover:text-white hover:bg-gray-600 hover:shadow-cart h-12 lg:h-14 mt-1 text-sm lg:text-base w-full sm:w-auto"
+          >
+            <input
+              on:change={onChange}
+              type="radio"
+              class="hidden"
+              value="next"
+            />Skip Now
+          </label>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
 
 <style>
   *:disabled {
@@ -165,14 +157,15 @@
     color: black;
     opacity: 1;
   }
-  /* label {
+  input {
     padding: 2rem 2rem;
     text-wrap: pretty;
+    /* height: 100px; */
     overflow: auto;
   }
-  label:hover {
+  input:hover {
     border-color: green;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
       0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  } */
+  }
 </style>

@@ -37,7 +37,6 @@
                 id="radio_1"
                 type="radio"
                 name="radio"
-                
                 value="Signed the Agreement with Builder or Seller"
             />
             <label
