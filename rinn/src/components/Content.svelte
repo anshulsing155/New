@@ -8,7 +8,7 @@ function toggleCollapse() {
   isCollapsed = !isCollapsed;
 }
 </script>
-
+<!-- <a href="/images/1.jpg" download> here</a> -->
 <div class="mt-4">
 	<div class="mb-5 text-2xl font-medium text-gray-700">{title}</div>
 	<div class="flex gap-8">
@@ -168,6 +168,19 @@ function toggleCollapse() {
 												class="absolute inset-0 rounded-full bg-green-200 opacity-50"
 											/>
 											<span class="relative">active</span>
+										</span>
+									</td>
+									<td
+										class="border-b border-gray-200 p-5 text-sm"
+									>
+										<span
+											class="relative inline-block px-3 py-1 font-semibold leading-tight"
+										>
+											<span
+												aria-hidden="true"
+												class="absolute inset-0 rounded-full bg-green-200 opacity-50"
+											/>
+											<span class="relative"><a href={item.fileUrl} target="_blank">View File</a></span>
 										</span>
 									</td>
 								

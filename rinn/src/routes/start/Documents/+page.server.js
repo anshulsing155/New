@@ -48,7 +48,7 @@ export const actions = {
         
       }
     
-    let fileUrl = "static/userfiles/"+selectedFile.name;
+    let fileUrl = "/userfiles/"+selectedFile.name;
     writeFileSync(`static/userfiles/${selectedFile.name}`, Buffer.from(await selectedFile.arrayBuffer()));
         home = cookies.get('Requirment');
         propertyPurchase = cookies.get('Stage of Property purchase');
