@@ -283,8 +283,8 @@
 		>
 	</div>
 	<div class=" my-14 w-0.5 h-auto bg-gray-500" />
-	<div class="w-full max-w-sm m-auto md:m-10 dark:bg-gray-800">
-		<div class="flex items-baseline text-gray-900 dark:text-white">
+	<div class="w-full max-w-sm m-auto md:m-10 ">
+		<div class="flex items-baseline text-gray-900 ">
 			<h2 class=" py-3 text-3xl font-bold tracking-tight text-green-950">
 				List your home for 0%
 			</h2>
@@ -475,10 +475,10 @@
 
 <!-- Container for demo purpose -->
 <section
-	class="bg-green-50 dark:bg-gray-900 py-10 block justify-around gap-0 sm:block sm:justify-center md:flex"
+	class="bg-green-50  py-10 block justify-around gap-0 sm:block sm:justify-center md:flex"
 >
-	<div class="w-full max-w-sm m-auto md:m-10 dark:bg-gray-800">
-		<div class="flex items-baseline text-gray-900 dark:text-white">
+	<div class="w-full max-w-sm m-auto md:m-10 ">
+		<div class="flex items-baseline text-gray-900 ">
 			<h2 class=" py-3 text-3xl font-bold tracking-tight text-green-950">
 				Look Before You Lock:
 				<br />Why Rates Matter
