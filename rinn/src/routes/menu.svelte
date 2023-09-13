@@ -1,10 +1,26 @@
 <script>
     import "../app.css";
+    import { home, balance } from "./start/store";
+	import { goto } from "$app/navigation";
+	
     let isOpen = true;
 
     function toggleMenu() {
         isOpen = !isOpen;
     }
+    function startButton(values){
+		document.cookie = "Requirment=" + values;
+        home.set(values);
+		if (values == "Buy A Home") {
+            goto("../start/home-loan");
+           
+        } else if (values == "Refinance") {
+            goto("../start/Property-Location");
+        } else if (values == "LAP") {
+            balance.set(true);
+            goto("../start/Property-Location");
+        }
+	}
 </script>
 
 <div class="w-full bg-gray-100">
@@ -102,9 +118,10 @@
                         >
                             <br />
                             <li class="hover:bg-gray-200">
-                                <a
+                                <button
+                                on:click={()=>startButton("Buy A Home")}
                                     class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal"
-                                    href="/start">Apply Now</a
+                                    >Apply Now</button
                                 >
                             </li>
                             <li class="hover:bg-gray-200">
@@ -151,9 +168,10 @@
                         >
                             <br />
                             <li class="hover:bg-gray-200">
-                                <a
+                                <button
+                                on:click={()=>startButton("Refinance")}
                                     class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal"
-                                    href="/start">Apply Now</a
+                                    >Apply Now</button
                                 >
                             </li>
                             <li class="hover:bg-gray-200">
@@ -192,9 +210,10 @@
                         >
                             <br />
                             <li class="hover:bg-gray-200 block">
-                                <a
+                                <button
+                                on:click={()=>startButton("LAP")}
                                     class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal"
-                                    href="/start">Apply Now</a
+                                    >Apply Now</button
                                 >
                             </li>
 

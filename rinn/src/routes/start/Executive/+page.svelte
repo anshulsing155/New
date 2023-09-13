@@ -62,7 +62,7 @@
                         <span
                             class="border rounded border-gray-500 p-1 bg-green-700"
                         >
-                            Call Now</span
+                        <a href="tel:1234567890">Call Now</a> </span
                         >
                     </div>
                     <!-- <div class="text-sm text-gray-300 hover:text-gray-400 cursor-pointer md:absolute pt-3 md:pt-0 bottom-0 right-0">Last Seen: <b>2 days ago</b></div> -->

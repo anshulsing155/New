@@ -374,7 +374,7 @@
 
 <div class=" block justify-around gap-0 sm:block sm:justify-center md:flex">
 	<div class=" m-10">
-		<h3 class="text-6xl font-bold my-10">Today’s <br /> mortgage rates</h3>
+		<h3 class=" text-2xl sm:text-4xl md:text-6xl font-bold my-10">Today’s <br /> mortgage rates</h3>
 		<p class="mb-10 w-full md:w-1/2 text-gray-700">
 			Tap that green button to see your personalized mortgage rates and
 			custom mortgage recommendation.

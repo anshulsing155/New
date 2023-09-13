@@ -11,7 +11,7 @@
 <Menu />
 <section class=" bg-green-50">
     <main class="container m-auto">
-    <div class="  ">
+    <div class=" m-auto ">
         <div class="inline-flex ">
             <button
                 class="inline-flex rounded-md px-3 py-2 text-5xl font-bold text-green-700"
@@ -75,11 +75,11 @@
         </p>
     </div>
     <div>
-        <h2 class="mx-20 px-3 mt-8">
-            <div class="text-green-700 font-normal text-5xl m-3">
+        <h2 class="m-20 p-3 mt-8">
+            <div class="text-green-700 font-normal text-2xl sm:text-4xl md:text-6xl m-3">
                 No commissions.
             </div>
-            <div class="text-blue-800 font-normal text-5xl m-3 font-sans">
+            <div class="text-blue-800 font-normal text-2xl sm:text-4xl md:text-6xl m-3 font-sans">
                 Fast pre-approval, with no hard credit pull.
             </div>
         </h2>
