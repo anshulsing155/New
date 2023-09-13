@@ -24,7 +24,7 @@
 </script>
 
 <Menu />
-<section class=" mt-0 bg-green-50 dark:bg-gray-900">
+<section class=" mt-0 bg-green-50">
 	<div
 		class="w-11/12 grid max-w-screen-xl px-4 py-8 m-auto lg:gap-5 xl:gap-0 lg:py-16 lg:grid-cols-12"
 	>
@@ -35,17 +35,17 @@
 				Introducing
 			</p>
 			<h1
-				class="max-w-2xl text-green-900 opacity-90 mb-1 text-3xl font-bold tracking-tight leading-none md:text-4xl xl:text-5xl dark:text-white"
+				class="max-w-2xl text-green-900 opacity-90 mb-1 text-3xl font-bold tracking-tight leading-none md:text-4xl xl:text-5xl"
 			>
 				One Day Mortgage
 			</h1>
 			<h1
-				class="max-w-2xl text-green-700 mb-4 text-3xl tracking-tight leading-none md:text-4xl xl:text-5xl dark:text-white"
+				class="max-w-2xl text-green-700 mb-4 text-3xl tracking-tight leading-none md:text-4xl xl:text-5xl"
 			>
 				exclusively at rinn.in
 			</h1>
 			<p
-				class="max-w-md mb-2 font-light text-gray-500 lg:mb-3 md:text-lg lg:text-xl dark:text-gray-400"
+				class="max-w-md mb-2 font-light text-gray-500 lg:mb-3 md:text-lg lg:text-xl"
 			>
 				Instead of waiting weeks, now you can lock a rate, share some
 				financial info, and get a loan Commitment Letter within the next
@@ -109,10 +109,10 @@
 </section>
 <!-- Product Details section -->
 <section
-	class="bg-green-50 dark:bg-gray-900 py-10 block justify-around gap-0 sm:block sm:justify-center md:flex"
+	class="bg-green-50 py-10 block justify-around gap-0 sm:block sm:justify-center md:flex"
 >
-	<div class="w-full max-w-sm m-auto md:m-10 dark:bg-gray-800">
-		<div class="flex items-baseline text-gray-900 dark:text-white">
+	<div class="w-full max-w-sm m-auto md:m-10">
+		<div class="flex items-baseline text-gray-900">
 			<h2 class=" py-3 text-3xl font-bold tracking-tight text-green-950">
 				Real Estate Agents
 			</h2>
@@ -126,7 +126,7 @@
 				<!-- Icon -->
 				<svg
 					aria-hidden="true"
-					class="flex-shrink-0 w-5 h-5 text-green-600 opacity-60 dark:text-blue-500"
+					class="flex-shrink-0 w-5 h-5 text-green-600 opacity-60"
 					fill="currentColor"
 					viewBox="0 0 20 20"
 					xmlns="http://www.w3.org/2000/svg"
@@ -137,7 +137,7 @@
 					/></svg
 				>
 				<span
-					class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"
+					class="text-base font-normal leading-tight text-gray-500"
 					>₹2k off rinn.in Mortgage closing costs 
 				</span>
 			</li>
@@ -145,7 +145,7 @@
 				<!-- Icon -->
 				<svg
 					aria-hidden="true"
-					class="flex-shrink-0 w-5 h-5 text-green-600 opacity-60 dark:text-blue-500"
+					class="flex-shrink-0 w-5 h-5 text-green-600 opacity-60"
 					fill="currentColor"
 					viewBox="0 0 20 20"
 					xmlns="http://www.w3.org/2000/svg"
@@ -156,7 +156,7 @@
 					/></svg
 				>
 				<span
-					class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"
+					class="text-base font-normal leading-tight text-gray-500"
 					>Selling? List your home for 0%</span
 				>
 			</li>
@@ -164,7 +164,7 @@
 				<!-- Icon -->
 				<svg
 					aria-hidden="true"
-					class="flex-shrink-0 w-5 h-5 text-green-600 opacity-60 dark:text-blue-500"
+					class="flex-shrink-0 w-5 h-5 text-green-600 opacity-60"
 					fill="currentColor"
 					viewBox="0 0 20 20"
 					xmlns="http://www.w3.org/2000/svg"
@@ -175,13 +175,13 @@
 					/></svg
 				>
 				<span
-					class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"
+					class="text-base font-normal leading-tight text-gray-500"
 					>Non-commissioned Agents</span
 				>
 			</li>
 			<li class="flex space-x-3">
 				<span
-					class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"
+					class="text-base font-normal leading-tight text-gray-500"
 					><img
 						src="/img/compimg.png"
 						alt=""
@@ -192,13 +192,13 @@
 		</ul>
 		<button
 			type="button"
-			class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-900 font-medium rounded-lg text-sm px-5 py-3 inline-flex justify-center w-full text-center"
+			class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-200 font-medium rounded-lg text-sm px-5 py-3 inline-flex justify-center w-full text-center"
 			>Learn More</button
 		>
 	</div>
 	<div class=" my-14 w-0.5 h-auto bg-gray-500" />
-	<div class="w-full max-w-sm m-auto md:m-10 dark:bg-gray-800">
-		<div class="flex items-baseline text-gray-900 dark:text-white">
+	<div class="w-full max-w-sm m-auto md:m-10">
+		<div class="flex items-baseline text-gray-900">
 			<h2 class=" py-3 text-3xl font-bold tracking-tight text-green-950">
 				Digital home loans
 			</h2>
@@ -212,7 +212,7 @@
 				<!-- Icon -->
 				<svg
 					aria-hidden="true"
-					class="flex-shrink-0 w-5 h-5 text-green-600 opacity-60 dark:text-blue-500"
+					class="flex-shrink-0 w-5 h-5 text-green-600 opacity-60"
 					fill="currentColor"
 					viewBox="0 0 20 20"
 					xmlns="http://www.w3.org/2000/svg"
@@ -223,7 +223,7 @@
 					/></svg
 				>
 				<span
-					class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"
+					class="text-base font-normal leading-tight text-gray-500"
 					>Apply 100% online, on your schedule.
 				</span>
 			</li>
@@ -231,7 +231,7 @@
 				<!-- Icon -->
 				<svg
 					aria-hidden="true"
-					class="flex-shrink-0 w-5 h-5 text-green-600 opacity-60 dark:text-blue-500"
+					class="flex-shrink-0 w-5 h-5 text-green-600 opacity-60"
 					fill="currentColor"
 					viewBox="0 0 20 20"
 					xmlns="http://www.w3.org/2000/svg"
@@ -242,7 +242,7 @@
 					/></svg
 				>
 				<span
-					class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"
+					class="text-base font-normal leading-tight text-gray-500 "
 					>No commissions</span
 				>
 			</li>
@@ -250,7 +250,7 @@
 				<!-- Icon -->
 				<svg
 					aria-hidden="true"
-					class="flex-shrink-0 w-5 h-5 text-green-600 opacity-60 dark:text-blue-500"
+					class="flex-shrink-0 w-5 h-5 text-green-600 opacity-60"
 					fill="currentColor"
 					viewBox="0 0 20 20"
 					xmlns="http://www.w3.org/2000/svg"
@@ -261,13 +261,13 @@
 					/></svg
 				>
 				<span
-					class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"
+					class="text-base font-normal leading-tight text-gray-500"
 					>Close 17 days faster than industry avg.
 				</span>
 			</li>
 			<li class="flex space-x-3">
 				<span
-					class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"
+					class="text-base font-normal leading-tight text-gray-500"
 					><img
 						src="/img/house-isolated-field.jpg"
 						alt=""
@@ -278,7 +278,7 @@
 		</ul>
 		<button
 			type="button"
-			class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-900 font-medium rounded-lg text-sm px-5 py-3 inline-flex justify-center w-full text-center"
+			class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-200 font-medium rounded-lg text-sm px-5 py-3 inline-flex justify-center w-full text-center"
 			>Get pre-approved</button
 		>
 	</div>
@@ -299,7 +299,7 @@
 				<!-- Icon -->
 				<svg
 					aria-hidden="true"
-					class="flex-shrink-0 w-5 h-5 text-green-600 opacity-60 dark:text-blue-500"
+					class="flex-shrink-0 w-5 h-5 text-green-600 opacity-60"
 					fill="currentColor"
 					viewBox="0 0 20 20"
 					xmlns="http://www.w3.org/2000/svg"
@@ -310,7 +310,7 @@
 					/></svg
 				>
 				<span
-					class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"
+					class="text-base font-normal leading-tight text-gray-500"
 					>Buy before you sell</span
 				>
 			</li>
@@ -318,7 +318,7 @@
 				<!-- Icon -->
 				<svg
 					aria-hidden="true"
-					class="flex-shrink-0 w-5 h-5 text-green-600 opacity-60 dark:text-blue-500"
+					class="flex-shrink-0 w-5 h-5 text-green-600 opacity-60"
 					fill="currentColor"
 					viewBox="0 0 20 20"
 					xmlns="http://www.w3.org/2000/svg"
@@ -329,7 +329,7 @@
 					/></svg
 				>
 				<span
-					class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"
+					class="text-base font-normal leading-tight text-gray-500"
 					>Stress-free homebuying</span
 				>
 			</li>
@@ -337,7 +337,7 @@
 				<!-- Icon -->
 				<svg
 					aria-hidden="true"
-					class="flex-shrink-0 w-5 h-5 text-green-600 opacity-60 dark:text-blue-500"
+					class="flex-shrink-0 w-5 h-5 text-green-600 opacity-60"
 					fill="currentColor"
 					viewBox="0 0 20 20"
 					xmlns="http://www.w3.org/2000/svg"
@@ -348,13 +348,13 @@
 					/></svg
 				>
 				<span
-					class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"
+					class="text-base font-normal leading-tight text-gray-500 "
 					>Partner with expert local agents</span
 				>
 			</li>
 			<li class="flex space-x-3">
 				<span
-					class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"
+					class="text-base font-normal leading-tight text-gray-500 "
 					><img
 						src="/img/formalboy.jpg"
 						alt=""
@@ -365,7 +365,7 @@
 		</ul>
 		<button
 			type="button"
-			class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-900 font-medium rounded-lg text-sm px-5 py-3 inline-flex justify-center w-full text-center"
+			class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-200  font-medium rounded-lg text-sm px-5 py-3 inline-flex justify-center w-full text-center"
 			>Learn More</button
 		>
 	</div>
@@ -381,7 +381,7 @@
 		</p>
 		<button
 			type="button"
-			class=" text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-900 font-medium rounded-lg text-lg px-10 py-5 inline-flex justify-center text-center"
+			class=" text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-200  font-medium rounded-lg text-lg px-10 py-5 inline-flex justify-center text-center"
 			><a href="/mortgage-rates/purchase">See Your Rates</a></button
 		>
 	</div>
@@ -459,7 +459,7 @@
 			</p>
 			<button
 				type="button"
-				class=" text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-900 font-medium rounded-lg text-lg px-10 py-5 inline-flex justify-center text-center"
+				class=" text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-200 font-medium rounded-lg text-lg px-10 py-5 inline-flex justify-center text-center"
 				><a href="/mortgage-rates/purchase">See Your Rates</a></button
 			>
 		</div>
@@ -493,7 +493,7 @@
 		<ul role="list" class="space-y-5 my-7">
 			<li class="flex space-x-3">
 				<span
-					class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"
+					class="text-base font-normal leading-tight text-gray-500"
 					><img
 						src="/img/look-before-you-lock.jpeg"
 						alt=""
@@ -504,13 +504,13 @@
 		</ul>
 		<button
 			type="button"
-			class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-900 font-medium rounded-lg text-sm px-5 py-3 inline-flex justify-center w-full text-center"
+			class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-200  font-medium rounded-lg text-sm px-5 py-3 inline-flex justify-center w-full text-center"
 			>Learn More</button
 		>
 	</div>
 	<div class=" my-14 w-0.5 h-auto bg-gray-500" />
-	<div class="w-full max-w-sm m-auto md:m-10 dark:bg-gray-800">
-		<div class="flex items-baseline text-gray-900 dark:text-white">
+	<div class="w-full max-w-sm m-auto md:m-10 ">
+		<div class="flex items-baseline text-gray-900 ">
 			<h2 class=" py-3 text-3xl font-bold tracking-tight text-green-950">
 				
 What’s a Good DTI for a Home Loan?
@@ -523,7 +523,7 @@ What’s a Good DTI for a Home Loan?
 		<ul role="list" class="space-y-5 my-7">
 			<li class="flex space-x-3">
 				<span
-					class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"
+					class="text-base font-normal leading-tight text-gray-500 "
 					><img
 						src="/img/whats-a-good-dti-for-home-loan.jpeg"
 						alt=""
@@ -534,13 +534,13 @@ What’s a Good DTI for a Home Loan?
 		</ul>
 		<button
 			type="button"
-			class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-900 font-medium rounded-lg text-sm px-5 py-3 inline-flex justify-center w-full text-center"
+			class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-200  font-medium rounded-lg text-sm px-5 py-3 inline-flex justify-center w-full text-center"
 			>Learn More</button
 		>
 	</div>
 	<div class=" my-14 w-0.5 h-auto bg-gray-500" />
-	<div class="w-full max-w-sm m-auto md:m-10 dark:bg-gray-800">
-		<div class="flex items-baseline text-gray-900 dark:text-white">
+	<div class="w-full max-w-sm m-auto md:m-10 ">
+		<div class="flex items-baseline text-gray-900 ">
 			<h2 class=" py-3 text-3xl font-bold tracking-tight text-green-950">
 				
 Understanding Your Down Payment
@@ -553,7 +553,7 @@ Understanding Your Down Payment
 		<ul role="list" class="space-y-5 my-7">
 			<li class="flex space-x-3">
 				<span
-					class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"
+					class="text-base font-normal leading-tight text-gray-500"
 					><img
 						src="/img/understanding-your-down-payment.jpeg"
 						alt=""
@@ -564,7 +564,7 @@ Understanding Your Down Payment
 		</ul>
 		<button
 			type="button"
-			class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-900 font-medium rounded-lg text-sm px-5 py-3 inline-flex justify-center w-full text-center"
+			class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-200  font-medium rounded-lg text-sm px-5 py-3 inline-flex justify-center w-full text-center"
 			>Learn More</button
 		>
 	</div>
