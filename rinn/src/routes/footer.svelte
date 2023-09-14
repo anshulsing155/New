@@ -140,7 +140,7 @@
           </p>
         </div>
         <!-- Products section -->
-        <div class="ml-14">
+        <div class="md:ml-14">
           <h6
             class="mb-6 flex justify-left font-semibold uppercase md:justify-start"
           >
@@ -178,7 +178,7 @@
           </p>
         </div>
         <!-- Useful links section -->
-        <div class="ml-14">
+        <div class="md:ml-14">
           <h6
             class="mb-6 flex justify-left font-semibold uppercase md:justify-start"
           >
@@ -211,7 +211,7 @@
           </p>
         </div>
         <!-- Contact section -->
-        <div class="ml-10">
+        <div class="md:ml-10">
           <h6
             class="mb-6 flex justify-left font-semibold uppercase md:justify-start"
           ><a class="group text-lg transition-all duration-300 ease-in-out" href="/">

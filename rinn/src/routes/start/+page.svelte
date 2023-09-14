@@ -3,44 +3,14 @@
     import { balance } from "./store.js";
     import { home } from "./store.js";
     import ProgressBar from "../components/ProgressBar.svelte";
-    // import { formValue } from "./formData.js";
-    // import { onMount } from "svelte";
-    // // let inputValue;
-    // formValue.subscribe((value) => {
-    //     inputValue = value;
-    // });
-    // import { MongoClient } from "mongodb"
-// import { parse } from 'cookie';
-// import { DB_URI } from '$env/static/public';
-// DB_UR = process.env('DB_URI');
-// import { DB_URI } from 'dotenv';
-
-// const DB_URI='mongodb+srv://rinn:rinn@dev-cluster.s2g8r6v.mongodb.net/';
-
-// const client = new MongoClient(DB_URI)
-
-// export async function connect() {
-//     try {
-//       await client.connect();
-//       console.log('Connected to MongoDB');
-//     } catch (error) {
-//       console.error('Failed to connect to MongoDB:', error);
-//     }
-//   }
     
     let progress = 0;
     function onChange(event) {
-    //     event.preventDefault();
-    //     const data = new FormData(event.value);
-    //     const values = Object.fromEntries(data.entries());
-    //    let newValue =  JSON.stringify(values)
-    //     console.log({ newValue });
+   
         let value = event.currentTarget.value;
         document.cookie = "Requirment=" + value;
         home.set(value);
-        // $formValue = [...$formValue, {
-		// 	name: value
-		// }];
+       
         
 
         if (event.currentTarget.value == "Home Loan") {
@@ -52,12 +22,8 @@
             balance.set(true);
             goto("../start/Property-Location");
         }
-        // document.getElementById("form").submit();
     }
-//     onMount(async () => {
-//         const form = document.querySelector('form');
-//   form.addEventListener('submit', onChange);
-//   });
+
   
     
 </script>
