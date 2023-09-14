@@ -111,7 +111,7 @@
 <section
 	class="bg-green-50 py-10 block justify-around gap-0 sm:block sm:justify-center md:flex"
 >
-	<div class="w-full max-w-sm m-auto md:m-10">
+	<div class="w-full p-5 max-w-sm m-auto md:m-10">
 		<div class="flex items-baseline text-gray-900">
 			<h2 class=" py-3 text-3xl font-bold tracking-tight text-green-950">
 				Real Estate Agents
@@ -197,7 +197,7 @@
 		>
 	</div>
 	<div class=" my-14 w-0.5 h-auto bg-gray-500" />
-	<div class="w-full max-w-sm m-auto md:m-10">
+	<div class="w-full p-5 max-w-sm m-auto md:m-10">
 		<div class="flex items-baseline text-gray-900">
 			<h2 class=" py-3 text-3xl font-bold tracking-tight text-green-950">
 				Digital home loans
@@ -283,7 +283,7 @@
 		>
 	</div>
 	<div class=" my-14 w-0.5 h-auto bg-gray-500" />
-	<div class="w-full max-w-sm m-auto md:m-10 ">
+	<div class="w-full p-5 max-w-sm m-auto md:m-10 ">
 		<div class="flex items-baseline text-gray-900 ">
 			<h2 class=" py-3 text-3xl font-bold tracking-tight text-green-950">
 				List your home for 0%
@@ -385,8 +385,8 @@
 			><a href="/mortgage-rates/purchase">See Your Rates</a></button
 		>
 	</div>
-	<div class="w-auto m-10 p-10 md:w-2/3 bg-gray-100 rounded-2xl">
-		<h3 class="m-auto p-10 text-2xl opacity-60 font-semibold">
+	<div class="m-5 p-5 md:w-2/3 bg-gray-100 rounded-2xl">
+		<h3 class="m-auto p-5 text-2xl opacity-60 font-semibold">
 			Hey, we currently don’t have service in your area. We will notify
 			you when we are there.
 		</h3>
@@ -477,7 +477,7 @@
 <section
 	class="bg-green-50  py-10 block justify-around gap-0 sm:block sm:justify-center md:flex"
 >
-	<div class="w-full max-w-sm m-auto md:m-10 ">
+	<div class="w-full p-5 max-w-sm m-auto md:m-10 ">
 		<div class="flex items-baseline text-gray-900 ">
 			<h2 class=" py-3 text-3xl font-bold tracking-tight text-green-950">
 				Look Before You Lock:
@@ -509,7 +509,7 @@
 		>
 	</div>
 	<div class=" my-14 w-0.5 h-auto bg-gray-500" />
-	<div class="w-full max-w-sm m-auto md:m-10 ">
+	<div class="w-full p-5 max-w-sm m-auto md:m-10 ">
 		<div class="flex items-baseline text-gray-900 ">
 			<h2 class=" py-3 text-3xl font-bold tracking-tight text-green-950">
 				
@@ -539,7 +539,7 @@ What’s a Good DTI for a Home Loan?
 		>
 	</div>
 	<div class=" my-14 w-0.5 h-auto bg-gray-500" />
-	<div class="w-full max-w-sm m-auto md:m-10 ">
+	<div class="w-full p-5 max-w-sm m-auto md:m-10 ">
 		<div class="flex items-baseline text-gray-900 ">
 			<h2 class=" py-3 text-3xl font-bold tracking-tight text-green-950">
 				
