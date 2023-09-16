@@ -4,7 +4,7 @@
 	import Footer from "./footer.svelte";
 	import { home, balance } from "./start/store";
 	import { goto } from "$app/navigation";
-	
+	export let data;
     //###########################
 	function startButton(values){
 		document.cookie = "Requirment=" + values;
@@ -23,7 +23,8 @@
 	
 </script>
 
-<Menu />
+<Menu data={data}/>
+
 <section class=" mt-0 bg-green-50">
 	<div
 		class="w-11/12 grid max-w-screen-xl px-4 py-8 m-auto lg:gap-5 xl:gap-0 lg:py-16 lg:grid-cols-12"
@@ -69,19 +70,7 @@
 			</button>
 
 			<div class="grid grid-cols-2">
-				<!-- <a on:click={()=>myfun('Balance transfer')}
-					href="/start/Property-Location" 
-					class=" mx-2 items-center justify-center py-5 mr-3 text-base font-medium text-center text-white rounded-lg bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 dark:focus:ring-green-900"
-				>
-				    
-					Refinance
-				</a>
-				<a on:click={()=>myfun('LAP')}
-					href="/start/Property-Location"
-					class="  mx-2 items-center justify-center py-5 mr-3 text-base font-medium text-center text-white rounded-lg bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 dark:focus:ring-green-900"
-				>
-					LAP
-				</a> -->
+				
 				<button on:click={()=>startButton("Refinance")}
 					class=" items-center justify-center py-5 text-base font-medium text-center text-white rounded-lg bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 "
 				>
@@ -197,9 +186,9 @@
 		>
 	</div>
 	<div class=" my-14 w-0.5 h-auto bg-gray-500" />
-	<div class="w-full p-5 max-w-sm m-auto md:m-10">
-		<div class="flex items-baseline text-gray-900">
-			<h2 class=" py-3 text-3xl font-bold tracking-tight text-green-950">
+	<div class="w-full p-5 border-2 sm:border-0 max-w-sm m-auto md:m-10">
+		<div class="flex  items-baseline text-gray-900">
+			<h2 class=" py-3 text-3xl  font-bold tracking-tight text-green-950">
 				Digital home loans
 			</h2>
 		</div>

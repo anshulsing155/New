@@ -4,7 +4,7 @@
    
 </script>
 
-<Menu />
+<Menu data/>
 <section class="bg-white-50 lg:flex">
     <div class="container w-1/2 mx-24 mt-14  ">
         <div class="text-green-700 font-semibold ml-8 text-xl">

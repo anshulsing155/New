@@ -5,10 +5,12 @@
     function toggleDropdown() {
         isOpen = !isOpen;
     }
+    export let data;
+
     const date = new Date();
 </script>
 
-<Menu />
+<Menu data={data}/>
 <section class=" bg-green-50">
     <main class="container m-auto">
     <div class=" m-auto ">

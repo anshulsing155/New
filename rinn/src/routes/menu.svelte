@@ -2,7 +2,19 @@
     import "../app.css";
     import { home, balance } from "./start/store";
 	import { goto } from "$app/navigation";
-	
+	export let data;
+    console.log(data.Requirment);
+    function handleClick(){
+        if(data.Requirment == "Home Loan"){
+            goto('/start/home-loan')
+        }
+        if (data.Requirment == "Balance Transfer") {
+           goto('/start/Property-Location'); 
+        } 
+        else {
+            goto("/start");
+        }
+    }
     let isOpen = true;
 
     function toggleMenu() {
@@ -22,7 +34,6 @@
         }
 	}
 </script>
-
 <div class="w-full bg-gray-100">
     <div
         class="container flex flex-row justify-center sm:justify-between m-auto w-11/12 p-5"
@@ -58,10 +69,11 @@
                     class="hidden sm:block text-gray-800  hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 font-medium border rounded-lg text-md px-4 lg:px-5 py-2 lg:py-2.5 mr-2  focus:outline-none "
                     >Sign In</a
                 >
-                <a
-                    href="/start"
+
+                <button
+                    on:click={handleClick}
                     class="text-black hover:text-white border hover:bg-green-600 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-lg px-4 lg:px-5 py-2 lg:py-2.5 mr-2   focus:outline-none "
-                    >Get Started</a
+                    >{data.visited ? 'Continue' : 'Get Started'}</button
                 >
                 <button
                     on:click={toggleMenu}
@@ -104,6 +116,7 @@
                 >
                     <li class="dropdown flex">
                         <button
+                        
                             class="btn py-2 pr-4 pl-3 rounded bg-primary-700 lg:bg-transparent lg:text-gray-700 lg:p-0 flex"
                             >Buy or Sell 
                             

@@ -4,7 +4,7 @@
     
    
 </script>
-<Menu />
+<Menu data/>
 
 <!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
 <section class=" container m-auto bg-white-50">
