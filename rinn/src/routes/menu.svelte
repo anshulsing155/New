@@ -3,36 +3,36 @@
     import { home, balance } from "./start/store";
 	import { goto } from "$app/navigation";
 	export let data;
-    console.log(data.Requirment);
-    function handleClick(){
-        if(data.Requirment == "Home Loan"){
-            goto('/start/home-loan')
-        }
-        if (data.Requirment == "Balance Transfer") {
-           goto('/start/Property-Location'); 
-        } 
-        else {
-            goto("/start");
-        }
-    }
+    // console.log(data.Requirment);
+    // function handleClick(){
+    //     if(data.Requirment == "Home Loan"){
+    //         goto('/start/home-loan')
+    //     }
+    //     if (data.Requirment == "Balance Transfer") {
+    //        goto('/start/Property-Location'); 
+    //     } 
+    //     else {
+    //         goto("/start");
+    //     }
+    // }
     let isOpen = true;
 
     function toggleMenu() {
         isOpen = !isOpen;
     }
-    function startButton(values){
-		document.cookie = "Requirment=" + values;
-        home.set(values);
-		if (values == "Buy A Home") {
-            goto("../start/home-loan");
+    // function startButton(values){
+	// 	document.cookie = "Requirment=" + values;
+    //     home.set(values);
+	// 	if (values == "Buy A Home") {
+    //         goto("../start/home-loan");
            
-        } else if (values == "Refinance") {
-            goto("../start/Property-Location");
-        } else if (values == "LAP") {
-            balance.set(true);
-            goto("../start/Property-Location");
-        }
-	}
+    //     } else if (values == "Refinance") {
+    //         goto("../start/Property-Location");
+    //     } else if (values == "LAP") {
+    //         balance.set(true);
+    //         goto("../start/Property-Location");
+    //     }
+	// }
 </script>
 <div class="w-full bg-gray-100">
     <div
@@ -70,10 +70,12 @@
                     >Sign In</a
                 >
 
-                <button
-                    on:click={handleClick}
+                <a
+                href="/start"
                     class="text-black hover:text-white border hover:bg-green-600 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-lg px-4 lg:px-5 py-2 lg:py-2.5 mr-2   focus:outline-none "
-                    >{data.visited ? 'Continue' : 'Get Started'}</button
+                    >Get Started
+                    <!-- {data.visited ? 'Continue' : 'Get Started'} -->
+                    </a
                 >
                 <button
                     on:click={toggleMenu}
@@ -248,13 +250,56 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
+                    <li class="dropdown flex">
+                        <button
+                            class="flex btn py-2 pr-4 pl-3 rounded bg-primary-700 lg:bg-transparent lg:text-gray-700 lg:p-0 "
+                            >Checklist & Calculators <div class="btn-hover caret my-5 mx-3 mt-3"/></button
+                        >
+
+                        <ul
+                            class="dropdown-menu mt-10 absolute hidden bg-white z-50 py-2 w-60 text-gray-700"
+                        >
+
+                            <li class="hover:bg-gray-200">
+                                <a
+                                    class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal"
+                                    href="/mortgage-calculator/home-loan-emi-calculator"
+                                >
+                                Home Loan EMI Calculator
+                                </a>
+                            </li>
+                            <li class="hover:bg-gray-200">
+                                <a
+                                    class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal"
+                                    href="/mortgage-calculator/home-loan-eligibility-calculator"
+                                >
+                                Home Loan Eligibility Calculator </a
+                                >
+                            </li>
+                            <li class="hover:bg-gray-200">
+                                <a
+                                    class="rounded-t hover:bg-gray-200 py-4 px-6 block whitespace-normal"
+                                    href="/mortgage-calculator/home-loan-balance-transfer-calculator"
+                                >
+                                Home Loan Balance Transfer Calculator </a
+                                >
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- <li>
                         <a
                             href="/mortgage-rates/purchase"
                             class="block mt-0 py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 "
                             >Rates</a
                         >
-                    </li>
+                    </li> -->
+                    <!-- <li>
+                        <a
+                            href="/mortgage-calculator"
+                            class="block mt-0 py-2 pr-4 pl-3 text-gray-700 hover:text-green-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 "
+                            >Checklist & Calculators</a
+                        >
+                    </li> -->
                 </ul>
             </div>
         </div>
