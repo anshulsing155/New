@@ -6,4 +6,4 @@
 	<title>Archived Messages</title>
 </svelte:head>
 
-<Content title="Archived Messages" />
+<Content title="Archived Messages" data />

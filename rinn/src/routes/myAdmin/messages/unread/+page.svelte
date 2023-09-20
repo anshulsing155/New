@@ -6,4 +6,4 @@
 	<title>Unread Messages</title>
 </svelte:head>
 
-<Content title="Unread Messages" />
+<Content title="Unread Messages" data/>

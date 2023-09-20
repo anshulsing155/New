@@ -6,4 +6,4 @@
 	<title>Unbox Messages</title>
 </svelte:head>
 
-<Content title="Unbox Messages" />
+<Content title="Unbox Messages" data />

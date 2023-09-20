@@ -6,4 +6,4 @@
 	<title>Travel Documents</title>
 </svelte:head>
 
-<Content title="Travel Documents" />
+<Content title="Travel Documents" data />

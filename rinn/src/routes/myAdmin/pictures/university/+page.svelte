@@ -6,4 +6,4 @@
 	<title>University Pictures</title>
 </svelte:head>
 
-<Content title="University Pictures" />
+<Content title="University Pictures" data />

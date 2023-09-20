@@ -6,4 +6,4 @@
 	<title>Networking Events</title>
 </svelte:head>
 
-<Content title="Networking Events" />
+<Content title="Networking Events" data/>

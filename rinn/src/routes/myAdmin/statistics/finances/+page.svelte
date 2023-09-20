@@ -7,4 +7,4 @@
 	<title>Finance Statistics</title>
 </svelte:head>
 
-<Content title="Finance Statistics" />
+<Content title="Finance Statistics" data />

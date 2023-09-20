@@ -6,4 +6,4 @@
 	<title>Taxes Documents</title>
 </svelte:head>
 
-<Content title="Taxes Documents" />
+<Content title="Taxes Documents"data />

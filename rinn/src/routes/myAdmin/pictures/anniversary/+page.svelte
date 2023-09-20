@@ -6,4 +6,4 @@
 	<title>Anniversary Pictures</title>
 </svelte:head>
 
-<Content title="Anniversary Pictures" />
+<Content title="Anniversary Pictures" data />

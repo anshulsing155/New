@@ -7,4 +7,4 @@
 	<title>Call Stats</title>
 </svelte:head>
 
-<Content title="Call Stats" />
+<Content title="Call Stats" data/>

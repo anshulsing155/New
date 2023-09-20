@@ -6,4 +6,4 @@
 	<title>Weddings Events</title>
 </svelte:head>
 
-<Content title="Weddings Events" />
+<Content title="Weddings Events" data/>

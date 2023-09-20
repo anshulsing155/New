@@ -6,4 +6,4 @@
 	<title>Vacation Pictures</title>
 </svelte:head>
 
-<Content title="Vacation Pictures" />
+<Content title="Vacation Pictures" data />
