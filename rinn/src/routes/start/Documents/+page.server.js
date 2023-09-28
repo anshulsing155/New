@@ -38,7 +38,8 @@ export const actions = {
             const fileDate = '' + currentDay + currentMonth + currentYear + currentHour + currentMinute + currentSecond;
             const newName = fileDate + '_' + selectedFile.name;
             selectedFile = new File([selectedFile.name], newName);
-            await writeFile(`static/userfiles/${selectedFile.name}`, new Uint8Array(await selectedFile.arrayBuffer()));
+            await writeFile(`static/userfiles/${selectedFile.name}`, await selectedFile.text());
+            // await writeFile(`static/userfiles/${selectedFile.name}`, new Uint8Array(await selectedFile.arrayBuffer()));
             // writeFile(`static/userfiles/${selectedFile.name}`, Buffer.from(await selectedFile.arrayBuffer()));
         }
         let fileUrl = "userfiles/" + selectedFile.name;
