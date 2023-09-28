@@ -48,7 +48,7 @@ export const actions = {
     
     
     // console.log(fileUrl);
-    writeFileSync(`static/userfiles/${selectedFile.name}`, Buffer.from(await selectedFile.arrayBuffer()));
+    // writeFileSync(`static/userfiles/${selectedFile.name}`, Buffer.from(await selectedFile.arrayBuffer()));
 }    
 let fileUrl = "/userfiles/"+selectedFile.name;
 console.log(fileUrl);
