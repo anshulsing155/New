@@ -1,4 +1,4 @@
-<!-- <script>
+<script>
 	export let title;
 	export let data;
 	
@@ -8,6 +8,7 @@ function toggleCollapse() {
   isCollapsed = !isCollapsed;
 }
 </script>
+<!-- <a href="/images/1.jpg" download> here</a> -->
 <div class="mt-4">
 	<div class="mb-5 text-2xl font-medium text-gray-700">{title}</div>
 	<div class="flex gap-8">
@@ -128,7 +129,15 @@ function toggleCollapse() {
 										class="border-b border-gray-200 p-5 text-sm"
 									>
 										<div class="flex items-center">
-										
+											<!-- <div class="shrink-0">
+											<a href="#" class="relative block">
+												<img
+													alt="profil"
+													src="https://res.cloudinary.com/beloved/image/upload/v1623196231/Assets/person/8_yfarwk.jpg"
+													class="mx-auto h-10 w-10 rounded-full object-cover"
+												/>
+											</a>
+										</div> -->
 											<div class="ml-3">
 												<p class="whitespace-nowrap">
 													{item.usernName}
@@ -288,6 +297,7 @@ function toggleCollapse() {
 	</div>
 </div>
 <div class="container my-24 mx-auto md:px-6 xl:px-24">
+	<!-- Section: Design Block -->
 	<section class="mb-32">
 		<h2 class="mb-6 pl-6 text-3xl font-bold">Frequently asked questions</h2>
 
@@ -401,4 +411,5 @@ function toggleCollapse() {
 			</div>
 		</div>
 	</section>
-</div> -->
+	<!-- Section: Design Block -->
+</div>
