@@ -1,8 +1,6 @@
 import { config } from 'dotenv';
 import { MongoClient } from 'mongodb';
-import { writeFileSync} from 'node:fs';
-
-
+import { writeFile } from 'fs/promises';
 
 async function connectToCluster() {
     let mongoClient;
@@ -40,7 +38,8 @@ export const actions = {
             const fileDate = '' + currentDay + currentMonth + currentYear + currentHour + currentMinute + currentSecond;
             const newName = fileDate + '_' + selectedFile.name;
             selectedFile = new File([selectedFile.name], newName);
-            writeFileSync(`static/userfiles/${selectedFile.name}`, Buffer.from(await selectedFile.arrayBuffer()));
+            await writeFile(`static/userfiles/${selectedFile.name}`, new Uint8Array(await selectedFile.arrayBuffer()));
+            // writeFile(`static/userfiles/${selectedFile.name}`, Buffer.from(await selectedFile.arrayBuffer()));
         }
         let fileUrl = "userfiles/" + selectedFile.name;
 
