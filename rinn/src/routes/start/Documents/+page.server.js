@@ -43,12 +43,7 @@ export const actions = {
   
         const newName = fileDate + '_' + selectedFile.name;
         selectedFile = new File([selectedFile.name], newName);
-        
-      
-    
-    
-    // console.log(fileUrl);
-    // writeFileSync(`static/userfiles/${selectedFile.name}`, Buffer.from(await selectedFile.arrayBuffer()));
+    writeFileSync(`/userfiles/${selectedFile.name}`, Buffer.from(await selectedFile.arrayBuffer()));
 }    
 let fileUrl = "/userfiles/"+selectedFile.name;
 console.log(fileUrl);
