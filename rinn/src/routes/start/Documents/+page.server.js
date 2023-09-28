@@ -1,5 +1,6 @@
 import { config } from 'dotenv';
 import { MongoClient } from 'mongodb';
+import { Console } from 'node:console';
 import  {writeFileSync}  from 'node:fs';
 
 
@@ -19,16 +20,12 @@ async function connectToCluster() {
     }
 }
 
-let home, propertyPurchase, propertyLocationState, propertyLocationCity, workingLocationState, workingLocationCity, masterPlan, propertyType, propertiesOwned, referralName, referralNo, usernName, userNo, userMail, currentFinancialName, roi, currentFinanciallocation;
-
-
 export const actions = {
     default: async ({request,cookies }) => {
     const formData = Object.fromEntries(await request.formData());
     
     let selectedFile = formData.file ;
-    
-    
+    console.log(selectedFile);
     if (selectedFile) {
         // Create a new Date object to get the current date and time
         const currentDate = new Date();
@@ -45,28 +42,34 @@ export const actions = {
         
   
         const newName = fileDate + '_' + selectedFile.name;
-        selectedFile = new File([selectedFile], newName);
+        selectedFile = new File([selectedFile.name], newName);
         
-      }
+      
     
-    let fileUrl = "/userfiles/"+selectedFile.name;
+    
+    // console.log(fileUrl);
     writeFileSync(`static/userfiles/${selectedFile.name}`, Buffer.from(await selectedFile.arrayBuffer()));
-        let data = cookies.get();
-        console.log(data);
-        home = cookies.get('Requirment');
-        propertyPurchase = cookies.get('Stage of Property purchase');
-        propertyLocationState = cookies.get('Property Location (State)');
-        propertyLocationCity = cookies.get('Property Location (City)');
-        workingLocationState = cookies.get('Working Location (State)');
-        workingLocationCity = cookies.get('Working Location (City)');
-        currentFinancialName = cookies.get('Current Financial Name');
-        currentFinanciallocation = cookies.get('Current Financial Location');
-        roi = cookies.get('Current Financial ROI');
-        referralName = cookies.get('Referral Code (Name)');
-        referralNo = cookies.get('Referral Code(Mobile No.)');
-        usernName = cookies.get('User (Name)');
-        userNo = cookies.get('User (Mobile No.)');
-        userMail = cookies.get('User (Email)');
+}    
+let fileUrl = "/userfiles/"+selectedFile.name;
+console.log(fileUrl);
+
+        const home = cookies.get('Requirment');
+        const propertyPurchase = cookies.get('Stage of Property purchase');
+        const propertyLocationState = cookies.get('Property Location (State)');
+        const propertyLocationCity = cookies.get('Property Location (City)');
+        const workingLocationState = cookies.get('Working Location (State)');
+        const workingLocationCity = cookies.get('Working Location (City)');
+        const currentFinancialName = cookies.get('Current Financial Name');
+        const currentFinanciallocation = cookies.get('Current Financial Location');
+        const masterPlan = cookies.get("Is it part of Master plan of City");
+        const propertyType = cookies.get("Type of Property");
+        const propertiesOwned = cookies.get("No. of properties already owned")
+        const roi = cookies.get('Current Financial ROI');
+        const referralName = cookies.get('Referral Code (Name)');
+        const referralNo = cookies.get('Referral Code(Mobile No.)');
+        const usernName = cookies.get('User (Name)');
+        const userNo = cookies.get('User (Mobile No.)');
+        const userMail = cookies.get('User (Email)');
         async function executeStudentCrudOperations() {
             // const uri = process.env.DB_URI;
             let mongoClient;
@@ -118,76 +121,3 @@ export const actions = {
     }
     
 }
-
-// export const actions = {
-//     default: async ({ request }) => {
-//         const formData = await request.formData();
-//         async function executeStudentCrudOperations() {
-//             const uri = process.env.DB_URI;
-//             let mongoClient;
-
-//             try {
-//                 mongoClient = await connectToCluster(uri);
-//                 const db = mongoClient.db('form');
-//                 const collection = db.collection('formData');
-//                 console.log('CREATE User');
-//                 await createStudentDocument(collection);
-//             } finally {
-//                 await mongoClient.close();
-//             }
-//         }
-//         async function createStudentDocument(collection) {
-//             const studentDocument = {
-//                 home,
-//                 propertyPurchase,
-//                 propertyLocationState,
-//                 propertyLocationCity,
-//                 workingLocationState,
-//                 workingLocationCity,
-//                 masterPlan,
-//                 propertyType,
-//                 propertiesOwned,
-//                 referralName,
-//                 referralNo,
-//                 usernName,
-//                 userNo,
-//                 userMail,
-//                 currentFinancialName,
-//                 roi,
-//                 currentFinanciallocation
-
-
-
-//             };
-
-//             await collection.insertOne(studentDocument);
-//         }
-
-
-//         config();
-//         await executeStudentCrudOperations();
-//     }
-// }
-
-// export const actions = {
-//   default: async ({ request }) => {
-//     const formData = Object.fromEntries(await request.formData());
- 
-    // if (
-    //   !(formData.fileToUpload as File).name ||
-    //   (formData.fileToUpload as File).name === 'undefined'
-    // ) {
-    //   return fail(400, {
-    //     error: true,
-    //     message: 'You must provide a file to upload'
-    //   });
-    // }
- 
-    // const { fileToUpload } = formData as { fileToUpload: File };
-    // writeFileSync(`static/userfiles/${fileToUpload.name}`, Buffer.from(await fileToUpload.arrayBuffer()));
-    
-    // return {
-    //   success: true
-    // };
-//   }
-// };
