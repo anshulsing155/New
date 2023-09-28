@@ -1,7 +1,4 @@
 <script>
- export let data;
-    
-console.log("hrere" +data.file);
 </script>
 <!-- <iframe style="background: #F1F5F4;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);width: 100%;height: 70vh;"  src="https://charts.mongodb.com/charts-project-0-gvcjt/embed/dashboards?id=65114b2e-0c8b-4a2c-8900-49e31083983c&theme=light&autoRefresh=true&maxDataAge=3600&showTitleAndDesc=false&scalingWidth=fixed&scalingHeight=fixed"></iframe> -->
 <div class="text-xl text-center font-medium m-8">
