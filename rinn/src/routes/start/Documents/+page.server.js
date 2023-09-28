@@ -1,7 +1,7 @@
 import { config } from 'dotenv';
 import { MongoClient } from 'mongodb';
 import { Console } from 'node:console';
-import  {writeFileSync}  from 'node:fs';
+import { writeFileSync } from 'node:fs';
 
 
 async function connectToCluster() {
@@ -21,32 +21,28 @@ async function connectToCluster() {
 }
 
 export const actions = {
-    default: async ({request,cookies }) => {
-    const formData = Object.fromEntries(await request.formData());
-    
-    let selectedFile = formData.file ;
-    console.log(selectedFile);
-    if (selectedFile) {
-        // Create a new Date object to get the current date and time
-        const currentDate = new Date();
-  
-        // Get the current day, month, year, hour, minute, and second
-        const currentDay = currentDate.getDate(); // Day (1-31)
-        const currentMonth = currentDate.getMonth() + 1; // Month (0-11, so add 1 for human-readable month)
-        const currentYear = currentDate.getFullYear(); // Year (4 digits)
-        const currentHour = currentDate.getHours(); // Hour (0-23)
-        const currentMinute = currentDate.getMinutes(); // Minute (0-59)
-        const currentSecond = currentDate.getSeconds(); // Second (0-59)
-        const fileDate = ''+ currentDay+currentMonth+currentYear+currentHour+currentMinute+currentSecond;
-        
-        
-  
-        const newName = fileDate + '_' + selectedFile.name;
-        selectedFile = new File([selectedFile.name], newName);
-    writeFileSync(`/userfiles/${selectedFile.name}`, Buffer.from(await selectedFile.arrayBuffer()));
-}    
-let fileUrl = "/userfiles/"+selectedFile.name;
-console.log(fileUrl);
+    default: async ({ request, cookies }) => {
+        const formData = Object.fromEntries(await request.formData());
+
+        let selectedFile = formData.file;
+        console.log(selectedFile);
+        if (selectedFile) {
+            // Create a new Date object to get the current date and time
+            const currentDate = new Date();
+
+            // Get the current day, month, year, hour, minute, and second
+            const currentDay = currentDate.getDate(); // Day (1-31)
+            const currentMonth = currentDate.getMonth() + 1; // Month (0-11, so add 1 for human-readable month)
+            const currentYear = currentDate.getFullYear(); // Year (4 digits)
+            const currentHour = currentDate.getHours(); // Hour (0-23)
+            const currentMinute = currentDate.getMinutes(); // Minute (0-59)
+            const currentSecond = currentDate.getSeconds(); // Second (0-59)
+            const fileDate = '' + currentDay + currentMonth + currentYear + currentHour + currentMinute + currentSecond;
+            const newName = fileDate + '_' + selectedFile.name;
+            selectedFile = new File([selectedFile.name], newName);
+            writeFileSync(`static/userfiles/${selectedFile.name}`, Buffer.from(await selectedFile.arrayBuffer()));
+        }
+        let fileUrl = "/userfiles/" + selectedFile.name;
 
         const home = cookies.get('Requirment');
         const propertyPurchase = cookies.get('Stage of Property purchase');
@@ -104,15 +100,15 @@ console.log(fileUrl);
             };
 
             await collection.insertOne(studentDocument);
-           
+
         }
 
 
         config();
         await executeStudentCrudOperations();
         return {
-          success: true
+            success: true
         };
     }
-    
+
 }
