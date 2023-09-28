@@ -31,7 +31,7 @@
                 value="Salaried"
             />
             <label
-                class="flex border-4 border-gray-400 rounded-lg cursor-pointer"
+                class="flex border border-gray-400 rounded-lg cursor-pointer"
                 for="radio_1"
             >
                 <span class=" my-auto flex"
@@ -75,7 +75,7 @@
                         </g></svg
                     ></span
                 >
-                <p class="text-lg mx-4 my-auto">Salaried</p>
+                <p class="text-lg mx-4 my-auto font-semibold">Salaried</p>
             </label>
         </div>
         <div class="m-10">
@@ -88,7 +88,7 @@
                 value="Self Employed Businessman"
             />
             <label
-                class="flex border-4 border-gray-400 rounded-lg cursor-pointer"
+                class="flex border border-gray-400 rounded-lg cursor-pointer"
                 for="radio_2"
             >
                 <span class=" my-auto flex"
@@ -115,7 +115,7 @@
                         </g></svg
                     ></span
                 >
-                <p class="text-lg mx-4 my-auto">Self Employed Businessman</p>
+                <p class="text-lg mx-4 my-auto font-semibold">Self Employed Businessman</p>
             </label>
         </div>
         <div class="m-10">
@@ -128,7 +128,7 @@
                 value="Self employed Professional"
             />
             <label
-                class="flex border-4 border-gray-400 rounded-lg cursor-pointer"
+                class="flex border border-gray-400 rounded-lg cursor-pointer"
                 for="radio_3"
             >
                 <span class=" my-auto flex"
@@ -180,7 +180,7 @@
                         </g></svg
                     ></span
                 >
-                <p class="text-lg mx-4 my-auto">Self employed Professional</p>
+                <p class="text-lg mx-4 my-auto font-semibold">Self employed Professional</p>
             </label>
         </div>
         <div class="m-10">
@@ -193,7 +193,7 @@
                 value="Retired"
             />
             <label
-                class="flex border-4 border-gray-400 rounded-lg cursor-pointer"
+                class="flex border border-gray-400 rounded-lg cursor-pointer"
                 for="radio_3"
             >
                 <span class=" my-auto flex"
@@ -238,7 +238,7 @@
                         </g></svg
                     ></span
                 >
-                <p class="text-lg mx-4 my-auto">Retired</p>
+                <p class="text-lg mx-4 my-auto font-semibold">Retired</p>
             </label>
         </div>
     </form>
@@ -246,14 +246,26 @@
 
 <style>
     label {
-        padding: 2rem 2rem;
+        padding: 1rem 1rem;
         text-wrap: pretty;
         /* height: 100px; */
         overflow: auto;
     }
     label:hover {
-        border-color: green;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-            0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 0 0 4px  #017a4e inset;
+
+        color: #017848;
+    }
+    label:active {
+        background-color: #017a4e;
+        color: white;
+    }
+    label:active svg {
+        fill: white;
+        stroke: white;
+    }
+    label:active svg path {
+        fill: white;
+        stroke: white;
     }
 </style>

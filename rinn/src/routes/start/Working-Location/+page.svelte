@@ -31,25 +31,19 @@
 
     
 
-    // Function to populate city options based on selected state
+
     function populateCities() {
         const stateSelect = document.getElementById("state");
         const citySelect = document.getElementById("city");
         const selectedState = stateSelect.value;
 
-        // Clear previous city options
+        
         citySelect.innerHTML = "<option value=''>-- Select a City --</option>";
         if (selectedState !== "") {
-            // let cities = Data1[selectedState];
+            
             const keys = Object.keys(Data1[selectedState]);
-            console.log(keys);
-            // for (const i in cities) {
-            //     console.log(i)
-            //     const option = document.createElement("option");
-            //     option.value = cities[i];
-            //     option.text = cities[i];
-            //     citySelect.appendChild(option);
-            // }
+            
+           
             for (const i of keys) {
                 console.log(i);
                 const option = document.createElement("option");
@@ -60,29 +54,10 @@
 
 
 
-            // for ( let i in keys[0]) {
-                
-            //     const option = document.createElement("option");
-            //     option.value = i;
-            //     option.text = i;
-
-            //     citySelect.appendChild(option);
-            // }
+            
         }
         citySelect.addEventListener("change", handleNext);
     }
-    //     if (selectedState !== "") {
-    //         let city = data[selectedState];
-    //         const cities = city.sort();
-    //         for (let i = 0; i < cities.length; i++) {
-    //             const option = document.createElement("option");
-    //             option.value = cities[i];
-    //             option.text = cities[i];
-    //             citySelect.appendChild(option);
-    //         }
-    //     }
-    //     citySelect.addEventListener( 'change',handleNext)
-    // }
     
     function handleNext(){
         const citySelect = document.getElementById("city");
@@ -97,7 +72,7 @@
 <ProgressBar {progress} />
 
 <div class="flex container m-auto items-center justify-center mb-20">
-    <form class="w-full font-medium p-10 max-w-screen-sm" id="form" >
+    <form class="w-full font-medium max-w-screen-sm" id="form" >
             <label
                 for="state"
                 class=" block mb-4 text-center text-xl text-gray-900"
@@ -110,7 +85,7 @@
         <select
             id="state"
             on:change={populateCities}
-            class="p-5 mb-8 bg-gray-50 border-4 border-gray-300 hover:border-green-700 text-green-800 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full"
+            class="p-5 mb-8 bg-gray-50 border border-gray-300 text-green-800 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full"
         ><option class="">Select Working State</option>
         
             {#each newState as item}
@@ -124,13 +99,13 @@
         
         <select
             id="city"
-            class="p-5 mb-8 bg-gray-50 border-4 border-gray-300 hover:border-green-700 text-green-800 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full"
+            class="p-5 mb-8 bg-gray-50 border border-gray-300  text-green-800 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full"
         >
             <option value="">Select Working City</option>
         </select>
         <button
             on:click|preventDefault={onChange}
-            class="w-full m-auto p-5 mb-8 bg-gray-50 rounded-full  text-green-800 text-lg  focus:ring-blue-500 focus:border-blue-500 block "
+            class="w-full m-auto p-5 mb-8  rounded-full  text-green-800 text-lg  focus:ring-blue-500 focus:border-blue-500 block "
             id="next"
             value="next"
             disabled>Next</button
@@ -141,16 +116,30 @@
             
 <style>
     *:disabled {
-        background-color: dimgrey;
+        background-color: darkgray;
         color: linen;
         opacity: 1;
     }
     #next:enabled {
-        background: rgb(22, 175, 22);
+        background: #017a4e;
         color: white;
         opacity: 1;
+        
     }
     select {
 	appearance: none;
-}
+    }
+    select:hover{
+        box-shadow: 0 0 0 4px  #017a4e inset;
+
+        color: #017848;
+    }
+    #next:enabled:active{
+        background: #005c53;
+        color: white;
+
+    }
+    
+   
+
 </style>

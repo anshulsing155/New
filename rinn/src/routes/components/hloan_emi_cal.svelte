@@ -164,9 +164,9 @@ $: arr_val=[
     
    
 </script>
-
-<section class=" bg-green-50">
-    <div class="container m-auto py-10">
+<hr>
+<section class=" bg-white">
+    <div class="container m-auto ">
         <div class=" text-center py-10 px-10">
             <p class=" text-5xl font-bold">Home Loan EMI Calculator</p>
         </div>
@@ -190,14 +190,15 @@ $: arr_val=[
                 </div>
                 
                 <input
+                    
                     type="range"
                     bind:value={val_1}
                     min="10000"
                     max={val_max_1}
                     step="1"
-                    class="w-full"
+                    class="w-full accent-emerald-600 "
                 />
-                <div class=" flex justify-between bg-slate-50">
+                <div class=" flex justify-between">
                     <div class=" m-2">₹ 1 lac</div>
                     <div class="m-2">₹100cr</div>
                 </div>
@@ -205,7 +206,10 @@ $: arr_val=[
                 <div class="flex justify-between mt-4">
                     <h4>Tenure (Years)</h4>
 
-                    <input class=" border-2 w-10" on:change={myfun_emi_val_2} type=" number" bind:value={val_2} />
+                    <label for="year">Yr.
+                        <input class=" border-2 w-10" on:change={myfun_emi_val_2} type=" number" bind:value={val_2} />
+                    </label>
+                    
                 </div>
 
                 <input
@@ -215,17 +219,19 @@ $: arr_val=[
                     min="1"
                     max={val_max_2}
                     step="1"
-                    class="w-full"
+                    class="w-full accent-emerald-600"
                 />
-                <div class=" flex justify-between bg-slate-50">
+                <div class=" flex justify-between">
                     <div class=" m-2">1 yr.</div>
                     <div class="m-2">30 yr.</div>
                 </div>
                 <!---progress bar3-->
                 <div class="flex justify-between mt-4">
                     <h4>Interest Rate (% P.A.)</h4>
-
-                    <input class=" border-2 w-12" on:change={myfun_emi_val_3} type="" bind:value={val_3} />
+                    <label for="rate">Rate(%) 
+                        <input class=" border-2 w-12" on:change={myfun_emi_val_3} type="" bind:value={val_3} />
+                    </label>
+                    
                 </div>
 
                 <input
@@ -235,16 +241,16 @@ $: arr_val=[
                     min="0.01"
                     max={val_max_3}
                     step=".01"
-                    class="w-full"
+                    class="w-full accent-emerald-600"
                 />
-                <div class=" flex justify-between bg-slate-50">
+                <div class=" flex justify-between ">
                     <div class=" m-2">0.01</div>
                     <div class="m-2">15</div>
                 </div>
             </div>
             <div class="ml-8 mt-4 bg-fixed">
                 <p class="lg:px-28">Monthly Home Loan EMI</p>
-                <p class="lg:px-28 text-4xl text-blue-800 font-semibold">
+                <p class="lg:px-28 text-4xl text-green-700 font-semibold">
                     <sup>₹</sup>{emi_cal}
                 </p>
                 <p class="lg:px-28 font-semibold mt-2">Principal Amount</p>
@@ -266,7 +272,7 @@ $: arr_val=[
                 </p>
                 <p class="lg:px-28 font-semibold">Need more information?</p>
                 <button
-                    class=" hover:bg-blue-800 lg:ml-24 mt-4 bg-blue-600 rounded-xl px-14 py-4 text-white"
+                    class=" hover:bg-green-800 lg:ml-24 mt-4 bg-green-700 rounded-xl px-14 py-4 text-white"
                     >Talk to our Loan Export</button
                 >
             </div>
@@ -275,16 +281,16 @@ $: arr_val=[
         <p class="mt-8 py-3 px-8">These calculators are provided only as general self-help Planning Tools. Results depend on many factors, including the assumptions you provide. We do not guarantee their <br> accuracy, or applicability to your circumstances.</p>
         <p class=" font-bold px-8 italic">NRIs should input net income.</p>
         <h2 class=" font-bold text-2xl mt-6 px-8">Home Loan EMI Calculator</h2>
-        <p class="mt-4 px-8  font-normal"> Home loan calculator helps you calculate your Home Loan Emi with ease.EMI calculator for a home loan can help you make an informed decision about<br>
-             buying a new house. The EMI calculator is useful in planning your cashflows for servicing your home loan. home loans with EMIs starting from ₹769 per lac <br>
-              and interest rates starting from 8.50%* p.a. with additional features such as flexible repayment options and top-up loan. With a low-interest rate and long repayment tenure,<br>
-               we ensure a comfortable home loan EMI for you. With our reasonable EMIs, Home loan is lighter on your pocket. Calculate the EMI that you will be required to<br>
+        <p class="mt-4 px-8  font-normal"> Home loan calculator helps you calculate your Home Loan Emi with ease.EMI calculator for a home loan can help you make an informed decision about
+             buying a new house. The EMI calculator is useful in planning your cashflows for servicing your home loan. home loans with EMIs starting from ₹769 per lac 
+              and interest rates starting from 8.50%* p.a. with additional features such as flexible repayment options and top-up loan. With a low-interest rate and long repayment tenure,
+               we ensure a comfortable home loan EMI for you. With our reasonable EMIs, Home loan is lighter on your pocket. Calculate the EMI that you will be required to
                 pay for your home loan with our easy to understand home loan EMI calculator.</p>
 
         <p class="mt-6 px-8 text-2xl font-bold">What is Home Loan EMI Calculator?</p>
-        <p class="mt-4 px-8">Home Loan EMI Calculator assists in calculation of the loan installment i.e. EMI towards your home loan. It an easy to use calculator and acts as  a financial planning tool <br> for a home buyer.</p>  
+        <p class="mt-4 px-8">Home Loan EMI Calculator assists in calculation of the loan installment i.e. EMI towards your home loan. It an easy to use calculator and acts as  a financial planning tool  for a home buyer.</p>  
         <p class="mt-6 px-8 font-bold text-2xl">What is Home Loan EMI?</p> 
-        <p class="mt-4 px-8 ">EMI stands for Equated Monthly Installment. It includes repayment of the principal amount and payment of the interest on the outstanding amount of your home loan.<br> A longer loan tenure (for a maximum period of 30 years) helps in reducing the EMI.</p>     
+        <p class="mt-4 px-8 ">EMI stands for Equated Monthly Installment. It includes repayment of the principal amount and payment of the interest on the outstanding amount of your home loan. A longer loan tenure (for a maximum period of 30 years) helps in reducing the EMI.</p>     
         <p class="mt-6 px-8 font-bold text-2xl">Illustration: How is EMI on Loan Calculated?</p>
         <p class="mt-4 px-8 font-bold text-base">Formula for EMI Calculation is -</p>
         <p class="mt-4 px-8 font-bold text-base">P x R x (1+R)^N / [(1+R)^N-1] where-</p>
@@ -302,11 +308,11 @@ $: arr_val=[
         <p class="mt-3 px-8">For example, If a person avails a loan of ₹10,00,000 at an annual interest rate of 7.2% for a tenure of 120 months (10 years), then his EMI will be calculated as under:
         </p> 
         <p class="mt-4 px-8 font-bold text-xl">EMI= ₹10,00,000 * 0.006 * (1 + 0.006)120 / ((1 + 0.006)120 - 1) = ₹11,714.</p>   
-        <p class=" mt-2 px-8 gap-2">The total amount payable will be ₹11,714 * 120 = ₹14,05,703. Principal loan amount is ₹10,00,000 and the Interest amount will be ₹4,05,703 <br>
-            Calculating the EMI manually using the formula can be tedious. <br>
+        <p class=" mt-2 px-8 gap-2">The total amount payable will be ₹11,714 * 120 = ₹14,05,703. Principal loan amount is ₹10,00,000 and the Interest amount will be ₹4,05,703 
+            Calculating the EMI manually using the formula can be tedious. 
             EMI Calculator can help you calculate your loan EMI with ease.</p>
         <p class="mt-6 px-8 font-bold text-2xl">How does EMI calculation help in planning the home purchase?</p>    
-        <p class="mt-3 px-8">Home Loan EMI calculator gives a clear understanding of the amount that needs to be paid towards the EMIs and helps make an informed decision about the outflow  <br> towards  the housing loan every month. This helps estimate the loan amount that can be availed and helps in assessing the own contribution requirements and cost of<br> the property. Therefore knowing the EMI is crucial for calculation of home loan eligibility and planning your home buying journey better.</p>
+        <p class="mt-3 px-8">Home Loan EMI calculator gives a clear understanding of the amount that needs to be paid towards the EMIs and helps make an informed decision about the outflow  towards  the housing loan every month. This helps estimate the loan amount that can be availed and helps in assessing the own contribution requirements and cost of the property. Therefore knowing the EMI is crucial for calculation of home loan eligibility and planning your home buying journey better.</p>
         <p class="mt-8 px-8 font-bold text-2xl">What are  Home Loans Key Features and Benefits?</p>
         <div class=" mt-6 px-16">
             <ul class="list-disc">
@@ -333,20 +339,20 @@ $: arr_val=[
 
             </ul>
         </div>
-        <p class="font-bold text-2xl mt-10 px-8"><a href="#" class=" hover:text-green-800 text-blue-800">Click here</a> to Know the Prevailing Home Loan Interest Rates</p>
+        <p class="font-bold text-2xl mt-10 px-8"><a href="#" class=" hover:text-green-800 underline text-green-700">Click here</a> to Know the Prevailing Home Loan Interest Rates</p>
         <p class="mt-4 px-8 font-bold text-2xl">What is Home Loan Amortization Schedule?</p>
-        <p class="mt-4 px-8">Loan amortization is the process of reducing the debt with regular payments over the loan period. A home loan amortization<br> 
+        <p class="mt-4 px-8">Loan amortization is the process of reducing the debt with regular payments over the loan period. A home loan amortization
             schedule is a table giving the details of the repayment amount, principal and interest component.</p>
-        <p class=" px-8 mt-8">EMI calculators give a fair understanding about the ratio of the principal amount to the interest due, based on the loan tenure and interest rates. EMI calculator <br> also provides an  amortization table elucidating the repayment schedule.
+        <p class=" px-8 mt-8">EMI calculators give a fair understanding about the ratio of the principal amount to the interest due, based on the loan tenure and interest rates. EMI calculator also provides an  amortization table elucidating the repayment schedule.
              home loan calculator provides a complete break-up of the interest and principal amount.</p> 
         <p class=" mt-4 px-8 font-bold text-2xl">Various Repayment Plans enhancing Home Loan Eligibility:</p> 
         <div class="mt-8 px-10">
             
             <li class="px-4">Step Up Repayment Facility (SURF)</li>
-            <p class="mt-2">SURF offers an option where the repayment schedule is linked to the expected growth in your income. You can avail a higher amount of loan and pay lower EMIs in<br> the initial years.
+            <p class="mt-2">SURF offers an option where the repayment schedule is linked to the expected growth in your income. You can avail a higher amount of loan and pay lower EMIs in the initial years.
                  Subsequently, the repayment is accelerated proportionately with the assumed increase in your income.</p>
             <li class="px-4 mt-4">Flexible Loan Installments Plan (FLIP)</li>
-            <p class="mt-2">FLIP offers a customized solution to suit your repayment capacity which is likely to alter during the term of the loan. The loan is structured in such a way that <br>the EMI is higher during the initial years and subsequently decreases in proportion to the income.</p>
+            <p class="mt-2">FLIP offers a customized solution to suit your repayment capacity which is likely to alter during the term of the loan. The loan is structured in such a way that the EMI is higher during the initial years and subsequently decreases in proportion to the income.</p>
             <li class="px-4 mt-4">Tranche Based EMI</li>
             <p class="mt-2">If you purchase an under construction property you are generally required to service only the interest on the loan amount drawn till the final disbursement of the loan and pay<br> EMIs thereafter. In case you wish to start principal repayment immediately you may opt to tranche the loan and start paying EMIs on the cumulative amounts disbursed.</p>
             <li class="px-4 mt-4">Accelerated Repayment Scheme</li>
@@ -361,15 +367,15 @@ $: arr_val=[
         </div>       
     
         <p class=" font-bold text-3xl mt-8 px-8">What is a Pre-Approved Home Loan?</p>
-        <p class=" mt-3 px-8">A facility of a pre-approved home loan even before you have identified your dream home. A <a href="#" class=" font-bold text-blue-800 hover:text-green-900 underline"> pre-approved home loan </a> is an in-principal approval for a loan given on the basis of your income, creditworthiness and financial position.</p>
-        <p class="px-8 mt-4">Apply for a home loan online with HDFC Bank, click <a href="#" class=" font-bold text-blue-800 underline  hover:text-green-900"> Apply Online</a></p>
+        <p class=" mt-3 px-8">A facility of a pre-approved home loan even before you have identified your dream home. A <a href="#" class=" font-bold text-green-700 hover:text-green-900 underline"> pre-approved home loan </a> is an in-principal approval for a loan given on the basis of your income, creditworthiness and financial position.</p>
+        <p class="px-8 mt-4">Apply for a home loan online with HDFC Bank, click <a href="#" class=" font-bold text-green-700 underline  hover:text-green-900"> Apply Online</a></p>
         <p class="px-8 mt-4">In case you would like us to get in touch with you, kindly leave your details with us.</p>
-        <p class="px-8 mt-4"><a href="#" class=" underline font-bold text-blue-800 hover:text-green-900">Click here </a> to know more about home loans.</p>
+        <p class="px-8 mt-4"><a href="#" class=" underline font-bold text-green-700 hover:text-green-900">Click here </a> to know more about home loans.</p>
         <p class=" text-center font-bold text-5xl py-24">Home Loan Amortization Schedule</p>
         <!--table-->
-        <div class=" px-8 overflow-x-auto">
+        <div class=" px-8 overflow-x-auto p-7">
             <table>
-                <thead class=" bg-blue-950 text-white">
+                <thead class=" bg-green-800 text-white">
                     <tr>
                         <th>month</th>
                         <th>Opening Balance</th>
@@ -422,4 +428,5 @@ $: arr_val=[
       margin-top: 5px;
       
     }
+   
 </style>

@@ -87,7 +87,8 @@ $: {
 }   
 
 </script>
-<section class=" bg-slate-50">
+<hr>
+<section class=" bg-white">
     <div class="container m-auto py-10">
         <div class=" text-center py-10 px-10">
             <p class=" text-5xl font-bold ">Home Loan Eligibility Calculator</p>
@@ -100,12 +101,14 @@ $: {
             <div >
                 <div class="flex justify-between">
                     <h4>Gross Income (Monthly)</h4>
+                    <label for="rupee">₹:
+                        <input class="w-15 border-2" type="number" on:change={myfun_eli_val_1} min="10000" bind:value={val_1} >
+                    </label>
                     
-                    <input class="w-15 border-2" type="number" on:change={myfun_eli_val_1} min="10000" bind:value={val_1} >
                 </div>
                 
-                <input type="range"  bind:value={val_1} min="0" max={val_max_1} step="1" class="w-full">
-                <div class=" flex justify-between bg-slate-50" >
+                <input type="range"  bind:value={val_1} min="0" max={val_max_1} step="1" class="w-full accent-emerald-600">
+                <div class=" flex justify-between" >
                     <div class=" m-2 ">
                         ₹ 10k
                     </div>
@@ -117,27 +120,29 @@ $: {
                 <div class="flex justify-between mt-4">
                     <h4>Tenure (Years)</h4>
                     
-                    <input class=" border-2 w-10" on:change={myfun_eli_val_2} type="number" bind:value={val_2} >
+                    <label for="year">Yr.<input class=" border-2 w-10" on:change={myfun_eli_val_2} type="number" bind:value={val_2} ></label>
                 </div>
                 
-                <input type="range" id="price" bind:value={val_2} min="0" max={val_max_2} step="1" class="w-full">
-                <div class=" flex justify-between bg-slate-50" >
+                <input type="range" id="price" bind:value={val_2} min="0" max={val_max_2} step="1" class="w-full accent-emerald-600">
+                <div class=" flex justify-between" >
                     <div class=" m-2 ">
-                        1
+                        1yr.
                     </div>
                     <div class="m-2">
-                        30
+                        30yr.
                     </div>
                 </div>
                 <!---progress bar3-->
                 <div class="flex justify-between mt-4">
                     <h4>Interest Rate (% P.A.)</h4>
+                    <label for="rate">Rate(%)
+                        <input class=" border-2 w-12" on:change={myfun_eli_val_3} type="number"  bind:value={val_3} >
+                    </label>
                     
-                    <input class=" border-2 w-12" on:change={myfun_eli_val_3} type="number"  bind:value={val_3} >
                 </div>
                 
-                <input type="range" bind:value={val_3} min="0" max={val_max_3} step="1" class="w-full">
-                <div class=" flex justify-between bg-slate-50" >
+                <input type="range" bind:value={val_3} min="0" max={val_max_3} step="1" class="w-full accent-emerald-600">
+                <div class=" flex justify-between " >
                     <div class=" m-2 ">
                         0.01
                     </div>
@@ -148,12 +153,14 @@ $: {
                 <!--progress bar 4-->
                 <div class="flex justify-between mt-4">
                     <h4>Other EMIs (Monthly)</h4>
+                    <label for="rupee">₹:
+                        <input class=" border-2 w-15" on:change={myfun_eli_val_4} type="" bind:value={val_4} >
+                    </label>
                     
-                    <input class=" border-2 w-15" on:change={myfun_eli_val_4} type="" bind:value={val_4} >
                 </div>
                 
-                <input type="range" bind:value={val_4} min="0" max={val_max_4} step="1" class="w-full">
-                <div class=" flex justify-between bg-slate-50" >
+                <input type="range" bind:value={val_4} min="0" max={val_max_4} step="1" class="w-full accent-emerald-600">
+                <div class=" flex justify-between " >
                     <div class=" m-2 ">
                         ₹0
                     </div>
@@ -167,10 +174,10 @@ $: {
             </div>
             <div class="ml-8 mt-4">
                 <p class="lg:px-32">Your Home Loan Eligibility</p>
-                <p class="lg:px-32 text-4xl text-blue-900 font-bold"><sup>₹</sup>{loan_eligibility}</p>
+                <p class="lg:px-32 text-4xl text-green-800 font-bold"><sup>₹</sup>{loan_eligibility}</p>
                 <p class="lg:px-32 font-semibold text-sm mt-3">Your Home Loan EMI will be</p>
-                <p class="lg:px-32 text-3xl text-black font-semibold"> <sup>₹</sup>{emi_eli} /month</p>
-                <button class=" hover:bg-blue-800 lg:ml-24 mt-4 bg-blue-600 rounded-xl px-14 py-4 text-white"> Apply Now</button>
+                <p class="lg:px-32 text-3xl text-green-800 font-semibold"> <sup>₹</sup>{emi_eli} /month</p>
+                <button class=" hover:bg-green-800 lg:ml-24 mt-4 bg-green-700 rounded-xl px-14 py-4 text-white"> Apply Now</button>
             </div>
 
 
@@ -182,7 +189,7 @@ $: {
         <p class="px-8 mt-5 font-bold text-2xl">Illustration : How Much Loan Can I Avail?</p>
         <p class="px-8 mt-2">For e.g. If a person is 30 years old and has a gross monthly salary of ₹30,000, he can avail a loan of ₹20.49 lakh at an interest rate of 6.90% for a tenure of 30 years provided he has no other existing financial obligations such as a personal loan or car loan etc.</p>
         <p class="px-8 mt-4 font-bold text-2xl">How is Home Loan eligibility calculated?</p>
-        <p class="px-8 mt-2"><a class="text-blue-800 font-bold hover:underline" href="#">Housing loan</a> eligibility is primarily dependent on the income and repayment capacity of the individual(s).There are other factors that determine the eligibility of home loans such as age, financial position, credit history, credit score, other financial obligations etc</p>
+        <p class="px-8 mt-2"><a class="text-green-700 font-bold underline hover:text-green-900" href="#">Housing loan</a> eligibility is primarily dependent on the income and repayment capacity of the individual(s).There are other factors that determine the eligibility of home loans such as age, financial position, credit history, credit score, other financial obligations etc</p>
         <p class="px-8 mt-4 text-2xl font-bold">Home Loan Eligibility Criteria</p>
         <div class="px-8 mt-2">
             <ul class="px-8 list-disc">
@@ -198,7 +205,7 @@ $: {
             </ul>
         </div>
         <p class="px-8 mt-4 text-2xl font-bold">How to enhance Home Loan eligibility?</p>
-        <p class="px-8 mt-2 ">The eligibility for <a class="text-blue-800 font-bold hover:underline" href="#">Home Loan</a>  can be enhanced by</p>
+        <p class="px-8 mt-2 ">The eligibility for <a class="text-green-700 font-bold underline hover:text-green-900" href="#">Home Loan</a>  can be enhanced by</p>
         <div class="px-8 mt-4">
             <ul class="px-8 mt-2 list-disc">
                 <li class=" mt-2">Adding an earning family member as co-applicant.</li>
@@ -217,14 +224,14 @@ $: {
             <ul class="px-8 list-disc mt-2">
                 <li class=" mt-2">Gross Income (Monthly) in ₹: Input gross monthly income. NRI should input net income.</li>
                 <li class=" mt-2">Loan Tenure (In Years): Input the desired loan term for which you wish to avail the loan. A longer tenure helps in enhancing the eligibility.</li>
-                <li class=" mt-2">Interest Rate (% P.A.): Input prevailing housing loan interest rate. <a class="text-blue-800 font-bold hover:underline" href="#">Click here</a> to know the prevailing interest rates</li>
+                <li class=" mt-2">Interest Rate (% P.A.): Input prevailing housing loan interest rate. <a class="text-green-700 font-bold hover:text-900 underline" href="#">Click here</a> to know the prevailing interest rates</li>
                 <li class=" mt-2">Other EMIs (Monthly): Input the EMIs of the other loans you may have</li>
             </ul>
 
         </div>
         <p class="px-8 mt-4 font-bold text-2xl">Apply for a Home Loan and Calculate Your Home Loan Eligibility</p>
-        <p class="px-8 mt-2">Once you get an indication of your eligibility and<a class="text-blue-800 font-bold hover:underline" href="#">EMI amount by using the calculator</a> , you can apply for a home loan online from the comfort of your living room easily with Online Home Loans.</p>
-        <p class="px-8 mt-3">To apply for a home loan online for <a class="text-blue-800 hover:underline font-bold" href="#">click here</a></p>
+        <p class="px-8 mt-2">Once you get an indication of your eligibility and<a class="text-green-700 font-bold hover:text-green-900 underline" href="#">EMI amount by using the calculator</a> , you can apply for a home loan online from the comfort of your living room easily with Online Home Loans.</p>
+        <p class="px-8 mt-3">To apply for a home loan online for <a class="text-green-700 hover:text-green-900 underline font-bold" href="#">click here</a></p>
         <p class="px-8 mt-3">In case you would like us to get in touch with you, kindly leave your details with us. A facility of a pre-approved home loan even before you have identified your dream home.</p>
         <p class="px-8 mt-3">These calculators are provided only as general self-help Planning Tools. Results depend on many factors, including the assumptions you provide. We do not guarantee their accuracy, or applicability to your circumstances.</p>
         <p class="px-8 mt text-2xl font-bold mt-4">What Factors determine your home loan eligibility?</p>

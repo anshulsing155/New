@@ -4,6 +4,7 @@ import MessagesIcon from './icons/MessagesIcon.svelte';
 import PicturesIcon from './icons/PicturesIcon.svelte';
 import DocumentsIcon from './icons/DocumentsIcon.svelte';
 import StatisticsIcon from './icons/StatisticsIcon.svelte';
+import DownloadIcon from './icons/DownloadIcon.svelte';
 
 export const data = [
 	{
@@ -99,6 +100,17 @@ export const data = [
 			{
 				title: 'Documentation',
 				link: '/myAdmin/guides/documentation'
+			}
+		]
+	}
+	,
+	{
+		section: 'Download',
+		icon: DownloadIcon,
+		content: [
+			{
+				title: 'Download',
+				link: '/myAdmin/download/'
 			}
 		]
 	}

@@ -79,11 +79,11 @@
 
 <ProgressBar {progress} />
 
-<div class="flex container m-auto items-center justify-center mb-20">
-    <form class="w-full font-medium p-10 max-w-screen-sm" id="form" >
+<div class="flex container m-auto items-center justify-center mb-8">
+    <form class="w-full font-medium p-2 max-w-screen-sm" id="form" >
             <label
                 for="state"
-                class=" block mb-4 text-center text-xl text-gray-900"
+                class=" block  text-center text-xl text-gray-900"
                 >Select Your Property Location</label
             >
         <div class="m-3 text-md">
@@ -93,7 +93,7 @@
         <select
             id="state"
             on:change={populateCities}
-            class="p-5 mb-8 bg-gray-50 border-4 border-gray-300 hover:border-green-700 text-green-800 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full"
+            class="p-5 mb-8 bg-gray-50 border border-gray-300 hover:border-green-700 text-green-800 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full"
         ><option class="">Select Property State</option>
         
             {#each newState as item}
@@ -107,7 +107,7 @@
         
         <select
             id="city"
-            class="p-5 mb-8 bg-gray-50 border-4 border-gray-300 hover:border-green-700 text-green-800 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full"
+            class="p-5 mb-8 bg-gray-50 border border-gray-300 hover:border-green-700 text-green-800 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full"
         >
             <option value="">Select Property City</option>
         </select>
@@ -124,16 +124,28 @@
             
 <style>
     *:disabled {
-        background-color: dimgrey;
+        background-color: darkgrey;
         color: linen;
         opacity: 1;
     }
     #next:enabled {
-        background: rgb(22, 175, 22);
+        background: #017a4e;
         color: white;
         opacity: 1;
     }
     select {
 	appearance: none;
-}
+    
+    }
+    select:hover{
+        box-shadow: 0 0 0 4px  #017a4e inset;
+
+        color: #017848;
+    }
+    #next:enabled:active{
+        background: #005c53;
+        color: white;
+
+    }
+
 </style>

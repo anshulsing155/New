@@ -60,7 +60,7 @@
       </div>
     <div class="flex w-full items-center justify-center bg-grey-lighter mt-5">
       <label
-        class=" flex   border-4 border-gray-400 rounded-lg cursor-pointer w-64  flex-col items-center px-2 py-4 bg-white text-green-700 shadow-lg tracking-wide uppercase   hover:bg-green-700 hover:text-white"
+        class=" flex   border border-gray-400 rounded-lg cursor-pointer w-64  flex-col items-center px-2 py-4 bg-white text-green-700 shadow-lg tracking-wide uppercase"
       >
         <svg class="w-6 h-8" fill="currentColor" viewBox="0 0 20 20">
           <path
@@ -89,7 +89,7 @@
           <button
             on:change={onChange}
             id="submit"
-            class="text-[13px] rounded-lg md:text-sm leading-4 inline-flex items-center cursor-pointer transition ease-in-out duration-300 font-semibold font-body text-center justify-center border-0 border-transparent placeholder-white focus-visible:outline-none focus:outline-none bg-gray-600 text-white px-5 md:px-6 lg:px-8 py-4 md:py-3.5 lg:py-4 hover:text-white hover:bg-green-600 hover:shadow-cart h-12 lg:h-14 mt-1 text-sm lg:text-base w-full sm:w-auto"
+            class="text-[13px] rounded-lg md:text-sm leading-4 inline-flex items-center cursor-pointer transition ease-in-out duration-300 font-semibold font-body text-center justify-center border-0 border-transparent placeholder-white focus-visible:outline-none focus:outline-none bg-gray-600 text-white px-5 md:px-6 lg:px-8 py-4 md:py-3.5 lg:py-4  hover:shadow-cart h-12 lg:h-14 mt-1 text-sm lg:text-base w-full sm:w-auto"
             type="submit"
             value="next"
           >
@@ -100,17 +100,17 @@
     </div>
   </form>
 </section>
-<!-- {#if form?.success}
-  <div class="text-white w-1/2 px-6 py-4 border-0 rounded relative mb-4 bg-green-300">
-    <span class="text-xl inline-block mr-5 align-middle">
-      <i class="fas fa-bell" />
-    </span>
-    <span class="inline-block align-middle mr-8">
-      <b class="capitalize">File uploaded Successfully... </b></span
-    >
-    <button
-      class="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none"
-    >
-    </button>
-  </div>
-{/if} -->
+<style>
+  label:hover{
+   
+    background-color: #005c53;
+    color: white;
+  }
+  
+  #submit:active {
+      background: #005c53;
+      color: white;
+      opacity: 1;
+        
+  }  
+</style>

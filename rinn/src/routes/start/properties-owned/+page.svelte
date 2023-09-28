@@ -46,7 +46,7 @@
                 value="0 Property"
             />
             <label
-                class="flex border-4 border-gray-400 rounded-lg cursor-pointer"
+                class="flex border border-gray-400 rounded-lg cursor-pointer"
                 for="radio_1"
             >
                 <span class=" my-auto flex"
@@ -86,7 +86,7 @@
                 value="1-2 Property"
             />
             <label
-                class="flex border-4 border-gray-400 rounded-lg cursor-pointer"
+                class="flex border border-gray-400 rounded-lg cursor-pointer"
                 for="radio_1"
             >
                 <span class=" my-auto flex"
@@ -123,7 +123,7 @@
                 value="More then 2 Property"
             />
             <label
-                class="flex border-4 border-gray-400 rounded-lg cursor-pointer"
+                class="flex border border-gray-400 rounded-lg cursor-pointer"
                 for="radio_1"
             >
                 <span class=" my-auto flex"
@@ -154,14 +154,26 @@
 
 <style>
     label {
-        padding: 2rem 2rem;
+        padding: 1rem 1rem;
         text-wrap: pretty;
         /* height: 100px; */
         overflow: auto;
     }
     label:hover {
-        border-color: green;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-            0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 0 0 4px  #017a4e inset;
+
+        color: #017848;
+    }
+    label:active {
+        background-color: #017a4e;
+        color: white;
+    }
+    label:active svg {
+        fill: white;
+        stroke: white;
+    }
+    label:active svg path {
+        fill: white;
+        stroke: white;
     }
 </style>

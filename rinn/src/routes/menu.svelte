@@ -3,7 +3,6 @@
     import { home, balance } from "./start/store";
 	import { goto } from "$app/navigation";
 	export let data;
-    console.log(data.Requirment);
     function handleClick(){
         if(data.Requirment == "Home Loan"){
             goto('/start/home-loan')
@@ -21,7 +20,7 @@
         isOpen = !isOpen;
     }
     function startButton(values){
-		document.cookie = "Requirment=" + values;
+		document.cookie = "Requirment=" + values; "path=/wp";
         home.set(values);
 		if (values == "Buy A Home") {
             goto("../start/home-loan");

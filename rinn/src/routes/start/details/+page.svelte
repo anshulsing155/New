@@ -61,7 +61,7 @@
   <div
     class="mx-auto sm:w-full md:w-3/5 lg:w-1/2 2xl:w-4/6 flex h-full ltr:md:ml-7 rtl:md:mr-7 flex-col ltr:lg:pl-7 rtl:lg:pr-7"
   >
-    <div class="md:flex justify-between pb-7 md:pb-9 mt-7 md:-mt-1.5">
+    <div class="md:flex justify-between pb-7 md:pb-9 mt-2 md:-mt-1.5">
       <h4 class="text-2xl mx-10 2xl:text-3xl font-bold text-heading">
         Enter Your Details...
       </h4>
@@ -86,7 +86,7 @@
             id="inline-full-name"
             type="text"
             placeholder="Enter Your Name"
-            class="py-2 px-4 md:px-5 w-full appearance-none text-input text-xs lg:text-sm font-body placeholder-body min-h-12 transition duration-200 ease-in-out bg-white focus:outline-none focus:border-heading h-11 md:h-12 flex border-4 border-gray-400 rounded-lg cursor-pointer"
+            class="py-2 px-4 md:px-5 w-full appearance-none text-input text-xs lg:text-sm font-body placeholder-body min-h-12 transition duration-200 ease-in-out bg-white focus:outline-none focus:border-heading h-11 md:h-12 flex border border-gray-400 rounded-lg cursor-pointer"
           />
         </div>
         <div class="relative">
@@ -102,7 +102,7 @@
             id="inline-contact"
             type="tel"
             placeholder="123-45-678"
-            class="py-2 px-4 md:px-5 w-full appearance-none text-input text-xs lg:text-sm font-body placeholder-body min-h-12 transition duration-200 ease-in-out bg-white focus:outline-none focus:border-heading h-11 md:h-12 flex border-4 border-gray-400 rounded-lg cursor-pointer"
+            class="py-2 px-4 md:px-5 w-full appearance-none text-input text-xs lg:text-sm font-body placeholder-body min-h-12 transition duration-200 ease-in-out bg-white focus:outline-none focus:border-heading h-11 md:h-12 flex border border-gray-400 rounded-lg cursor-pointer"
           />
           {#if !isMobileNumberValid}
             <p class="text-red-300 mb-5">
@@ -123,7 +123,7 @@
             id="inline-email"
             type="email"
             placeholder="abc@domain.com"
-            class="py-2 px-4 md:px-5 w-full appearance-none text-input text-xs lg:text-sm font-body placeholder-body min-h-12 transition duration-200 ease-in-out bg-white focus:outline-none focus:border-heading h-11 md:h-12 flex border-4 border-gray-400 rounded-lg cursor-pointer"
+            class="py-2 px-4 md:px-5 w-full appearance-none text-input text-xs lg:text-sm font-body placeholder-body min-h-12 transition duration-200 ease-in-out bg-white focus:outline-none focus:border-heading h-11 md:h-12 flex border border-gray-400 rounded-lg cursor-pointer"
           />
           {#if !isEmailValid}
             <p class="text-red-300 mb-5">Please enter a valid Email Address.</p>
@@ -153,9 +153,13 @@
     opacity: 1;
   }
   #next:enabled {
-    background: rgb(82, 150, 82);
-    color: black;
+    background: #017a4e;
+    color: white;
     opacity: 1;
+  }
+  #next:enabled:active{
+    background-color: #005c53;
+    color: white;
   }
   input {
     padding: 2rem 2rem;
@@ -164,8 +168,8 @@
     overflow: auto;
   }
   input:hover {
-    border-color: green;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 0 4px  #017a4e inset;
+
+    color: #017848;
   }
 </style>

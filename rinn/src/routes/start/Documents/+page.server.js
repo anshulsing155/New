@@ -1,8 +1,8 @@
 import { config } from 'dotenv';
 import { MongoClient } from 'mongodb';
 import  {writeFileSync}  from 'node:fs';
-import transporter from "$lib/emailSetup.server.js";
-let GOOGLE_EMAIL = "billing@hostingfighter.com"
+
+
 async function connectToCluster() {
     let mongoClient;
 
@@ -19,7 +19,7 @@ async function connectToCluster() {
     }
 }
 
-let Requirments, propertyPurchase, propertyLocationState, propertyLocationCity, workingLocationState, workingLocationCity, masterPlan, propertyType, propertiesOwned, referralName, referralNo, usernName, userNo, userMail, currentFinancialName, roi, currentFinanciallocation;
+let home, propertyPurchase, propertyLocationState, propertyLocationCity, workingLocationState, workingLocationCity, masterPlan, propertyType, propertiesOwned, referralName, referralNo, usernName, userNo, userMail, currentFinancialName, roi, currentFinanciallocation;
 
 
 export const actions = {
@@ -51,7 +51,9 @@ export const actions = {
     
     let fileUrl = "/userfiles/"+selectedFile.name;
     writeFileSync(`static/userfiles/${selectedFile.name}`, Buffer.from(await selectedFile.arrayBuffer()));
-        Requirments = cookies.get('Requirment');
+        let data = cookies.get();
+        console.log(data);
+        home = cookies.get('Requirment');
         propertyPurchase = cookies.get('Stage of Property purchase');
         propertyLocationState = cookies.get('Property Location (State)');
         propertyLocationCity = cookies.get('Property Location (City)');
@@ -65,7 +67,6 @@ export const actions = {
         usernName = cookies.get('User (Name)');
         userNo = cookies.get('User (Mobile No.)');
         userMail = cookies.get('User (Email)');
-        console.log(typeof(userMail));
         async function executeStudentCrudOperations() {
             // const uri = process.env.DB_URI;
             let mongoClient;
@@ -82,7 +83,7 @@ export const actions = {
         }
         async function createStudentDocument(collection) {
             const studentDocument = {
-                Requirments,
+                home,
                 propertyPurchase,
                 propertyLocationState,
                 propertyLocationCity,
@@ -104,102 +105,8 @@ export const actions = {
 
             };
 
-            // await collection.insertOne(studentDocument);
-            let email = "anshulsing154@gmail.com"
-            let subject = "New User Login"
-            let body = studentDocument.currentFinancialName;
-            let html = `<!DOCTYPE html>
-            <html>
-            <head>
-            <style>
-            table {
-              font-family: arial, sans-serif;
-              border-collapse: collapse;
-              width: 100%;
-            }
-            
-            td, th {
-              border: 1px solid #dddddd;
-              text-align: left;
-              padding: 8px;
-            }
-            
-            tr:nth-child(even) {
-              background-color: #dddddd;
-            }
-            </style>
-            </head>  
-            <body>
-            Dear Sir,
- Please review this email in its entirety as it contains important information.
-
-New User Logging In
-<h2>New User Detailes</h2>
-
-<table>
-  <tr>
-    <th>Requrements</th>
-    <th>User input Data</th>
-  </tr>
-  <tr>
-    <td>Name</td>
-    <td>${studentDocument.usernName}</td>
-  </tr>
-  <tr>
-    <td>Mobile No.</td>
-    <td>${studentDocument.userNo}</td>
-   
-  </tr>
-  <tr>
-    <td>Email</td>
-    <td>${studentDocument.userMail}</td>
-  </tr>
-  <tr>
-    <td>Requirment</td>
-    <td>${studentDocument.Requirments}</td>
-   
-  </tr>
-  <tr>
-    <td>Property Location (City)</td>
-    <td>${studentDocument.propertyLocationCity}</td>
-  </tr>
-  <tr>
-    <td>Working Location (City)</td>
-    <td>${studentDocument.propertyLocationState}</td>
-  </tr>
-</table>
-
-
-
-</body>
-            `;
-            console.log(email);
-            const message = {
-                from: GOOGLE_EMAIL,
-                to: email,
-                subject: subject,
-                text: body,
-                html: html,
-            };
-            
-            const sendEmail = async (message) => {
-                await new Promise((resolve, reject) => {
-                    transporter.sendMail(message, (err, info) => {
-                        if (err) {
-                            console.error(err);
-                            reject(err);
-                        } else {
-                            resolve(info);
-                        }
-                    });
-                });
-            };
-
-            await sendEmail(message);
-
-            return {
-                success: "Email is sent",
-            };
+            await collection.insertOne(studentDocument);
+           
         }
 
 
@@ -211,3 +118,76 @@ New User Logging In
     }
     
 }
+
+// export const actions = {
+//     default: async ({ request }) => {
+//         const formData = await request.formData();
+//         async function executeStudentCrudOperations() {
+//             const uri = process.env.DB_URI;
+//             let mongoClient;
+
+//             try {
+//                 mongoClient = await connectToCluster(uri);
+//                 const db = mongoClient.db('form');
+//                 const collection = db.collection('formData');
+//                 console.log('CREATE User');
+//                 await createStudentDocument(collection);
+//             } finally {
+//                 await mongoClient.close();
+//             }
+//         }
+//         async function createStudentDocument(collection) {
+//             const studentDocument = {
+//                 home,
+//                 propertyPurchase,
+//                 propertyLocationState,
+//                 propertyLocationCity,
+//                 workingLocationState,
+//                 workingLocationCity,
+//                 masterPlan,
+//                 propertyType,
+//                 propertiesOwned,
+//                 referralName,
+//                 referralNo,
+//                 usernName,
+//                 userNo,
+//                 userMail,
+//                 currentFinancialName,
+//                 roi,
+//                 currentFinanciallocation
+
+
+
+//             };
+
+//             await collection.insertOne(studentDocument);
+//         }
+
+
+//         config();
+//         await executeStudentCrudOperations();
+//     }
+// }
+
+// export const actions = {
+//   default: async ({ request }) => {
+//     const formData = Object.fromEntries(await request.formData());
+ 
+    // if (
+    //   !(formData.fileToUpload as File).name ||
+    //   (formData.fileToUpload as File).name === 'undefined'
+    // ) {
+    //   return fail(400, {
+    //     error: true,
+    //     message: 'You must provide a file to upload'
+    //   });
+    // }
+ 
+    // const { fileToUpload } = formData as { fileToUpload: File };
+    // writeFileSync(`static/userfiles/${fileToUpload.name}`, Buffer.from(await fileToUpload.arrayBuffer()));
+    
+    // return {
+    //   success: true
+    // };
+//   }
+// };

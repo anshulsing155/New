@@ -5,6 +5,7 @@
 	import { home, balance } from "./start/store";
 	import { goto } from "$app/navigation";
 	export let data;
+	console.log(data);
     //###########################
 	function startButton(values){
 		document.cookie = "Requirment=" + values;

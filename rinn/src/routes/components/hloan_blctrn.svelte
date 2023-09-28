@@ -101,7 +101,8 @@
 
 
 </script>
-<section class="bg-green-50">
+<hr>
+<section class="bg-white">
     <div class="container m-auto py-10">
         <div class=" text-center py-10 px-10">
             <p class=" text-5xl font-bold ">Refinance Calculator</p>
@@ -114,13 +115,15 @@
                 <p class=" font-bold text-xl">Existing Loan</p>
                 <div class="flex justify-between">
                     <h4>Principal Outstanding</h4>
+                    <label for="rupee">₹:
+                        <input class="w-15 border-2" type="number" on:change={myfun}  bind:value={val_1}>
+                    </label>
                     
-                    <input class="w-15 border-2" type="number" on:change={myfun}  bind:value={val_1}>
                 </div>
-                <input type="range" bind:value={val_1} min="10000" max={val_max_1} step="1" class="w-full">
+                <input type="range" bind:value={val_1} min="10000" max={val_max_1} step="1" class="w-full accent-emerald-600">
             
 
-                <div class=" flex justify-between bg-slate-50" >
+                <div class=" flex justify-between " >
                     <div class=" m-2 ">
                         ₹ 10k
                     </div>
@@ -131,12 +134,12 @@
                 <!---######2 progress bar-->
                 <div class="flex justify-between mt-4">
                     <h4>Tenure (Years)</h4>
+                    <label for="year">Yr.<input class=" border-2 w-10" type="number" on:change={myfun_val_2} min="1" bind:value={val_2}></label>
                     
-                    <input class=" border-2 w-10" type="number" on:change={myfun_val_2} min="1" bind:value={val_2}>
                 </div>
                 
-                <input type="range" bind:value={val_2} min="0" max={val_max_2} step="1" class="w-full">
-                <div class=" flex justify-between bg-slate-50" >
+                <input type="range" bind:value={val_2} min="0" max={val_max_2} step="1" class="w-full accent-emerald-600">
+                <div class=" flex justify-between" >
                     <div class=" m-2 ">
                         1
                     </div>
@@ -147,12 +150,14 @@
                 <!---progress bar3-->
                 <div class="flex justify-between mt-4">
                     <h4>Interest Rate (% P.A.)</h4>
+                    <label for="rate">Rate(%)
+                        <input class=" border-2 w-12" type="number" on:change={myfun_val_3}  bind:value={val_3} >
+                    </label>
                     
-                    <input class=" border-2 w-12" type="number" on:change={myfun_val_3}  bind:value={val_3} >
                 </div>
                 
-                <input type="range"  bind:value={val_3} min="0" max={val_max_3} step="1" class="w-full">
-                <div class=" flex justify-between bg-slate-50" >
+                <input type="range"  bind:value={val_3} min="0" max={val_max_3} step="1" class="w-full accent-emerald-600">
+                <div class=" flex justify-between " >
                     <div class=" m-2 ">
                         0.5
                     </div>
@@ -164,12 +169,14 @@
                 <!--progressbar 4-->
                 <div class="flex justify-between mt-4">
                     <h4>Tenure (Years)</h4>
+                    <label for="year">Yr.
+                        <input class=" border-2 w-12" type="number" on:change={myfun_val_4} bind:value={val_4} >
+                    </label>
                     
-                    <input class=" border-2 w-12" type="number" on:change={myfun_val_4} bind:value={val_4} >
                 </div>
                 
-                <input type="range"  bind:value={val_4} min="0" max={val_max_4} step="1" class="w-full">
-                <div class=" flex justify-between bg-slate-50" >
+                <input type="range"  bind:value={val_4} min="0" max={val_max_4} step="1" class="w-full accent-emerald-600">
+                <div class=" flex justify-between " >
                     <div class=" m-2 ">
                         1
                     </div>
@@ -180,12 +187,14 @@
                 <!-- ######progress bar 5-->
                 <div class="flex justify-between mt-4">
                     <h4>Interest Rate (% P.A.)</h4>
+                    <label for="rate">Rate(%)
+                        <input class=" border-2 w-12" type="number" on:change={myfun_val_5} bind:value={val_5} >
+                    </label>
                     
-                    <input class=" border-2 w-12" type="number" on:change={myfun_val_5} bind:value={val_5} >
                 </div>
                 
-                <input type="range" id="price" bind:value={val_5} min="0" max={val_max_5} step="1" class="w-full">
-                <div class=" flex justify-between bg-slate-50" >
+                <input type="range" id="price" bind:value={val_5} min="0" max={val_max_5} step="1" class="w-full accent-emerald-600">
+                <div class=" flex justify-between " >
                     <div class=" m-2 ">
                         0.5
                     </div>
@@ -202,7 +211,7 @@
             <div class="ml-8 mt-4 bg-fixed">
 
                 <p class="lg:px-28">Total Saving in Cash Outflow</p>
-                <p class="lg:px-28 text-4xl text-blue-800 font-bold"><sup>₹</sup>{total_saving_cash}</p>
+                <p class="lg:px-28 text-4xl text-green-800 font-bold"><sup>₹</sup>{total_saving_cash}</p>
                 <p class="lg:px-28 font-semibold mt-2">Existing EMI</p>
                 <p class="lg:px-28 font-bold text-2xl"><sup>₹</sup>{emi_cal}</p>
                 <p class="lg:px-28 font-semibold mt-2">Proposed EMI</p>
@@ -210,22 +219,22 @@
                 <p class="lg:px-28 font-semibold mt-2">Saving in EMI</p>
                 <p class="lg:px-28 font-bold text-2xl"><sup>₹</sup>{saving_emi}</p>
                 
-                <button class="hover:bg-blue-800 lg:ml-24 mt-4 bg-blue-600 rounded px-14 py-4 text-white">Apply Now</button>
+                <button class="hover:bg-green-800 lg:ml-24 mt-4 bg-green-700 rounded px-14 py-4 text-white">Apply Now</button>
             </div>
         </div>
         <p class="px-8 mt-4">Do not miss a chance to lower your loan repayments when you have smarter options to choose from. Move your Home Loan outstanding balances to  pay lower monthly installments and enjoy the savings for the other things in life that really matter to you and your family.</p>
         <p class="px-8 mt-4 text-xl font-bold">Home Loan Refinance Calculator</p>
-        <p class="px-8 mt-2">Use <a class=" text-blue-800 hover:underline font-bold" href="#">Home Loan Refinance Calculator</a> to find out the savings in EMI, resulting in lower cash outflow towards your home loan.</p>
+        <p class="px-8 mt-2">Use <a class=" text-green-700 hover:text-green-900 underline font-bold" href="#">Home Loan Refinance Calculator</a> to find out the savings in EMI, resulting in lower cash outflow towards your home loan.</p>
         <p class="px-8 mt-5">How to use the calculator?</p>
         <div class="px-8 mt-4">
             <ul class="px-8 mt-2 list-disc">
                 <li class=" mt-2">Existing Loan Principal Outstanding: Input the principal outstanding of your existing home loan with the other financial institution</li>
                 <li class=" mt-2">Tenure: Input the balance loan term of your existing home loan</li>
-                <li class=" mt-2">Interest Rate (%): Input the <a class=" text-blue-800 hover:underline font-bold" href="#">interest rate of your existing home loan</a></li>
+                <li class=" mt-2">Interest Rate (%): Input the <a class=" text-green-700 hover:text-green-900 underline font-bold" href="#">interest rate of your existing home loan</a></li>
             </ul>
         </div>
         
-        <p class="px-8 mt-5">The total cash outflow and your revised EMI of your outstanding home loan will be calculated to assist you to make a fair comparison, in case you make a balance transfer to another bank. This will help you to get a clear understanding of the total savings on your <a class="text-blue-800 hover:underline font-bold"> home loan.</a></p>
+        <p class="px-8 mt-5">The total cash outflow and your revised EMI of your outstanding home loan will be calculated to assist you to make a fair comparison, in case you make a balance transfer to another bank. This will help you to get a clear understanding of the total savings on your <a class="text-green-700 hover:text-green-900 underline font-bold"> home loan.</a></p>
         
         <div class=" mt-10 text-center">
             <p class="font-bold text-4xl">Looking for a home loan?</p>
@@ -243,7 +252,7 @@
                     </div>
                 </div>
                 <p class="mt-4 font-bold">Avail best interest rates on <br> your Home Loan!</p>
-                <button class=" hover:bg-blue-500 hover:text-white mt-4  border rounded-md border-blue-600 text-blue-700 px-4 py-2 ">Apply Now</button>
+                <button class=" hover:bg-green-800 hover:text-white mt-4  border rounded-md border-green-700 text-green-900 px-4 py-2 ">Apply Now</button>
             </div>
             <!--2 btn-->
             <div class="  text-center mt-2">
@@ -255,7 +264,7 @@
                     </div>
                 </div>
                 <p class="mt-4 font-bold">Our Loan Expert can meet you <br> at your doorstep</p>        
-                <button class="  hover:bg-blue-500 hover:text-white mt-4 border  border-blue-600 text-blue-700 rounded-md px-4 py-2 ">Instant Call Back</button>
+                <button class="  hover:bg-green-800 hover:text-white mt-4 border  border-green-700 text-green-900 rounded-md px-4 py-2 ">Instant Call Back</button>
             </div>
             <div class="  text-center mt-2 ">
                 <!--3 btn-->
@@ -268,7 +277,7 @@
                 </div> 
                 <p class="mt-4 font-bold">Give us a missed call on<br>
                     +91 120-4994466</p>       
-                <button class=" hover:bg-blue-500 hover:text-white mt-4 border  border-blue-600 text-blue-700 rounded-md px-4 py-2 ">Call us</button>
+                <button class=" hover:bg-green-800 hover:text-white mt-4 border  border-green-700 text-green-900 rounded-md px-4 py-2 ">Call us</button>
             </div>
            
 

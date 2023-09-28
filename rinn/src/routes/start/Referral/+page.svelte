@@ -88,7 +88,7 @@
             id="inline-full-name"
             type="text"
             placeholder="Enter Referral Name"
-            class="py-2 px-4 md:px-5 w-full appearance-none text-input text-xs lg:text-sm font-body placeholder-body min-h-12 transition duration-200 ease-in-out bg-white focus:outline-none focus:border-heading h-11 md:h-12 flex border-4 border-gray-400 rounded-lg cursor-pointer"
+            class="py-2 px-4 md:px-5 w-full appearance-none text-input text-xs lg:text-sm font-body placeholder-body min-h-12 transition duration-200 ease-in-out bg-white focus:outline-none focus:border-heading h-11 md:h-12 flex border border-gray-400 rounded-lg cursor-pointer"
             autoComplete="off"
             spellCheck="false"
             aria-invalid="false"
@@ -107,7 +107,7 @@
             id="inline-Contact"
             type="tel"
             placeholder="123-45-678"
-            class="py-2 px-4 md:px-5 w-full appearance-none text-input text-xs lg:text-sm font-body placeholder-body min-h-12 transition duration-200 ease-in-out bg-white focus:outline-none focus:border-heading h-11 md:h-12 flex border-4 border-gray-400 rounded-lg cursor-pointer"
+            class="py-2 px-4 md:px-5 w-full appearance-none text-input text-xs lg:text-sm font-body placeholder-body min-h-12 transition duration-200 ease-in-out bg-white focus:outline-none focus:border-heading h-11 md:h-12 flex border border-gray-400 rounded-lg cursor-pointer"
             autoComplete="off"
             spellCheck="false"
             aria-invalid="false"
@@ -153,7 +153,7 @@
     opacity: 1;
   }
   #next:enabled {
-    background: rgb(82, 150, 82);
+    background: #017a4e;
     color: black;
     opacity: 1;
   }
@@ -164,8 +164,12 @@
     overflow: auto;
   }
   input:hover {
-    border-color: green;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 0 4px  #017a4e inset;
+
+    color: #017848;
+  }
+  #next:enabled:active{
+    background-color: #005c53;
+    color: white;
   }
 </style>
