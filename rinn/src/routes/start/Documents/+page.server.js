@@ -27,39 +27,39 @@ async function connectToCluster() {
 
 export const actions = {
     default: async ({request,cookies }) => {
-    const formData = await request.formData();
-    const uploadedFile = formData?.get('file');
-    const filename = `uploads/${crypto.randomUUID()}${extname(uploadedFile?.name)}`;
-    await writeFile(filename, Buffer.from(await uploadedFile?.arrayBuffer()));
+    // const formData = await request.formData();
+    // const uploadedFile = formData?.get('file');
+    // const filename = `uploads/${crypto.randomUUID()}${extname(uploadedFile?.name)}`;
+    // await writeFile(filename, Buffer.from(await uploadedFile?.arrayBuffer()));
 
     // return { success: true };
 
-    // const formData = Object.fromEntries(await request.formData());
+    const formData = Object.fromEntries(await request.formData());
     
-    // let selectedFile = formData.file ;
+    let selectedFile = formData.file ;
     
     
-    // if (selectedFile) {
-    //     // Create a new Date object to get the current date and time
-    //     const currentDate = new Date();
+    if (selectedFile) {
+        // Create a new Date object to get the current date and time
+        const currentDate = new Date();
   
-    //     // Get the current day, month, year, hour, minute, and second
-    //     const currentDay = currentDate.getDate(); // Day (1-31)
-    //     const currentMonth = currentDate.getMonth() + 1; // Month (0-11, so add 1 for human-readable month)
-    //     const currentYear = currentDate.getFullYear(); // Year (4 digits)
-    //     const currentHour = currentDate.getHours(); // Hour (0-23)
-    //     const currentMinute = currentDate.getMinutes(); // Minute (0-59)
-    //     const currentSecond = currentDate.getSeconds(); // Second (0-59)
-    //     const fileDate = ''+ currentDay+currentMonth+currentYear+currentHour+currentMinute+currentSecond;
+        // Get the current day, month, year, hour, minute, and second
+        const currentDay = currentDate.getDate(); // Day (1-31)
+        const currentMonth = currentDate.getMonth() + 1; // Month (0-11, so add 1 for human-readable month)
+        const currentYear = currentDate.getFullYear(); // Year (4 digits)
+        const currentHour = currentDate.getHours(); // Hour (0-23)
+        const currentMinute = currentDate.getMinutes(); // Minute (0-59)
+        const currentSecond = currentDate.getSeconds(); // Second (0-59)
+        const fileDate = ''+ currentDay+currentMonth+currentYear+currentHour+currentMinute+currentSecond;
         
         
   
-    //     const newName = fileDate + '_' + selectedFile.name;
-    //     selectedFile = new File([selectedFile], newName);
+        const newName = fileDate + '_' + selectedFile.name;
+        selectedFile = new File([selectedFile], newName);
         
-    //   }
+      }
     
-    // let fileUrl = "/userfiles/"+selectedFile.name;
+    let fileUrl = "/userfiles/"+selectedFile.name;
     // writeFileSync(`static/userfiles/${selectedFile.name}`, Buffer.from(await selectedFile.arrayBuffer()));
         const Requirments = cookies.get('Requirment');
         const propertyPurchase = cookies.get('Stage of Property purchase');
@@ -112,7 +112,7 @@ export const actions = {
                 currentFinancialName,
                 roi,
                 currentFinanciallocation,
-                // fileUrl,
+                fileUrl,
 
 
             };
