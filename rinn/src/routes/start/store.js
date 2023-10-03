@@ -5,3 +5,4 @@ export const path = writable(false);
 export const balance = writable(false);
 export const home = writable([]);
 export const writableArray = writable([]);
+export const cookiesArray = writable();
