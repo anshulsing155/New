@@ -12,22 +12,34 @@
     function onChange(event) {
         let value = event.currentTarget.value;
         document.cookie = "No. of properties already owned=" + value;
-        if (countValue == true) goto("../start/Financial-Institution");
+        if (countValue == true) 
+        setTimeout(() => {
+            goto("../start/Financial-Institution");
+            }, 1000);
         else if (
             event.currentTarget.value == "0 Property" &&
             countValue == false
         ) {
-            goto("../start/Referral");
+            setTimeout(() => {
+                goto("../start/Referral");
+            }, 1000);
+           
         } else if (
             event.currentTarget.value == "1-2 Property" &&
             countValue == false
         ) {
-            goto("../start/Referral");
+            setTimeout(() => {
+                goto("../start/Referral");
+            }, 1000);
+           
         } else if (
             event.currentTarget.value == "More then 2 Property" &&
             countValue == false
         ) {
-            goto("../start/Referral");
+            setTimeout(() => {
+                goto("../start/Referral");
+            }, 1000);
+           
         }
     }
 </script>
@@ -39,21 +51,20 @@
             <input
                 on:change={onChange}
                 class="hidden"
-                id="radio_1"
+                id="Property"
                 type="radio"
                 name="radio"
-                checked
                 value="0 Property"
             />
             <label
                 class="flex border border-gray-400 rounded-lg cursor-pointer"
-                for="radio_1"
+                for="Property"
             >
                 <span class=" my-auto flex"
-                    ><svg 
-                    height="36px"
-                    style="margin-left:16px;margin-right:12px"
-                    width="36px"
+                    ><svg
+                        height="36px"
+                        style="margin-left:16px;margin-right:12px"
+                        width="36px"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -79,27 +90,25 @@
             <input
                 on:change={onChange}
                 class="hidden"
-                id="radio_1"
+                id="Property2"
                 type="radio"
                 name="radio"
-                checked
                 value="1-2 Property"
             />
             <label
                 class="flex border border-gray-400 rounded-lg cursor-pointer"
-                for="radio_1"
+                for="Property2"
             >
                 <span class=" my-auto flex"
-                    ><svg 
-                    height="36px"
-                    style="margin-left:16px;margin-right:12px"
-                    width="36px"
+                    ><svg
+                        height="36px"
+                        style="margin-left:16px;margin-right:12px"
+                        width="36px"
                         fill="#0b751c"
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
                         ><g id="SVGRepo_bgCarrier" stroke-width="0" /><g
                             id="SVGRepo_tracerCarrier"
-                            
                             stroke-linecap="round"
                             stroke-linejoin="round"
                         /><g id="SVGRepo_iconCarrier"
@@ -116,27 +125,25 @@
             <input
                 on:change={onChange}
                 class="hidden"
-                id="radio_1"
+                id="More"
                 type="radio"
                 name="radio"
-                checked
                 value="More then 2 Property"
             />
             <label
                 class="flex border border-gray-400 rounded-lg cursor-pointer"
-                for="radio_1"
+                for="More"
             >
                 <span class=" my-auto flex"
-                    ><svg 
-                    height="36px"
-                    style="margin-left:16px;margin-right:12px"
-                    width="36px"
+                    ><svg
+                        height="36px"
+                        style="margin-left:16px;margin-right:12px"
+                        width="36px"
                         fill="#0b751c"
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
                         ><g id="SVGRepo_bgCarrier" stroke-width="0" /><g
                             id="SVGRepo_tracerCarrier"
-                            
                             stroke-linecap="round"
                             stroke-linejoin="round"
                         /><g id="SVGRepo_iconCarrier"
@@ -156,24 +163,18 @@
     label {
         padding: 1rem 1rem;
         text-wrap: pretty;
-        /* height: 100px; */
         overflow: auto;
     }
     label:hover {
-        box-shadow: 0 0 0 4px  #017a4e inset;
-
+        transition: color 0.3s;
+        box-shadow: 0 0 0 4px #017a4e inset;
         color: #017848;
     }
-    label:active {
+    input[type="radio"]:checked + label {
         background-color: #017a4e;
         color: white;
     }
-    label:active svg {
+    input[type="radio"]:checked + label svg path {
         fill: white;
-        stroke: white;
-    }
-    label:active svg path {
-        fill: white;
-        stroke: white;
     }
 </style>

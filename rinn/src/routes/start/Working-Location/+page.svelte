@@ -124,22 +124,16 @@
         background: #017a4e;
         color: white;
         opacity: 1;
-        
     }
     select {
 	appearance: none;
     }
     select:hover{
         box-shadow: 0 0 0 4px  #017a4e inset;
-
         color: #017848;
     }
     #next:enabled:active{
         background: #005c53;
         color: white;
-
     }
-    
-   
-
 </style>

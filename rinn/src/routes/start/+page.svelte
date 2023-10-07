@@ -2,8 +2,6 @@
     import { goto } from "$app/navigation";
     import { balance, home, cookiesArray } from "./store.js";
     import ProgressBar from "../components/ProgressBar.svelte";
-    import { onMount } from "svelte";
-    import { browser } from "$app/environment";
     // let countValue = {};
     // cookiesArray.subscribe((value) => {
     //     countValue = value;
@@ -18,29 +16,23 @@
         document.cookie = "Requirment=" + value;
         home.set(value);
 
-        // if (event.currentTarget.value == "Home Loan") {
-        //     goto("../start/home-loan");
-        // } else if (event.currentTarget.value == "LAP") {
-        //     goto("../start/Property-Location");
-        // } else if (event.currentTarget.value == "Balance Transfer") {
-        //     balance.set(true);
-        //     goto("../start/Property-Location");
-        // }
-    }
-    
-    onMount(async () => {
-       let btns = document.getElementsByClassName("btn");
-        for (let i = 0; i < btns.length; i++) {
-            btns[i].addEventListener("click", function () {
-               let current = document.getElementsByClassName("active");
-                current[0].className = current[0].className.replace(
-                    " active",
-                    ""
-                );
-                this.className += " active";
-            });
+        if (event.currentTarget.value == "Home Loan") {
+            setTimeout(() => {
+                goto("../start/home-loan");
+            }, 1000);
+        } else if (event.currentTarget.value == "LAP") {
+            setTimeout(() => {
+                goto("../start/Property-Location");
+            }, 1000);
+        } else if (event.currentTarget.value == "Balance Transfer") {
+            balance.set(true);
+            setTimeout(() => {
+                goto("../start/Property-Location");
+            }, 1000);
         }
-    });
+    }
+
+   
 </script>
 
 <ProgressBar {progress} />
@@ -50,14 +42,14 @@
             <input
                 on:change={onChange}
                 class="hidden"
-                id="radio_1"
+                id="Home Loan"
                 type="radio"
                 name="radio"
                 value="Home Loan"
             />
             <label
-                class="btn flex flex-col border border-gray-400 rounded-lg cursor-pointer"
-                for="radio_1"
+                class="flex flex-col border border-gray-400 rounded-lg cursor-pointer"
+                for="Home Loan"
             >
                 <span class="text-lg flex">
                     <svg
@@ -83,14 +75,14 @@
             <input
                 on:change={onChange}
                 class="hidden"
-                id="radio_3"
+                id="Balance Transfer"
                 type="radio"
                 name="radio"
                 value="Balance Transfer"
             />
             <label
-                class="btn flex flex-col p-4 border border-gray-400 rounded-lg cursor-pointer"
-                for="radio_3"
+                class="flex flex-col border border-gray-400 rounded-lg cursor-pointer"
+                for="Balance Transfer"
             >
                 <span class="text-lg flex">
                     <svg
@@ -130,14 +122,14 @@
             <input
                 on:change={onChange}
                 class="hidden"
-                id="radio_2"
+                id="LAP"
                 type="radio"
                 name="radio"
                 value="LAP"
             />
             <label
-                class="btn flex flex-col p-2 border border-gray-400 rounded-lg cursor-pointer"
-                for="radio_2"
+                class="flex flex-col border border-gray-400 rounded-lg cursor-pointer"
+                for="LAP"
             >
                 <span class="text-lg flex">
                     <svg
@@ -147,6 +139,7 @@
                         width="36"
                         xmlns="http://www.w3.org/2000/svg"
                     >
+                    
                         <path
                             d="M35.579 13.748 18.703.247a1.124 1.124 0 0 0-1.406 0L.42 13.747a1.125 1.125 0 0 0 .698 2.003h2.25v19.126A1.126 1.126 0 0 0 4.494 36h27.001a1.125 1.125 0 0 0 1.125-1.125V15.75h2.25a1.125 1.125 0 0 0 .709-2.002Zm-4.084-.248a1.125 1.125 0 0 0-1.125 1.125V33.75H5.619V14.625A1.126 1.126 0 0 0 4.494 13.5h-.169l13.67-10.936L31.662 13.5h-.168Z"
                             fill="#017848"
@@ -166,46 +159,22 @@
     </form>
 </div>
 
-   
-    <button class="btn active hidden">2</button>
-    
-
-
 <style>
     label {
         padding: 1rem 1rem;
         text-wrap: pretty;
-        /* height: 100px; */
         overflow: auto;
     }
     label:hover {
+        transition: color 0.3s;
         box-shadow: 0 0 0 4px #017a4e inset;
         color: #017848;
     }
-    label:active {
+    input[type="radio"]:checked + label {
         background-color: #017a4e;
         color: white;
     }
-    label:active svg {
+    input[type="radio"]:checked + label svg path {
         fill: white;
-        stroke: white;
-    }
-    label:active svg path {
-        fill: white;
-        stroke: white;
-    }
-    .btn {
-        border: none;
-        outline: none;
-        padding: 10px 16px;
-        background-color: #f1f1f1;
-        cursor: pointer;
-        font-size: 18px;
-    }
-
-    .active,
-    .btn:hover {
-        background-color: #666;
-        color: white;
     }
 </style>

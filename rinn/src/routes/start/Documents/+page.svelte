@@ -42,25 +42,25 @@
     use:enhance
     enctype="multipart/form-data"
   >
-      <label
-        for="state"
-        class="  block mb-3 text-center text-xl font-medium text-gray-900"
-        >Document to upload for loan eligibility...
-      </label>
-      <div class="md:flex md:items-center ">
-        <div class="m-auto">
-          <p
-            class="text-center text-gray-500 font-bold text-md mb-1 md:mb-0 pr-4"
-          >
-            3 Months Payslips <br>
-            <span class="text-lg text-red-500">OR</span>
-            <br /> 3 years ITR with computation
-          </p>
-        </div>
+    <label
+      for="state"
+      class="  block mb-3 text-center text-xl font-medium text-gray-900"
+      >Document to upload for loan eligibility...
+    </label>
+    <div class="md:flex md:items-center">
+      <div class="m-auto">
+        <p
+          class="text-center text-gray-500 font-bold text-md mb-1 md:mb-0 pr-4"
+        >
+          3 Months Payslips <br />
+          <span class="text-lg text-red-500">OR</span>
+          <br /> 3 years ITR with computation
+        </p>
       </div>
+    </div>
     <div class="flex w-full items-center justify-center bg-grey-lighter mt-5">
       <label
-        class=" flex   border border-gray-400 rounded-lg cursor-pointer w-64  flex-col items-center px-2 py-4 bg-white text-green-700 shadow-lg tracking-wide uppercase"
+        class=" flex border border-gray-400 rounded-lg cursor-pointer w-64 flex-col items-center px-2 py-4 bg-white text-green-700 shadow-lg tracking-wide uppercase"
       >
         <svg class="w-6 h-8" fill="currentColor" viewBox="0 0 20 20">
           <path
@@ -83,34 +83,30 @@
         {files[0].name}
       {/if}
     </div>
-    <div class="mx-4 md:flex md:items-center">
-      <div class="m-auto">
-        <div class="md:w-2/3 my-4">
-          <button
-            on:change={onChange}
-            id="submit"
-            class="text-[13px] rounded-lg md:text-sm leading-4 inline-flex items-center cursor-pointer transition ease-in-out duration-300 font-semibold font-body text-center justify-center border-0 border-transparent placeholder-white focus-visible:outline-none focus:outline-none bg-gray-600 text-white px-5 md:px-6 lg:px-8 py-4 md:py-3.5 lg:py-4  hover:shadow-cart h-12 lg:h-14 mt-1 text-sm lg:text-base w-full sm:w-auto"
-            type="submit"
-            value="next"
-          >
-            Submit
-          </button>
-        </div>
-      </div>
+    <div class="m-auto md:flex md:items-center">
+      <button
+        on:change={onChange}
+        id="submit"
+        class="w-full p-5 m-8 bg-slate-500 rounded-full text-white text-lg "
+        type="submit"
+        value="next"
+      >
+        Submit
+      </button>
     </div>
   </form>
 </section>
+
 <style>
-  label:hover{
-   
+  label:hover {
     background-color: #005c53;
     color: white;
   }
-  
-  #submit:active {
-      background: #005c53;
-      color: white;
-      opacity: 1;
-        
-  }  
+
+  #submit:hover {
+    
+    background: #005c53;
+    color: white;
+    opacity: 1;
+  }
 </style>

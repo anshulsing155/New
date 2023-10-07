@@ -10,23 +10,31 @@
         let value = event.currentTarget.value;
 
         document.cookie = "Stage of Property purchase=" + value;
-
         if (
             event.currentTarget.value ==
             "Signed the Agreement with Builder or Seller"
         ) {
-            goto("../start/Property-Location");
+            setTimeout(() => {
+                goto("../start/Property-Location");
+            }, 1000);
+           
         } else if (
             event.currentTarget.value ==
             "Property Finalised but Agreement is not signed. Need Sanction Letter to see eligiblity ( Validity 3 months)"
         ) {
-            goto("../start/Property-Location");
+            setTimeout(() => {
+                goto("../start/Property-Location");
+            }, 1000);
+           
         } else if (
             event.currentTarget.value ==
             "Need only Sanction letter (Validity 3 months)"
         ) {
             path.set(true);
-            goto("../start/Working-Location");
+            setTimeout(() => {
+                goto("../start/Working-Location");
+            }, 1000);
+           
         }
     }
 </script>
@@ -212,26 +220,21 @@
 
 
 <style>
-    label {
+   label {
         padding: 1rem 1rem;
         text-wrap: pretty;
-        /* height: 100px; */
         overflow: auto;
     }
     label:hover {
+        transition: color 0.3s;
         box-shadow: 0 0 0 4px #017a4e inset;
-
         color: #017848;
     }
-    label:active {
+    input[type="radio"]:checked + label {
         background-color: #017a4e;
         color: white;
     }
-    label:active svg {
-        fill: white;
-        stroke: white;
-    }
-    label:active svg path {
+    input[type="radio"]:checked + label svg path {
         fill: white;
         stroke: white;
     }

@@ -130,12 +130,12 @@
           {/if}
         </div>
 
-        <div class="relative md:m-auto justify-center gap-5">
+        <div class="w-full relative md:m-auto justify-center gap-5">
           <button
             on:click|preventDefault={onChange}
             id="next"
             value="next"
-            class="text-[13px] rounded-lg md:text-sm leading-4 inline-flex items-center cursor-pointer transition ease-in-out duration-300 font-semibold font-body text-center justify-center border-0 border-transparent placeholder-white focus-visible:outline-none focus:outline-none b text-white px-5 md:px-6 lg:px-8 py-4 md:py-3.5 lg:py-4 hover:text-white hover:bg-gray-600 hover:shadow-cart h-12 lg:h-14 mt-1 text-sm lg:text-base w-full sm:w-auto"
+            class="w-full m-auto p-5 mb-8 bg-gray-50 rounded-full  text-green-800 text-lg  focus:ring-blue-500 focus:border-blue-500 block "
             disabled={nextButton}
           >
             Next

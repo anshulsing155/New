@@ -7,15 +7,21 @@
         let value = event.currentTarget.value;
         document.cookie = "Is it part of Master plan of City =" + value;
         if (event.currentTarget.value == "Property selected is : Authorised") {
-            goto("../start/Property-Type");
+            setTimeout(() => {
+                goto("../start/Property-Type");
+            }, 1000);
         } else if (
             event.currentTarget.value == "Property selected is : UnAuthorised"
         ) {
-            goto("../start/Property-Type");
+            setTimeout(() => {
+                goto("../start/Property-Type");
+            }, 1000);
         } else if (
             event.currentTarget.value == "Property selected is : Don't Know"
         ) {
-            goto("../start/Property-Type");
+            setTimeout(() => {
+                goto("../start/Property-Type");
+            }, 1000);
         }
     }
 </script>
@@ -27,15 +33,14 @@
             <input
                 on:change={onChange}
                 class="hidden"
-                id="radio_1"
+                id="Authorised"
                 type="radio"
                 name="radio"
-                checked
                 value="Property selected is : Authorised"
             />
             <label
                 class="flex border border-gray-400 rounded-lg cursor-pointer"
-                for="radio_1"
+                for="Authorised"
             >
                 <span class=" my-auto flex"
                     ><svg
@@ -65,15 +70,14 @@
             <input
                 on:change={onChange}
                 class="hidden"
-                id="radio_1"
+                id="UnAuthorised"
                 type="radio"
                 name="radio"
-                checked
                 value="Property selected is : UnAuthorised"
             />
             <label
                 class="flex border border-gray-400 rounded-lg cursor-pointer"
-                for="radio_1"
+                for="UnAuthorised"
             >
                 <span class=" my-auto flex"
                     ><svg
@@ -115,24 +119,20 @@
             <input
                 on:change={onChange}
                 class="hidden"
-                id="radio_1"
+                id="DontKnow"
                 type="radio"
                 name="radio"
-                checked
                 value="Property selected is : Don't Know"
             />
             <label
                 class="flex border border-gray-400 rounded-lg cursor-pointer"
-                for="radio_1"
+                for="DontKnow"
             >
                 <svg
-                
-                
-                height="36px"
-                style="margin-left:16px;margin-right:12px"
-                width="36px"
+                    height="36px"
+                    style="margin-left:16px;margin-right:12px"
+                    width="36px"
                     viewBox="0 0 24 24"
-                    
                     xmlns="http://www.w3.org/2000/svg"
                     ><g id="SVGRepo_bgCarrier" stroke-width="1" /><g
                         id="SVGRepo_tracerCarrier"
@@ -155,14 +155,19 @@
     label {
         padding: 1rem 1rem;
         text-wrap: pretty;
-        /* height: 100px; */
         overflow: auto;
     }
     label:hover {
-        box-shadow: 0 0 0 4px  #017a4e inset;
-
+        transition: color 0.3s;
+        box-shadow: 0 0 0 4px #017a4e inset;
         color: #017848;
-        
+    }
+    input[type="radio"]:checked + label {
+        background-color: #017a4e;
+        color: white;
+    }
+    input[type="radio"]:checked + label svg path {
+        fill: white;
     }
     label:active {
         background-color: #017a4e;

@@ -1,8 +1,8 @@
 <script >
-    import Menu from "../../menu.svelte";
+    import Menu from '../../menu.svelte'
     import Footer from '../../footer.svelte'
 </script>
-<Menu />
+<Menu data/>
 
 
 

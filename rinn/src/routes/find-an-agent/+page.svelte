@@ -5,35 +5,39 @@
 </script>
 
 <Menu data/>
-<section class="bg-white-50 lg:flex">
-    <div class="container w-1/2 mx-24 mt-14  ">
-        <div class="text-green-700 font-semibold ml-8 text-xl">
-            <p>Better Real Estate</p>
-        </div>
-        <div class="font-semibold ml-8 text-5xl mt-3">
-            <h1>Get an agent who can help</h1> 
-            <h1>you make the right offer</h1>
-        </div>
-        <div class="ml-12 mt-8 inline-flex">
+<hr>
+<section class="bg-white-50">
+    <div class="container m-auto">
+        <div class="grid lg:grid-cols-2 py-8">
+            <div class=" px-5">
+                <p class=" text-xl font-semibold text-green-800 py-12">Better Real Estate</p>
+                <p class=" text-5xl font-bold py-8">Get an agent who can help
 
-            <span class="dot mt-3">
-                <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 m-auto mt-2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                  </svg>
-                  
-            </span>
-            <div class="text-2xl font-semibold ml-4 ">
-                <p>Use data-driven insights to find out exactly how <br> much to offer</p>
+                 you make the right offer
+                </p>
+                <div class=" inline-flex py-8">
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="#017a4e" class="w-6 h-6 m-auto mt-2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                          
+
+                    </div>
+                    <p class=" text-2xl font-semibold px-8 ">Use data-driven insights to find out exactly how
+                        much to offer</p>
+                </div>
+                   
+                    
+                <button class="px-12 rounded-xl text-xl text-white font-bold py-6 bg-green-600 hover:bg-green-800">Get Start</button>    
+
             </div>
-        </div>
-        <div class="bg-green-600 w-36 h-14 rounded ml-8 mt-10">
-            <button class="text-slate-100 text-xl font-semibold ml-8 mt-3">Get Start</button>
-        </div>
+            <div class="place-self-end p-5 ">
+                <img src="/img/welcome-step-hero.png" alt="">
+            </div>
 
-    </div>
-    <div class="w-auto">
-        <img src="/img/welcome-step-hero.png">
-    </div>
+        </div>
+        
+    
 
 
 </section>
@@ -41,15 +45,6 @@
 
 
 <Footer />
-<style>
-    .dot {
-  height: 40px;
-  width: 40px;
-  background-color: rgb(85, 158, 85);
-  border-radius: 50%;
-  display: inline-block;
-}
-</style>
 
 
 

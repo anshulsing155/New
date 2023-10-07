@@ -8,13 +8,21 @@
         document.cookie = "Type of Property=" + value;
         event.currentTarget.value;
         if (event.currentTarget.value == "Row House") {
-            goto("../start/properties-owned");
+            setTimeout(() => {
+                goto("../start/properties-owned");
+            }, 1000);
         } else if (event.currentTarget.value == "Flat") {
-            goto("../start/properties-owned");
+            setTimeout(() => {
+                goto("../start/properties-owned");
+            }, 1000);
         } else if (event.currentTarget.value == "Floor") {
-            goto("../start/properties-owned");
+            setTimeout(() => {
+                goto("../start/properties-owned");
+            }, 1000);
         } else if (event.currentTarget.value == "Plot") {
-            goto("../start/properties-owned");
+            setTimeout(() => {
+                goto("../start/properties-owned");
+            }, 1000);
         }
     }
 </script>
@@ -26,15 +34,15 @@
             <input
                 on:change={onChange}
                 class="hidden"
-                id="radio_1"
+                id="RowHouse"
                 type="radio"
                 name="radio"
-                checked
+            
                 value="Row House"
             />
             <label
                 class="flex border border-gray-400 rounded-lg cursor-pointer"
-                for="radio_1"
+                for="RowHouse"
             >
                 <span class=" my-auto flex"
                     ><svg
@@ -66,15 +74,15 @@
             <input
                 on:change={onChange}
                 class="hidden"
-                id="radio_1"
+                id="Floor"
                 type="radio"
                 name="radio"
-                checked
+            
                 value="Floor"
             />
             <label
                 class="flex border border-gray-400 rounded-lg cursor-pointer"
-                for="radio_1"
+                for="Floor"
             >
                 <span class=" my-auto flex"
                     ><svg
@@ -106,15 +114,15 @@
             <input
                 on:change={onChange}
                 class="hidden"
-                id="radio_1"
+                id="Flat"
                 type="radio"
                 name="radio"
-                checked
+            
                 value="Flat"
             />
             <label
                 class="flex border border-gray-400 rounded-lg cursor-pointer"
-                for="radio_1"
+                for="Flat"
             >
                 <span class=" my-auto flex"
                     ><svg
@@ -146,15 +154,15 @@
             <input
                 on:change={onChange}
                 class="hidden"
-                id="radio_1"
+                id="Plot"
                 type="radio"
                 name="radio"
-                checked
+            
                 value="Plot"
             />
             <label
                 class="flex border border-gray-400 rounded-lg cursor-pointer"
-                for="radio_1"
+                for="Plot"
             >
                 <span class=" my-auto flex"
                     ><svg
@@ -291,27 +299,22 @@
 </div>
 
 <style>
-    label {
+     label {
         padding: 1rem 1rem;
         text-wrap: pretty;
-        /* height: 100px; */
         overflow: auto;
     }
     label:hover {
-        box-shadow: 0 0 0 4px  #017a4e inset;
-
+        transition: color 0.3s;
+        box-shadow: 0 0 0 4px #017a4e inset;
         color: #017848;
     }
-    label:active {
+    input[type="radio"]:checked + label {
         background-color: #017a4e;
         color: white;
     }
-    label:active svg {
-        fill: white;
-        stroke: white;
-    }
-    label:active svg path {
-        fill: white;
+    input[type="radio"]:checked + label svg path {
+        /* fill: white; */
         stroke: white;
     }
 </style>

@@ -7,9 +7,9 @@
 	<title>Insurance Documents</title>
 </svelte:head>
 
-<details class="dropdown ">
+<details class="dropdown border appearance-none  ">
 	<summary class="">open or close</summary>
-	<ul class="   ">
+	<ul class=" bg-red-200  ">
 	  <li><a>Item 1</a></li>
 	  <li><a>Item 2</a></li>
 	</ul>

@@ -57,7 +57,7 @@
         Person who referred you...
       </h4>
       <label
-        class="hidden md:flex text-blue-400 font-semibold border-2 py-2 px-4 hover:bg-green-600 hover:text-white rounded-md shadow-lg hover:shadow-green-200 mx-10"
+        class="hidden md:flex text-blue-400 text-center m-auto w-30 text-xs md:font-semibold border-2 px-6 py-4 hover:bg-green-600 hover:text-white rounded-md shadow-lg hover:shadow-green-200 mx-10"
       >
         <input
           on:change={onChange}
@@ -119,19 +119,19 @@
           {/if}
         </div>
 
-        <div class="relative md:m-auto justify-center gap-5">
+        <div class="md:w-full relative md:m-auto justify-center gap-5">
           <button
             on:click|preventDefault={onChange}
             id="next"
             value="next"
             data-variant="flat"
-            class="text-[13px] rounded-lg md:text-sm leading-4 inline-flex items-center cursor-pointer transition ease-in-out duration-300 font-semibold font-body text-center justify-center border-0 border-transparent placeholder-white focus-visible:outline-none focus:outline-none b text-white px-5 md:px-6 lg:px-8 py-4 md:py-3.5 lg:py-4 hover:text-white hover:bg-gray-600 hover:shadow-cart h-12 lg:h-14 mt-1 text-sm lg:text-base w-full sm:w-auto"
+            class="w-full m-auto p-5 mb-4 md:mb-8 bg-gray-50 rounded-full  text-green-800 text-lg  focus:ring-blue-500 focus:border-blue-500 block "
             disabled
           >
             Next
           </button>
           <label
-            class=" md:hidden text-[13px] rounded-lg md:text-sm leading-4 inline-flex items-center cursor-pointer transition ease-in-out duration-300 font-semibold font-body text-center justify-center border-0 border-transparent placeholder-white focus-visible:outline-none focus:outline-none bg-black text-white px-5 md:px-6 lg:px-8 py-4 md:py-3.5 lg:py-4 hover:text-white hover:bg-gray-600 hover:shadow-cart h-12 lg:h-14 mt-1 text-sm lg:text-base w-full sm:w-auto"
+            class=" md:hidden w-full m-auto p-5 mb-8 bg-green-700 rounded-full text-center  text-white text-sm  md:text-lg  focus:ring-blue-500 focus:border-blue-500 block "
           >
             <input
               on:change={onChange}
@@ -154,7 +154,7 @@
   }
   #next:enabled {
     background: #017a4e;
-    color: black;
+    color: white;
     opacity: 1;
   }
   input {
