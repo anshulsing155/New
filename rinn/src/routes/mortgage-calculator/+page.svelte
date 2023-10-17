@@ -5,7 +5,7 @@
     import Homeloanemi1_cal from "../components/hloan_emi_cal.svelte"
 
 </script>
-<Menu />
+<Menu data/>
 
 
 <Homeloanemi1_cal />
